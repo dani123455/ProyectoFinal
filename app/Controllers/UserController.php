@@ -10,6 +10,17 @@ class UserController extends BaseController
     {
         $userModel = new UserModel();
         $data['usuarios'] = $userModel->findAll(); // Obtener todos los usuarios
+        
+        //Paginacion
+        $perPage = 10; // Número de elementos por página
+
+        //Obtener usuarios paginados
+        $data['usuarios'] = $userModel->paginate($perPage);
+        
+        //Pasar el objeto del paginador a la vista
+        $data['pager'] = $userModel->pager;
+        
+        //Cargar la vista con los datos
         return view('user_list', $data);
     }
 
@@ -19,6 +30,7 @@ class UserController extends BaseController
         helper(['form', 'url']);
         // Cargar datos del usuario si es edición
         $data['usuarios'] = $id ? $userModel->find($id) : null;
+        $data['isEdit'] = $id ? true : false;
 
         if ($this->request->getMethod() == 'POST') {
 
@@ -27,7 +39,7 @@ class UserController extends BaseController
             $validation->setRules([
                 'nombre' => 'required|min_length[3]|max_length[50]',
                 'email' => 'required|valid_email',
-                'rol_id' => 'requiered',
+                'rol_id' => 'required',
                 'telefono' => 'required|numeric|min_length[10]|max_length[15]',
                 'direccion' =>'required|min_length[10]|max_length[255]'
             ]);
@@ -62,6 +74,7 @@ class UserController extends BaseController
 
         // Cargar la vista del formulario (crear/editar)
         return view('user_form', $data);
+
     }
 
     public function delete($id)

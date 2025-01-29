@@ -8,7 +8,7 @@
 </head>
 <body>
 <div class="container mt-5">
-    <h1 class="text-center"><?= isset($usuario) ? 'Editar Usuario' : 'Crear Usuario' ?></h1>
+    <h1 class="text-center"><?= $isEdit ? 'Editar Usuario' : 'Crear Usuario' ?></h1>
 
     <!-- Mostrar errores de validación -->
     <?php if (isset($validation)): ?>
@@ -18,11 +18,11 @@
     <?php endif; ?>
 
     <!-- Formulario -->
-    <form action="<?= isset($usuario) ? base_url('usuarios/save/') . $usuario['id'] : base_url('usuarios/save') ?>" method="post">
+    <form action="<?= isset($usuario) ? base_url('usuarios/save') . $usuario['id'] : base_url('usuarios/save') ?>" method="post">
         <?= csrf_field(); ?>
         <div class="mb-3">
             <label for="name" class="form-label">Nombre</label>
-            <input type="text" name="name" id="name" class="form-control" 
+            <input type="text" name="nombre" id="name" class="form-control" 
                 value="<?= isset($usuario) ? esc($usuario['name']) : '' ?>" required>
         </div>
         <div class="mb-3">
@@ -37,7 +37,7 @@
         </div>
         <div class="mb-3">
             <label for="telefono" class="form-label">Telefono</label>
-            <input type="number" name="number" id="telefono" class="form-control" 
+            <input type="number" name="telefono" id="telefono" class="form-control" 
                 value="<?= isset($usuario) ? esc($usuario['telefono']) : '' ?>" required>
         </div>
         <div class="mb-3">
