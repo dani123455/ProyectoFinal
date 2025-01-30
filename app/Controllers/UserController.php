@@ -11,14 +11,30 @@ class UserController extends BaseController
         $userModel = new UserModel();
         $data['usuarios'] = $userModel->findAll(); // Obtener todos los usuarios
         
-        //Paginacion
+        $name = $this->request->getVar('nombre');
+        $email = $this->request->getVar('email');///Obtener el termino de busqueda desde el formulario
+        $query = $userModel;
+        //Aplicar filtro si se introduce un nombre
+        if($name){
+            $query = $userModel->like('nombre', $name);
+        }
+
+        if($email){
+            $query = $userModel->like('email', $email);
+        }
+
+        //Paginaciona
         $perPage = 10; // Número de elementos por página
 
         //Obtener usuarios paginados
-        $data['usuarios'] = $userModel->paginate($perPage);
+        $data['usuarios'] = $query->paginate($perPage);
         
         //Pasar el objeto del paginador a la vista
         $data['pager'] = $userModel->pager;
+
+        //Mantener el termino de busqueda en la vista
+        $data['name'] = $name;
+        $data['email'] = $email;
         
         //Cargar la vista con los datos
         return view('user_list', $data);

@@ -6,3 +6,5 @@ dados de baja, en alta y todos.
 Hacer los filtros de busqueda.
 
 Hacer las demas tablas
+
+Los id no hace falta mostrarlo y los roles id mejor que salga el rol (admin, empleado, cliente)

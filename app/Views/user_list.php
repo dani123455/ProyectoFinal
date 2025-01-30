@@ -20,6 +20,25 @@
     <?php endif; ?>
 
     <a href="<?= base_url('usuarios/save') ?>" class="btn btn-primary mb-3">Crear Usuario</a>
+    <!--Formulario de busqueda-->
+    <div class="d-flex">
+    <form method="GET" action="<?=base_url('usuarios')?>">
+        <div class="container d-flex mb-2">
+            <div class="input-group w-auto">
+                <input type="text" name="nombre" class="form-control" placeholder="Nombre" value="<?=$name?>">
+                <button type="submit" class="btn btn-primary">Buscar</button>
+            </div>
+        </div>
+    </form>
+    <form method="GET" action="<?=base_url('usuarios')?>">
+        <div class="container d-flex mb-2">
+            <div class="input-group w-auto">
+                <input type="text" name="email" class="form-control" placeholder="Email" value="<?=$email?>">
+                <button type="submit" class="btn btn-primary">Buscar</button>
+            </div>
+        </div>
+    </form>
+    </div>
 
     <?php if (!empty($usuarios) && is_array($usuarios)): ?>
         <table class="table table-bordered">
@@ -55,7 +74,7 @@
         </table>
         <!--Paginador-->
         <div class="mt-4">
-            <?= $pager->links('default','custom_pagination') ?>
+            <?= $pager->only(['name'])->links('default','custom_pagination') ?>
         </div>
     <?php else: ?>
         <p class="text-center">No hay usuarios registrados.</p>
