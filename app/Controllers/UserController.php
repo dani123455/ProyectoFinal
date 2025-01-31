@@ -9,34 +9,68 @@ class UserController extends BaseController
     public function index()
     {
         $userModel = new UserModel();
-        $data['usuarios'] = $userModel->findAll(); // Obtener todos los usuarios
-        
+
+        // Obtener el nombre del rol junto con los usuarios
+        $data['usuarios'] = $userModel->getUsuariosConRoles();
+
+        // Filtrar usuarios si se proporcionan nombre o email
         $name = $this->request->getVar('nombre');
-        $email = $this->request->getVar('email');///Obtener el termino de busqueda desde el formulario
-        $query = $userModel;
-        //Aplicar filtro si se introduce un nombre
-        if($name){
-            $query = $userModel->like('nombre', $name);
+        $email = $this->request->getVar('email');
+        $rol = $this->request->getVar('rol');
+        $telefono = $this->request->getVar('telefono');
+        $direccion = $this->request->getVar('direccion');
+        $sort = $this->request->getVar('sort');
+        $order = $this->request->getVar('order') == 'desc' ? 'desc' : 'asc';
+        $status = $this->request->getVar('status');
+
+        $query = $userModel->select('usuarios.*, roles.nombre as rol_nombre')
+                            ->join('roles', 'usuarios.rol_id = roles.id');
+
+        if ($name) {
+            $query = $query->like('usuarios.nombre', $name);
         }
 
-        if($email){
-            $query = $userModel->like('email', $email);
+        if ($email) {
+            $query = $query->like('usuarios.email', $email);
         }
 
-        //Paginaciona
+        if ($rol) {
+            $query = $query->like('roles.nombre', $rol);
+        }
+
+        if ($telefono) {
+            $query = $query->like('usuarios.telefono', $telefono);
+        }
+
+        if ($direccion) {
+            $query = $query->like('usuarios.direccion', $direccion);
+        }
+
+        if ($sort && in_array($sort, ['nombre', 'email', 'rol_nombre', 'telefono', 'direccion'])) {
+            $query = $query->orderBy($sort, $order);
+        }
+
+        if ($status == 'baja') {
+            $query = $query->where('usuarios.fecha_baja IS NOT NULL');
+        } elseif ($status == 'alta') {
+            $query = $query->where('usuarios.fecha_baja IS NULL');
+        }
+
+        // Paginación
         $perPage = 10; // Número de elementos por página
-
-        //Obtener usuarios paginados
         $data['usuarios'] = $query->paginate($perPage);
-        
-        //Pasar el objeto del paginador a la vista
         $data['pager'] = $userModel->pager;
 
-        //Mantener el termino de busqueda en la vista
         $data['name'] = $name;
         $data['email'] = $email;
-        
-        //Cargar la vista con los datos
+        $data['rol'] = $rol;
+        $data['telefono'] = $telefono;
+        $data['direccion'] = $direccion;
+        $data['sort'] = $sort;
+        $data['order'] = $order;
+        $data['perPage'] = $perPage;
+        $data['status'] = $status;
+
         return view('user_list', $data);
     }
 
@@ -44,6 +78,7 @@ class UserController extends BaseController
     {
         $userModel = new UserModel();
         helper(['form', 'url']);
+        
         // Cargar datos del usuario si es edición
         $data['usuarios'] = $id ? $userModel->find($id) : null;
         $data['isEdit'] = $id ? true : false;
@@ -57,7 +92,7 @@ class UserController extends BaseController
                 'email' => 'required|valid_email',
                 'rol_id' => 'required',
                 'telefono' => 'required|numeric|min_length[10]|max_length[15]',
-                'direccion' =>'required|min_length[10]|max_length[255]'
+                'direccion' => 'required|min_length[10]|max_length[255]'
             ]);
 
             if (!$validation->withRequest($this->request)->run()) {
@@ -90,13 +125,50 @@ class UserController extends BaseController
 
         // Cargar la vista del formulario (crear/editar)
         return view('user_form', $data);
-
     }
 
-    public function delete($id)
+    public function archive($id)
     {
         $userModel = new UserModel();
-        $userModel->delete($id); // Eliminar usuario
-        return redirect()->to('/usuarios')->with('success', 'Usuario eliminado correctamente.');
+    
+        // Verificar que el ID existe
+        $usuario = $userModel->find($id);
+        if ($usuario) {
+            // Obtener la fecha actual en el formato correcto
+            $fecha_baja = date('Y-m-d H:i:s');
+            
+            // Preparar los datos para la actualización
+            $data = [
+                'fecha_baja' => $fecha_baja
+            ];
+    
+            // Actualizar el usuario
+            $userModel->update($id, $data);
+            
+            return redirect()->to('/usuarios')->with('success', 'Usuario archivado correctamente.');
+        } else {
+            return redirect()->to('/usuarios')->with('error', 'Usuario no encontrado.');
+        }
     }
+
+    public function unarchive($id)
+{
+    $userModel = new UserModel();
+
+    // Verificar que el ID existe
+    $usuario = $userModel->find($id);
+    if ($usuario) {
+        // Preparar los datos para la actualización
+        $data = [
+            'fecha_baja' => null
+        ];
+
+        // Actualizar el usuario
+        $userModel->update($id, $data);
+        
+        return redirect()->to('/usuarios')->with('success', 'Usuario desarchivado correctamente.');
+    } else {
+        return redirect()->to('/usuarios')->with('error', 'Usuario no encontrado.');
+    }
+}
 }

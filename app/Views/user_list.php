@@ -13,6 +13,13 @@
 <div class="container mt-5">
     <h1 class="text-center">Listado de Usuarios</h1>
 
+    
+    <div class="position-absolute top-0 start-0 mt-2 ms-2">
+        <a href="<?= base_url('index.php') ?>" class="btn btn-primary">Volver</a>
+    </div>
+
+
+
     <?php if (session()->getFlashdata('success')): ?>
         <script>
             toastr.success('<?= session()->getFlashdata('success'); ?>');
@@ -21,52 +28,53 @@
 
     <a href="<?= base_url('usuarios/save') ?>" class="btn btn-primary mb-3">Crear Usuario</a>
     <!--Formulario de busqueda-->
-    <div class="d-flex">
     <form method="GET" action="<?=base_url('usuarios')?>">
-        <div class="container d-flex mb-2">
-            <div class="input-group w-auto">
-                <input type="text" name="nombre" class="form-control" placeholder="Nombre" value="<?=$name?>">
-                <button type="submit" class="btn btn-primary">Buscar</button>
-            </div>
+    <div class="container d-flex mb-2">
+        <div class="input-group w-auto">
+            <input type="text" name="nombre" class="form-control" placeholder="Nombre" value="<?= isset($name) ? $name : '' ?>">
+            <input type="text" name="email" class="form-control" placeholder="Email" value="<?= isset($email) ? $email : '' ?>">
+            <input type="text" name="rol" class="form-control" placeholder="Rol" value="<?= isset($rol) ? $rol : '' ?>">
+            <input type="text" name="telefono" class="form-control" placeholder="Teléfono" value="<?= isset($telefono) ? $telefono : '' ?>">
+            <input type="text" name="direccion" class="form-control" placeholder="Dirección" value="<?= isset($direccion) ? $direccion : '' ?>">
+            <select name="status" class="form-control">
+                <option value="">Todos</option>
+                <option value="alta" <?= isset($status) && $status == 'alta' ? 'selected' : '' ?>>En Alta</option>
+                <option value="baja" <?= isset($status) && $status == 'baja' ? 'selected' : '' ?>>Dado de Baja</option>
+            </select>
+            <button type="submit" class="btn btn-primary">Buscar</button>
         </div>
-    </form>
-    <form method="GET" action="<?=base_url('usuarios')?>">
-        <div class="container d-flex mb-2">
-            <div class="input-group w-auto">
-                <input type="text" name="email" class="form-control" placeholder="Email" value="<?=$email?>">
-                <button type="submit" class="btn btn-primary">Buscar</button>
-            </div>
-        </div>
-    </form>
     </div>
+</form>
+
 
     <?php if (!empty($usuarios) && is_array($usuarios)): ?>
         <table class="table table-bordered">
             <thead>
                 <tr>
-                    <th>ID</th>
-                    <th>Nombre</th>
-                    <th>Email</th>
-                    <th>Rol_id</th>
-                    <th>Teléfono</th>
-                    <th>Dirección</th>
+                <tr>
+                    <th><a href="<?=base_url('usuarios?sort=nombre&order=' . ($sort == 'nombre' && $order == 'asc' ? 'desc' : 'asc'))?>">Usuario</a></th>
+                    <th><a href="<?=base_url('usuarios?sort=email&order=' . ($sort == 'email' && $order == 'asc' ? 'desc' : 'asc'))?>">Email</a></th>
+                    <th><a href="<?=base_url('usuarios?sort=rol_nombre&order=' . ($sort == 'rol_nombre' && $order == 'asc' ? 'desc' : 'asc'))?>">Rol</a></th>
+                    <th><a href="<?=base_url('usuarios?sort=telefono&order=' . ($sort == 'telefono' && $order == 'asc' ? 'desc' : 'asc'))?>">Teléfono</a></th>
+                    <th><a href="<?=base_url('usuarios?sort=direccion&order=' . ($sort == 'direccion' && $order == 'asc' ? 'desc' : 'asc'))?>">Dirección</a></th>
                     <th>Acciones</th>
                 </tr>
             </thead>
             <tbody>
                 <?php foreach ($usuarios as $usuario): ?>
                     <tr>
-                        <td><?= esc($usuario['id']) ?></td>
                         <td><?= esc($usuario['nombre']) ?></td>
                         <td><?= esc($usuario['email']) ?></td>
-                        <td><?= esc($usuario['rol_id']) ?></td>
+                        <td><?= esc($usuario['rol_nombre']) ?></td>
                         <td><?= esc($usuario['telefono']) ?></td>
                         <td><?= esc($usuario['direccion']) ?></td>
                         <td>
                             <a href="<?= base_url('usuarios/save/' . $usuario['id']) ?>" class="btn btn-warning">Editar</a>
-                            <a href="<?=base_url('usuarios/delete/') . esc($usuario['id']) ?>" 
-                                class="btn btn-danger btn-sm"
-                                onclick="return confirm('¿Estás seguro de eliminar este usuario?');">Eliminar</a>
+                            <?php if (is_null($usuario['fecha_baja'])): ?>
+                                <a href="<?= base_url('usuarios/archive/' . $usuario['id']) ?>" class="btn btn-danger">Archivar</a>
+                            <?php else: ?>
+                                <a href="<?= base_url('usuarios/unarchive/' . $usuario['id']) ?>" class="btn btn-success">Desarchivar</a>
+                            <?php endif; ?>
                         </td>
                     </tr>
                 <?php endforeach; ?>

@@ -1,10 +1,3 @@
-El eliminar no debe eliminar debe archivar. En la base de datos debe tener 
-un Date = null y cuando le des a eliminar ponga la fecha de cuando le has 
-dado al eliminar y que se archive. Y en los filtros uno de ellos debe ser 
-dados de baja, en alta y todos.
-
-Hacer los filtros de busqueda.
-
 Hacer las demas tablas
 
-Los id no hace falta mostrarlo y los roles id mejor que salga el rol (admin, empleado, cliente)
+
