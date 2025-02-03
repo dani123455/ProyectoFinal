@@ -47013,6 +47013,7 @@ body {
 .aside.aside-dark .aside-logo {
   background-color: #1a1a27;
 }
+
 .aside.aside-dark .aside-toggle svg [fill]:not(.permanent):not(g) {
   transition: fill 0.3s ease;
   fill: #494b74;

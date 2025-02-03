@@ -5,7 +5,7 @@ use CodeIgniter\Router\RouteCollection;
 /**
  * @var RouteCollection $routes
  */
-$routes->get('/', 'Home::sign-up');
+$routes->get('/', 'Home::index');
 //Usuarios
 $routes->get('usuarios', 'UserController::index');//Listar usuarios
 $routes->get( 'usuarios/save', 'UserController::saveUser');//Mostrar formulario para crear usuario
