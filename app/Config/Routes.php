@@ -5,7 +5,7 @@ use CodeIgniter\Router\RouteCollection;
 /**
  * @var RouteCollection $routes
  */
-$routes->get('/', 'Home::index');
+$routes->get('/', 'Home::sign-up');
 //Usuarios
 $routes->get('usuarios', 'UserController::index');//Listar usuarios
 $routes->get( 'usuarios/save', 'UserController::saveUser');//Mostrar formulario para crear usuario
@@ -16,7 +16,7 @@ $routes->get('usuarios/archive/(:num)', 'UserController::archive/$1'); //Archiva
 $routes->get('usuarios/unarchive/(:num)', 'UserController::unarchive/$1'); //Desarchivar usuario
 //Marcas
 $routes->get('marcas', 'BrandController::index');//Listar marcas
-//$routes->get( 'marcas/save', 'BrandController::saveBrand');//Mostrar formulario para crear marca
+$routes->get( 'marcas/save', 'BrandController::saveBrand');//Mostrar formulario para crear marca
 $routes->get( 'marcas/save/(:num)', 'BrandController::saveBrand/$1');//Mostrar formulario para editar marca
 $routes->post('marcas/save', 'BrandController::saveBrand');//Crear marca(POST)
 $routes->post('marcas/save/(:num)', 'BrandController::saveBrand/$1');//Editar marca (POST)

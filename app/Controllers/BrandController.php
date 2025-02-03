@@ -9,15 +9,12 @@ class BrandController extends BaseController
     public function index()
     {
         $brandModel = new BrandModel();
-
-        // Obtener el nombre de las marcas
-        $data['marcas'] = $brandModel->findAll();
-
-        // Filtrar marcas si se proporcionan nombre 
+        
+        // Obtener el nombre de las marcas y aplicar filtros de búsqueda
         $name = $this->request->getVar('nombre');
         $sort = $this->request->getVar('sort');
         $order = $this->request->getVar('order') == 'desc' ? 'desc' : 'asc';
-
+        
         $query = $brandModel;
 
         if ($name) {
@@ -27,7 +24,6 @@ class BrandController extends BaseController
         if ($sort && in_array($sort, ['nombre'])) {
             $query = $query->orderBy($sort, $order);
         }
-
 
         // Paginación
         $perPage = 10; // Número de elementos por página
@@ -46,56 +42,39 @@ class BrandController extends BaseController
     {
         $brandModel = new BrandModel();
         helper(['form', 'url']);
-    
-        // Cargar datos de la marca si es edición
-        $data['marcas'] = $id ? $brandModel->find($id) : null;
-        $data['isEdit'] = $id ? true : false;
 
+        // Reglas de validación
+        $validation = \Config\Services::validation();
+        $validation->setRules([
+            'nombre' => 'required',
+        ]);
 
-    
-        if ($this->request->getMethod() == 'GET'|| true) {
-    
-    
-            // Reglas de validación
-            $validation = \Config\Services::validation();
-            $validation->setRules([
-                'nombre' => 'required',
-            ]);
-      
-    
-            if (!$validation->withRequest($this->request)->run()) {
-                // Mostrar errores de validación
-                $brandData = [
-                    'nombre' => $this->request->getPost('nombre'),
-                ];
-    
-                $data['validation'] = $validation;
-                $brandModel->save($brandData);
-                $message = 'Marca creada correctamente.';
-            } else {
-                // Preparar datos del formulario
-                $brandData = [
-                    'nombre' => $this->request->getPost('nombre'),
-                ];
-    
-                if ($id) {
-                    // Actualizar marca existente
-                    $brandModel->update($id, $brandData);
-                    $message = 'Marca actualizada correctamente.';
-                } else {
-                    // Crear nuevo marca
-                    $brandModel->save($brandData);
-                    $message = 'Marca creada correctamente.';
-                }
-    
-                // Redirigir al listado con un mensaje de éxito
-                return redirect()->to('/marcas')->with('success', $message);
-            }
+        // Preparar datos del formulario
+        $brandData = [
+            'nombre' => $this->request->getPost('nombre'),
+        ];
+
+        // Validar datos
+        if (!$validation->withRequest($this->request)->run()) {
+            // Mostrar errores de validación
+            $data['validation'] = $validation;
+            $data['marcas'] = $id ? $brandModel->find($id) : null;
+            $data['isEdit'] = $id ? true : false;
+            return view('brand_form', $data);
         }
 
-        
-        // Cargar la vista del formulario (crear/editar)
-        return view('brand_form', $data);
+        if ($id) {
+            // Actualizar marca existente
+            $brandModel->update($id, $brandData);
+            $message = 'Marca actualizada correctamente.';
+        } else {
+            // Crear nueva marca
+            $brandModel->save($brandData);
+            $message = 'Marca creada correctamente.';
+        }
+
+        // Redirigir al listado con un mensaje de éxito
+        return redirect()->to('/marcas')->with('success', $message);
     }
 
     public function delete($id)
