@@ -9,13 +9,15 @@ class BrandController extends BaseController
     public function index()
     {
         $brandModel = new BrandModel();
-        
-        // Obtener el nombre de las marcas y aplicar filtros de búsqueda
+
+        $data['marcas'] = $brandModel->findAll();
+
+        // Filtrar marcas si se proporciona nombre
         $name = $this->request->getVar('nombre');
         $sort = $this->request->getVar('sort');
         $order = $this->request->getVar('order') == 'desc' ? 'desc' : 'asc';
-        
-        $query = $brandModel;
+
+        $query = $brandModel->select('marcas.*');
 
         if ($name) {
             $query = $query->like('marcas.nombre', $name);
@@ -42,51 +44,92 @@ class BrandController extends BaseController
     {
         $brandModel = new BrandModel();
         helper(['form', 'url']);
+        
+        // Cargar datos de la marca si es edición
+        $data['marcas'] = $id ? $brandModel->find($id) : null;
+        $data['isEdit'] = $id ? true : false;
 
-        // Reglas de validación
-        $validation = \Config\Services::validation();
-        $validation->setRules([
-            'nombre' => 'required',
-        ]);
+        if ($this->request->getMethod() == 'POST') {
 
-        // Preparar datos del formulario
-        $brandData = [
-            'nombre' => $this->request->getPost('nombre'),
-        ];
+            // Reglas de validación
+            $validation = \Config\Services::validation();
+            $validation->setRules([
+                'nombre' => 'required|min_length[3]|max_length[50]'
+            ]);
 
-        // Validar datos
-        if (!$validation->withRequest($this->request)->run()) {
-            // Mostrar errores de validación
-            $data['validation'] = $validation;
-            $data['marcas'] = $id ? $brandModel->find($id) : null;
-            $data['isEdit'] = $id ? true : false;
-            return view('brand_form', $data);
+            if (!$validation->withRequest($this->request)->run()) {
+                // Mostrar errores de validación
+                $data['validation'] = $validation;
+            } else {
+                // Preparar datos del formulario
+                $brandData = [
+                    'nombre' => $this->request->getPost('nombre')
+                ];
+
+                if ($id) {
+                    // Actualizar marca existente
+                    $brandModel->update($id, $brandData);
+                    $message = 'Marca actualizada correctamente.';
+                } else {
+                    // Crear nueva marca
+                    $brandModel->save($brandData);
+                    $message = 'Marca creada correctamente.';
+                }
+
+                // Redirigir al listado con un mensaje de éxito
+                return redirect()->to('/marcas')->with('success', $message);
+            }
         }
 
-        if ($id) {
-            // Actualizar marca existente
-            $brandModel->update($id, $brandData);
-            $message = 'Marca actualizada correctamente.';
-        } else {
-            // Crear nueva marca
-            $brandModel->save($brandData);
-            $message = 'Marca creada correctamente.';
-        }
-
-        // Redirigir al listado con un mensaje de éxito
-        return redirect()->to('/marcas')->with('success', $message);
+        // Cargar la vista del formulario (crear/editar)
+        return view('brand_form', $data);
     }
 
-    public function delete($id)
+    public function archive($id)
     {
         $brandModel = new BrandModel();
-        
-        // Verificar que el ID existe antes de eliminar
-        if ($brandModel->find($id)) {
-            $brandModel->delete($id);
-            return redirect()->to('/marcas')->with('success', 'Marca eliminada correctamente');
+    
+        // Verificar que el ID existe
+        $marca = $brandModel->find($id);
+        if ($marca) {
+            // Obtener la fecha actual en el formato correcto
+            $fecha_baja = date('Y-m-d H:i:s');
+            
+            // Preparar los datos para la actualización
+            $data = [
+                'fecha_baja' => $fecha_baja
+            ];
+    
+            // Actualizar la marca
+            $brandModel->update($id, $data);
+            
+            return redirect()->to('/marcas')->with('success', 'Marca archivada correctamente.');
         } else {
-            return redirect()->to('/marcas')->with('error', 'Marca no encontrada');
+            return redirect()->to('/marcas')->with('error', 'Marca no encontrada.');
+        }
+    }
+
+    public function unarchive($id)
+    {
+        $brandModel = new BrandModel();
+    
+        // Verificar que el ID existe
+        $marca = $brandModel->find($id);
+        if ($marca) {
+            // Preparar los datos para la actualización
+            $data = [
+                'fecha_baja' => null
+            ];
+    
+            // Actualizar la marca solo si el dataset no está vacío
+            if (!empty($data)) {
+                $brandModel->update($id, $data);
+                return redirect()->to('/marcas')->with('success', 'Marca desarchivada correctamente.');
+            } else {
+                return redirect()->to('/marcas')->with('error', 'No hay datos para actualizar.');
+            }
+        } else {
+            return redirect()->to('/marcas')->with('error', 'Marca no encontrada.');
         }
     }
 }

@@ -48,7 +48,7 @@ License: For each use you must have a valid license purchased only from above li
 				<!--begin::Aside-->
 				<div id="kt_aside" class="aside aside-dark aside-hoverable" data-kt-drawer="true" data-kt-drawer-name="aside" data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true" data-kt-drawer-width="{default:'200px', '300px': '250px'}" data-kt-drawer-direction="start" data-kt-drawer-toggle="#kt_aside_mobile_toggle">
 					<!--begin::Brand-->
-					<div class="aside-logo flex-column-auto p-2" style="background-color:black" id="kt_aside_logo">
+					<div class="aside-logo flex-column-auto p-2" style="background-color:#21273a;" id="kt_aside_logo">
 						<!--begin::Logo-->
 						<a href="<?= base_url('index.php') ?>">
 							<img alt="Logo" src="../assets/media/logos/LogoTiendaCoche.png" class="logo" style="width: 200px;" />
@@ -69,7 +69,7 @@ License: For each use you must have a valid license purchased only from above li
 					</div>
 					<!--end::Brand-->
 					<!--begin::Aside menu-->
-					<div style="background-color:rgb(23, 23, 24);" class="aside-menu flex-column-fluid">
+					<div style="background-color:#0c1e35" class="aside-menu flex-column-fluid">
 						<!--begin::Aside Menu-->
 						<div class="hover-scroll-overlay-y my-5 my-lg-5" id="kt_aside_menu_wrapper" data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-height="auto" data-kt-scroll-dependencies="#kt_aside_logo, #kt_aside_footer" data-kt-scroll-wrappers="#kt_aside_menu" data-kt-scroll-offset="0">
 							<!--begin::Menu-->
@@ -1523,7 +1523,7 @@ License: For each use you must have a valid license purchased only from above li
 					</div>
 					<!--end::Aside menu-->
 					<!--begin::Footer-->
-					<div style="background-color:black" class="aside-footer flex-column-auto pt-5 pb-7 px-5" id="kt_aside_footer">
+					<div style="background-color:#21273a" class="aside-footer flex-column-auto pt-5 pb-7 px-5" id="kt_aside_footer">
 						<a href="../../demo1/dist/documentation/getting-started.html" class="btn btn-custom btn-primary w-100" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-dismiss-="click" title="200+ in-house components and 3rd-party plugins">
 							<span class="btn-label">Docs &amp; Components</span>
 							<!--begin::Svg Icon | path: icons/duotune/general/gen005.svg-->
