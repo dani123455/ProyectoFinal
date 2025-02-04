@@ -86,28 +86,24 @@ class BrandController extends BaseController
     }
 
     public function archive($id)
-    {
-        $brandModel = new BrandModel();
-    
-        // Verificar que el ID existe
-        $marca = $brandModel->find($id);
-        if ($marca) {
-            // Obtener la fecha actual en el formato correcto
-            $fecha_baja = date('Y-m-d H:i:s');
-            
-            // Preparar los datos para la actualización
-            $data = [
-                'fecha_baja' => $fecha_baja
-            ];
-    
-            // Actualizar la marca
-            $brandModel->update($id, $data);
-            
-            return redirect()->to('/marcas')->with('success', 'Marca archivada correctamente.');
-        } else {
-            return redirect()->to('/marcas')->with('error', 'Marca no encontrada.');
-        }
+{
+    $brandModel = new BrandModel();
+
+    // Verificar que el ID existe 
+    $marca = $brandModel->find($id);
+    if ($marca) {
+        // Obtener la fecha actual
+        $fecha_baja = date('Y-m-d H:i:s');
+
+        // Actualizar la marca sin verificar el array de datos
+        $brandModel->set('fecha_baja', $fecha_baja)->where('id', $id)->update();
+        
+        return redirect()->to('/marcas')->with('success', 'Marca archivada correctamente.');
+    } else {
+        return redirect()->to('/marcas')->with('error', 'Marca no encontrada.');
     }
+}
+
 
     public function unarchive($id)
     {

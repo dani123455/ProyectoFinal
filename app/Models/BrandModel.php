@@ -9,6 +9,6 @@ class BrandModel extends Model
     protected $table = 'marcas'; // Nombre de la tabla en la base de datos
     protected $primaryKey = 'id'; // Clave primaria de la tabla
 
-    protected $allowedFields = ['nombre'];
+    protected $allowedFields = ['nombre', 'fecha_baja'];
 
 }

@@ -23,7 +23,7 @@
         <div class="mb-3">
             <label for="name" class="form-label">Nombre</label>
             <input type="text" name="nombre" id="name" class="form-control" 
-                value="<?= isset($marca) ? esc($marca['nombre']) : '' ?>" required>
+                value="<?= isset($marca) ? esc($marca['name']) : '' ?>" required>
         </div>
         <button type="submit" class="btn btn-success"><?= isset($marca) ? 'Actualizar' : 'Guardar' ?></button>
         <a href="<?= base_url('marcas') ?>" class="btn btn-secondary">Cancelar</a>

@@ -48,7 +48,7 @@
                         <td><?= esc($marca['nombre']) ?></td>
                         <td>
                             <a href="<?= base_url('marcas/save/' . $marca['id']) ?>" class="btn btn-warning">Editar</a>
-                            <?php if (isset($marca['fecha_baja']) && is_null($marca['fecha_baja'])): ?>
+                            <?php if (is_null($marca['fecha_baja'])): ?>
                                 <a href="<?= base_url('marcas/archive/' . $marca['id']) ?>" class="btn btn-danger">Archivar</a>
                             <?php else: ?>
                                 <a href="<?= base_url('marcas/unarchive/' . $marca['id']) ?>" class="btn btn-success">Desarchivar</a>

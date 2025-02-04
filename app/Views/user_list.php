@@ -51,7 +51,6 @@
         <table class="table table-bordered">
             <thead>
                 <tr>
-                <tr>
                     <th><a href="<?=base_url('usuarios?sort=nombre&order=' . ($sort == 'nombre' && $order == 'asc' ? 'desc' : 'asc'))?>">Usuario</a></th>
                     <th><a href="<?=base_url('usuarios?sort=email&order=' . ($sort == 'email' && $order == 'asc' ? 'desc' : 'asc'))?>">Email</a></th>
                     <th><a href="<?=base_url('usuarios?sort=rol_nombre&order=' . ($sort == 'rol_nombre' && $order == 'asc' ? 'desc' : 'asc'))?>">Rol</a></th>
