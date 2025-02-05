@@ -22,4 +22,12 @@ $routes->post('marcas/save', 'BrandController::saveBrand'); // Crear marca (POST
 $routes->post('marcas/save/(:num)', 'BrandController::saveBrand/$1'); // Editar marca (POST)
 $routes->get('marcas/archive/(:num)', 'BrandController::archive/$1'); // Archivar marca
 $routes->get('marcas/unarchive/(:num)', 'BrandController::unarchive/$1'); // Desarchivar marca
+//Coches
+$routes->get('coches', 'CarController::index'); // Listar coches
+$routes->get('coches/save', 'CarController::saveCar'); // Mostrar formulario para crear coche
+$routes->get('coches/save/(:num)', '    CarController::saveCar/$1'); // Mostrar formulario para editar coche
+$routes->post('coches/save', 'CarController::saveCar'); // Crear marca (POST)
+$routes->post('coches/save/(:num)', 'CarController::saveCar/$1'); // Editar marca (POST)
+$routes->get('coches/archive/(:num)', 'CarController::archive/$1'); // Archivar marca
+$routes->get('coches/unarchive/(:num)', 'CarController::unarchive/$1'); // Desarchivar marca
 
