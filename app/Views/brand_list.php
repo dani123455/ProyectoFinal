@@ -29,6 +29,11 @@
         <div class="container d-flex mb-2">
             <div class="input-group w-auto">
                 <input type="text" name="nombre" class="form-control" placeholder="Nombre" value="<?= isset($name) ? $name : '' ?>">
+                <select name="status" class="form-control">
+                    <option value="">Todos</option>
+                    <option value="alta" <?= isset($status) && $status == 'alta' ? 'selected' : '' ?>>En Alta</option>
+                    <option value="baja" <?= isset($status) && $status == 'baja' ? 'selected' : '' ?>>Dado de Baja</option>
+                </select>
                 <button type="submit" class="btn btn-primary">Buscar</button>
             </div>
         </div>

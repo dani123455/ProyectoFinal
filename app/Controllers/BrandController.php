@@ -16,6 +16,7 @@ class BrandController extends BaseController
         $name = $this->request->getVar('nombre');
         $sort = $this->request->getVar('sort');
         $order = $this->request->getVar('order') == 'desc' ? 'desc' : 'asc';
+        $status = $this->request->getVar('status');
 
         $query = $brandModel->select('marcas.*');
 
@@ -27,6 +28,12 @@ class BrandController extends BaseController
             $query = $query->orderBy($sort, $order);
         }
 
+        if ($status == 'baja') {
+            $query = $query->where('marcas.fecha_baja IS NOT NULL');
+        } elseif ($status == 'alta') {
+            $query = $query->where('marcas.fecha_baja IS NULL');
+        }
+
         // Paginación
         $perPage = 10; // Número de elementos por página
         $data['marcas'] = $query->paginate($perPage);
@@ -36,6 +43,7 @@ class BrandController extends BaseController
         $data['sort'] = $sort;
         $data['order'] = $order;
         $data['perPage'] = $perPage;
+        $data['status'] = $status;
 
         return view('brand_list', $data);
     }
@@ -46,7 +54,7 @@ class BrandController extends BaseController
         helper(['form', 'url']);
         
         // Cargar datos de la marca si es edición
-        $data['marcas'] = $id ? $brandModel->find($id) : null;
+        $data['marca'] = $id ? $brandModel->find($id) : null;
         $data['isEdit'] = $id ? true : false;
 
         if ($this->request->getMethod() == 'POST') {

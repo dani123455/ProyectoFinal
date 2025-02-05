@@ -1,0 +1,112 @@
+ERROR - 2025-02-05 07:31:10 --> mysqli_sql_exception: Unknown column 'usuarios.fecha_baja' in 'where clause' in C:\wamp64\www\ProyectoFinal\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\wamp64\www\ProyectoFinal\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\wamp64\www\ProyectoFinal\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\wamp64\www\ProyectoFinal\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\wamp64\www\ProyectoFinal\system\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\wamp64\www\ProyectoFinal\system\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+#5 C:\wamp64\www\ProyectoFinal\system\BaseModel.php(1283): CodeIgniter\Model->countAllResults(false)
+#6 C:\wamp64\www\ProyectoFinal\app\Controllers\BrandController.php(39): CodeIgniter\BaseModel->paginate(10)
+#7 C:\wamp64\www\ProyectoFinal\system\CodeIgniter.php(933): App\Controllers\BrandController->index()
+#8 C:\wamp64\www\ProyectoFinal\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BrandController))
+#9 C:\wamp64\www\ProyectoFinal\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\wamp64\www\ProyectoFinal\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\wamp64\www\ProyectoFinal\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\wamp64\www\ProyectoFinal\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-02-05 07:31:10 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'usuarios.fecha_baja' in 'where clause'
+[Method: GET, Route: marcas]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `marcas`
+WHERE `usuarios`.`fecha_baja` IS NOT NULL', [], false)
+ 2 SYSTEMPATH\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 3 SYSTEMPATH\BaseModel.php(1283): CodeIgniter\Model->countAllResults(false)
+ 4 APPPATH\Controllers\BrandController.php(39): CodeIgniter\BaseModel->paginate(10)
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\BrandController->index()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BrandController))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-05 07:31:10 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'usuarios.fecha_baja' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `marcas`
+WHERE `usuarios`.`fecha_baja` IS NOT NULL')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `marcas`
+WHERE `usuarios`.`fecha_baja` IS NOT NULL')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `marcas`
+WHERE `usuarios`.`fecha_baja` IS NOT NULL', [], false)
+ 4 SYSTEMPATH\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 5 SYSTEMPATH\BaseModel.php(1283): CodeIgniter\Model->countAllResults(false)
+ 6 APPPATH\Controllers\BrandController.php(39): CodeIgniter\BaseModel->paginate(10)
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\BrandController->index()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BrandController))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-05 07:31:10 --> [Caused by] mysqli_sql_exception: Unknown column 'usuarios.fecha_baja' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `marcas`
+WHERE `usuarios`.`fecha_baja` IS NOT NULL', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `marcas`
+WHERE `usuarios`.`fecha_baja` IS NOT NULL')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `marcas`
+WHERE `usuarios`.`fecha_baja` IS NOT NULL')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `marcas`
+WHERE `usuarios`.`fecha_baja` IS NOT NULL', [], false)
+ 5 SYSTEMPATH\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 6 SYSTEMPATH\BaseModel.php(1283): CodeIgniter\Model->countAllResults(false)
+ 7 APPPATH\Controllers\BrandController.php(39): CodeIgniter\BaseModel->paginate(10)
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\BrandController->index()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BrandController))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-05 08:43:02 --> ErrorException: Undefined variable $marca
+[Method: GET, Route: marcas/save/61]
+in APPPATH\Views\brand_form.php on line 12.
+ 1 APPPATH\Views\brand_form.php(12): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $marca', 'C:\\wamp64\\www\\ProyectoFinal\\app\\Views\\brand_form.php', 12)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\wamp64\\www\\ProyectoFinal\\app\\Views\\brand_form.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('brand_form', [], true)
+ 5 APPPATH\Controllers\BrandController.php(93): view('brand_form', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\BrandController->saveBrand('61')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BrandController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-05 08:45:14 --> ErrorException: Undefined array key "name"
+[Method: GET, Route: marcas/save/60]
+in APPPATH\Views\brand_form.php on line 25.
+ 1 APPPATH\Views\brand_form.php(25): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "name"', 'C:\\wamp64\\www\\ProyectoFinal\\app\\Views\\brand_form.php', 25)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\wamp64\\www\\ProyectoFinal\\app\\Views\\brand_form.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('brand_form', [], true)
+ 5 APPPATH\Controllers\BrandController.php(93): view('brand_form', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\BrandController->saveBrand('60')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BrandController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-05 09:09:56 --> ErrorException: Undefined variable $data
+[Method: GET, Route: marcas/save]
+in APPPATH\Controllers\BrandController.php on line 99.
+ 1 APPPATH\Controllers\BrandController.php(99): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data', 'C:\\wamp64\\www\\ProyectoFinal\\app\\Controllers\\BrandController.php', 99)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\BrandController->saveBrand()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BrandController))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
