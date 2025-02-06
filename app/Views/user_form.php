@@ -18,12 +18,12 @@
     <?php endif; ?>
 
     <!-- Formulario -->
-    <form action="<?= isset($usuario) ? base_url('usuarios/save') . $usuario['id'] : base_url('usuarios/save') ?>" method="post">
+    <form action="<?= isset($usuario) ? base_url('usuarios/save/' . $usuario['id']) : base_url('usuarios/save') ?>" method="post">
         <?= csrf_field(); ?>
         <div class="mb-3">
-            <label for="name" class="form-label">Nombre</label>
-            <input type="text" name="nombre" id="name" class="form-control" 
-                value="<?= isset($usuario) ? esc($usuario['name']) : '' ?>" required>
+            <label for="nombre" class="form-label">Nombre</label>
+            <input type="text" name="nombre" id="nombre" class="form-control" 
+                value="<?= isset($usuario) ? esc($usuario['nombre']) : '' ?>" required>
         </div>
         <div class="mb-3">
             <label for="email" class="form-label">Email</label>
@@ -31,17 +31,17 @@
                 value="<?= isset($usuario) ? esc($usuario['email']) : '' ?>" required>
         </div>
         <div class="mb-3">
-            <label for="rol_id" class="form-label">Id_rol</label>
+            <label for="rol_id" class="form-label">Rol ID</label>
             <input type="number" name="rol_id" id="rol_id" class="form-control" 
                 value="<?= isset($usuario) ? esc($usuario['rol_id']) : '' ?>" required>
         </div>
         <div class="mb-3">
-            <label for="telefono" class="form-label">Telefono</label>
-            <input type="number" name="telefono" id="telefono" class="form-control" 
+            <label for="telefono" class="form-label">Teléfono</label>
+            <input type="text" name="telefono" id="telefono" class="form-control" 
                 value="<?= isset($usuario) ? esc($usuario['telefono']) : '' ?>" required>
         </div>
         <div class="mb-3">
-            <label for="direccion" class="form-label">direccion</label>
+            <label for="direccion" class="form-label">Dirección</label>
             <input type="text" name="direccion" id="direccion" class="form-control" 
                 value="<?= isset($usuario) ? esc($usuario['direccion']) : '' ?>" required>
         </div>

@@ -18,7 +18,7 @@
     <?php endif; ?>
 
     <!-- Formulario -->
-    <form action="<?= isset($coche) ? base_url('coches/save') . $coche['id'] : base_url('coches/save') ?>" method="post">
+    <form action="<?= isset($coche) ? base_url('coches/save/' . $coche['id']) : base_url('coches/save') ?>" method="post">
         <?= csrf_field(); ?>
         <div class="mb-3">
             <label for="marca_id" class="form-label">Marca</label>

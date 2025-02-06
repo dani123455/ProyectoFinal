@@ -80,7 +80,7 @@ class UserController extends BaseController
         helper(['form', 'url']);
         
         // Cargar datos del usuario si es edición
-        $data['usuarios'] = $id ? $userModel->find($id) : null;
+        $data['usuario'] = $id ? $userModel->find($id) : null;
         $data['isEdit'] = $id ? true : false;
 
         if ($this->request->getMethod() == 'POST') {

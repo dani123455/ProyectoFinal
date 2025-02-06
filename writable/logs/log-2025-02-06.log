@@ -1,0 +1,214 @@
+CRITICAL - 2025-02-06 07:33:16 --> ErrorException: Undefined array key "name"
+[Method: GET, Route: usuarios/save/16]
+in APPPATH\Views\user_form.php on line 26.
+ 1 APPPATH\Views\user_form.php(26): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "name"', 'C:\\wamp64\\www\\ProyectoFinal\\app\\Views\\user_form.php', 26)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\wamp64\\www\\ProyectoFinal\\app\\Views\\user_form.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('user_form', [], true)
+ 5 APPPATH\Controllers\UserController.php(127): view('user_form', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController->saveUser('16')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-06 07:35:38 --> ErrorException: Undefined array key "name"
+[Method: GET, Route: usuarios/save/16]
+in APPPATH\Views\user_form.php on line 26.
+ 1 APPPATH\Views\user_form.php(26): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "name"', 'C:\\wamp64\\www\\ProyectoFinal\\app\\Views\\user_form.php', 26)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\wamp64\\www\\ProyectoFinal\\app\\Views\\user_form.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('user_form', [], true)
+ 5 APPPATH\Controllers\UserController.php(127): view('user_form', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController->saveUser('16')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-06 07:36:21 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<form action="
+[Method: POST, Route: usuarios/save/%3Cform%20action=]
+in SYSTEMPATH\Router\Router.php on line 737.
+ 1 SYSTEMPATH\Router\Router.php(204): CodeIgniter\Router\Router->checkDisallowedChars('usuarios/save/<form action=')
+ 2 SYSTEMPATH\CodeIgniter.php(834): CodeIgniter\Router\Router->handle('usuarios/save/<form action=')
+ 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-06 07:36:41 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<form action="
+[Method: POST, Route: usuarios/save/%3Cform%20action=]
+in SYSTEMPATH\Router\Router.php on line 737.
+ 1 SYSTEMPATH\Router\Router.php(204): CodeIgniter\Router\Router->checkDisallowedChars('usuarios/save/<form action=')
+ 2 SYSTEMPATH\CodeIgniter.php(834): CodeIgniter\Router\Router->handle('usuarios/save/<form action=')
+ 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-06 07:37:27 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<form action="
+[Method: POST, Route: usuarios/save/%3Cform%20action=]
+in SYSTEMPATH\Router\Router.php on line 737.
+ 1 SYSTEMPATH\Router\Router.php(204): CodeIgniter\Router\Router->checkDisallowedChars('usuarios/save/<form action=')
+ 2 SYSTEMPATH\CodeIgniter.php(834): CodeIgniter\Router\Router->handle('usuarios/save/<form action=')
+ 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-02-06 09:34:09 --> mysqli_sql_exception: Unknown column 'coches.nombre' in 'field list' in C:\wamp64\www\ProyectoFinal\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\wamp64\www\ProyectoFinal\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `ventas`...', 0)
+#1 C:\wamp64\www\ProyectoFinal\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `ventas`...')
+#2 C:\wamp64\www\ProyectoFinal\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `ventas`...')
+#3 C:\wamp64\www\ProyectoFinal\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `ventas`...', Array, false)
+#4 C:\wamp64\www\ProyectoFinal\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\wamp64\www\ProyectoFinal\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\wamp64\www\ProyectoFinal\app\Models\SaleModel.php(19): CodeIgniter\BaseModel->findAll()
+#7 C:\wamp64\www\ProyectoFinal\app\Controllers\SaleController.php(13): App\Models\SaleModel->getVentaConCoche()
+#8 C:\wamp64\www\ProyectoFinal\system\CodeIgniter.php(933): App\Controllers\SaleController->index()
+#9 C:\wamp64\www\ProyectoFinal\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SaleController))
+#10 C:\wamp64\www\ProyectoFinal\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\wamp64\www\ProyectoFinal\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 C:\wamp64\www\ProyectoFinal\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\wamp64\www\ProyectoFinal\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2025-02-06 09:34:09 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'coches.nombre' in 'field list'
+[Method: GET, Route: ventas]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `ventas`.*, `coches`.`nombre` as `coche_nombre`
+FROM `ventas`
+JOIN `coches` ON `ventas`.`coche_id` = `coches`.`id`', [], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\SaleModel.php(19): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\SaleController.php(13): App\Models\SaleModel->getVentaConCoche()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SaleController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SaleController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-06 09:34:09 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'coches.nombre' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `ventas`.*, `coches`.`nombre` as `coche_nombre`
+FROM `ventas`
+JOIN `coches` ON `ventas`.`coche_id` = `coches`.`id`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `ventas`.*, `coches`.`nombre` as `coche_nombre`
+FROM `ventas`
+JOIN `coches` ON `ventas`.`coche_id` = `coches`.`id`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `ventas`.*, `coches`.`nombre` as `coche_nombre`
+FROM `ventas`
+JOIN `coches` ON `ventas`.`coche_id` = `coches`.`id`', [], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\SaleModel.php(19): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\SaleController.php(13): App\Models\SaleModel->getVentaConCoche()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SaleController->index()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SaleController))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-06 09:34:09 --> [Caused by] mysqli_sql_exception: Unknown column 'coches.nombre' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `ventas`.*, `coches`.`nombre` as `coche_nombre`
+FROM `ventas`
+JOIN `coches` ON `ventas`.`coche_id` = `coches`.`id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `ventas`.*, `coches`.`nombre` as `coche_nombre`
+FROM `ventas`
+JOIN `coches` ON `ventas`.`coche_id` = `coches`.`id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `ventas`.*, `coches`.`nombre` as `coche_nombre`
+FROM `ventas`
+JOIN `coches` ON `ventas`.`coche_id` = `coches`.`id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `ventas`.*, `coches`.`nombre` as `coche_nombre`
+FROM `ventas`
+JOIN `coches` ON `ventas`.`coche_id` = `coches`.`id`', [], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\SaleModel.php(19): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\SaleController.php(13): App\Models\SaleModel->getVentaConCoche()
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SaleController->index()
+10 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SaleController))
+11 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-02-06 09:46:29 --> mysqli_sql_exception: Unknown column 'coches.nombre' in 'field list' in C:\wamp64\www\ProyectoFinal\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\wamp64\www\ProyectoFinal\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `ventas`...', 0)
+#1 C:\wamp64\www\ProyectoFinal\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `ventas`...')
+#2 C:\wamp64\www\ProyectoFinal\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `ventas`...')
+#3 C:\wamp64\www\ProyectoFinal\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `ventas`...', Array, false)
+#4 C:\wamp64\www\ProyectoFinal\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\wamp64\www\ProyectoFinal\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\wamp64\www\ProyectoFinal\app\Models\SaleModel.php(19): CodeIgniter\BaseModel->findAll()
+#7 C:\wamp64\www\ProyectoFinal\app\Controllers\SaleController.php(13): App\Models\SaleModel->getVentaConCoche()
+#8 C:\wamp64\www\ProyectoFinal\system\CodeIgniter.php(933): App\Controllers\SaleController->index()
+#9 C:\wamp64\www\ProyectoFinal\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SaleController))
+#10 C:\wamp64\www\ProyectoFinal\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\wamp64\www\ProyectoFinal\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 C:\wamp64\www\ProyectoFinal\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\wamp64\www\ProyectoFinal\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2025-02-06 09:46:29 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'coches.nombre' in 'field list'
+[Method: GET, Route: ventas]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `ventas`.*, `coches`.`nombre` as `coche_nombre`
+FROM `ventas`
+JOIN `coches` ON `ventas`.`coche_id` = `coches`.`id`', [], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\SaleModel.php(19): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\SaleController.php(13): App\Models\SaleModel->getVentaConCoche()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SaleController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SaleController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-06 09:46:29 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'coches.nombre' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `ventas`.*, `coches`.`nombre` as `coche_nombre`
+FROM `ventas`
+JOIN `coches` ON `ventas`.`coche_id` = `coches`.`id`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `ventas`.*, `coches`.`nombre` as `coche_nombre`
+FROM `ventas`
+JOIN `coches` ON `ventas`.`coche_id` = `coches`.`id`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `ventas`.*, `coches`.`nombre` as `coche_nombre`
+FROM `ventas`
+JOIN `coches` ON `ventas`.`coche_id` = `coches`.`id`', [], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\SaleModel.php(19): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\SaleController.php(13): App\Models\SaleModel->getVentaConCoche()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SaleController->index()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SaleController))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-06 09:46:29 --> [Caused by] mysqli_sql_exception: Unknown column 'coches.nombre' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `ventas`.*, `coches`.`nombre` as `coche_nombre`
+FROM `ventas`
+JOIN `coches` ON `ventas`.`coche_id` = `coches`.`id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `ventas`.*, `coches`.`nombre` as `coche_nombre`
+FROM `ventas`
+JOIN `coches` ON `ventas`.`coche_id` = `coches`.`id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `ventas`.*, `coches`.`nombre` as `coche_nombre`
+FROM `ventas`
+JOIN `coches` ON `ventas`.`coche_id` = `coches`.`id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `ventas`.*, `coches`.`nombre` as `coche_nombre`
+FROM `ventas`
+JOIN `coches` ON `ventas`.`coche_id` = `coches`.`id`', [], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\SaleModel.php(19): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\SaleController.php(13): App\Models\SaleModel->getVentaConCoche()
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SaleController->index()
+10 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SaleController))
+11 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
