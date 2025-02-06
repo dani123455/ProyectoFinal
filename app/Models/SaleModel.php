@@ -14,7 +14,7 @@ class SaleModel extends Model
     // Función para obtener los coches con el nombre de la marca
     public function getVentaConCoche()
     {
-        return $this->select('ventas.*, coches.nombre as coche_nombre')
+        return $this->select('ventas.*, coches.modelo as coche_modelo')
                     ->join('coches', 'ventas.coche_id = coches.id')
                     ->findAll();
     }

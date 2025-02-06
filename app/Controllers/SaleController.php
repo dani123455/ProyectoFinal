@@ -10,8 +10,6 @@ class SaleController extends BaseController
     {
         $saleModel = new SaleModel();
 
-        $data['ventas'] = $saleModel->getVentaConCoche();
-
         // Filtrar coches si se proporciona nombre
         $coche_id = $this->request->getVar('coche_id');
         $cliente_id = $this->request->getVar('cliente_id');
@@ -21,12 +19,12 @@ class SaleController extends BaseController
         $order = $this->request->getVar('order') == 'desc' ? 'desc' : 'asc';
         $status = $this->request->getVar('status');
 
-                $query = $saleModel->select('ventas.*, coches.nombre as coche_nombre')
-                ->join('coches', 'ventas.coche_id = coches.id');
-                            
+        $query = $saleModel->select('ventas.*, coches.modelo as coche_modelo, usuarios.nombre as usuario_nombre')
+                ->join('coches', 'ventas.coche_id = coches.id')
+                ->join('usuarios', 'ventas.usuario_id = usuarios.id');
 
         if ($coche_id) {
-            $query = $query->like('coches.nombre', $coche_id);
+            $query = $query->like('coches.modelo', $coche_id);
         }
 
         if ($cliente_id) {
@@ -41,7 +39,7 @@ class SaleController extends BaseController
             $query = $query->like('ventas.precio_venta', $precio_venta);
         }
 
-        if ($sort && in_array($sort, ['coche_nombre','usuario_nombre','fecha','precio_venta'])) {
+        if ($sort && in_array($sort, ['coche_modelo', 'usuario_nombre', 'fecha', 'precio_venta'])) {
             $query = $query->orderBy($sort, $order);
         }
 
@@ -73,7 +71,7 @@ class SaleController extends BaseController
         $saleModel = new SaleModel();
         helper(['form', 'url']);
         
-        // Cargar datos de el coche si es edición
+        // Cargar datos de la venta si es edición
         $data['venta'] = $id ? $saleModel->find($id) : null;
         $data['isEdit'] = $id ? true : false;
 
@@ -83,10 +81,9 @@ class SaleController extends BaseController
             $validation = \Config\Services::validation();
             $validation->setRules([
                 'coche_id' => 'required',
-                'usuario_id' => 'required|min_length[3]|max_length[50]',
-                'fecha' => 'required|numeric|exact_length[4]|greater_than_equal_to[1900]|less_than_equal_to['.date('Y').']',
+                'usuario_id' => 'required',
+                'fecha' => 'required|valid_date[Y-m-d]',
                 'precio_venta' => 'required|numeric|greater_than_equal_to[0]',
-
             ]);
 
             if (!$validation->withRequest($this->request)->run()) {
@@ -95,18 +92,18 @@ class SaleController extends BaseController
             } else {
                 // Preparar datos del formulario
                 $saleData = [
-                    'coche_id' => $this->request->getPost('marca_id'),
-                    'usuario_id' => $this->request->getPost('modelo'),
-                    'fecha' => $this->request->getPost('año'),
-                    'precio_venta' => $this->request->getPost('precio'),
+                    'coche_id' => $this->request->getPost('coche_id'),
+                    'usuario_id' => $this->request->getPost('usuario_id'),
+                    'fecha' => $this->request->getPost('fecha'),
+                    'precio_venta' => $this->request->getPost('precio_venta'),
                 ];
 
                 if ($id) {
-                    // Actualizar coche existente
+                    // Actualizar venta existente
                     $saleModel->update($id, $saleData);
                     $message = 'Venta actualizada correctamente.';
                 } else {
-                    // Crear nueva marca
+                    // Crear nueva venta
                     $saleModel->save($saleData);
                     $message = 'Venta creada correctamente.';
                 }
@@ -121,24 +118,23 @@ class SaleController extends BaseController
     }
 
     public function archive($id)
-{
-    $saleModel = new SaleModel();
+    {
+        $saleModel = new SaleModel();
 
-    // Verificar que el ID existe 
-    $venta = $saleModel->find($id);
-    if ($venta) {
-        // Obtener la fecha actual
-        $fecha_baja = date('Y-m-d H:i:s');
+        // Verificar que el ID existe 
+        $venta = $saleModel->find($id);
+        if ($venta) {
+            // Obtener la fecha actual
+            $fecha_baja = date('Y-m-d H:i:s');
 
-        // Actualizar el coche sin verificar el array de datos
-        $saleModel->set('fecha_baja', $fecha_baja)->where('id', $id)->update();
-        
-        return redirect()->to('/ventas')->with('success', 'Venta archivado correctamente.');
-    } else {
-        return redirect()->to('/ventas')->with('error', 'Venta no encontrado.');
+            // Actualizar la venta sin verificar el array de datos
+            $saleModel->set('fecha_baja', $fecha_baja)->where('id', $id)->update();
+            
+            return redirect()->to('/ventas')->with('success', 'Venta archivada correctamente.');
+        } else {
+            return redirect()->to('/ventas')->with('error', 'Venta no encontrada.');
+        }
     }
-}
-
 
     public function unarchive($id)
     {
@@ -152,7 +148,7 @@ class SaleController extends BaseController
                 'fecha_baja' => null
             ];
     
-            // Actualizar el coche solo si el dataset no está vacío
+            // Actualizar la venta solo si el dataset no está vacío
             if (!empty($data)) {
                 $saleModel->update($id, $data);
                 return redirect()->to('/ventas')->with('success', 'Venta desarchivada correctamente.');

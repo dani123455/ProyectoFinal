@@ -31,7 +31,7 @@
     <form method="GET" action="<?=base_url('ventas')?>">
     <div class="container d-flex mb-2">
         <div class="input-group w-auto">
-            <input type="text" name="venta_nombre" class="form-control" placeholder="venta" value="<?= isset($venta_nombre) ? $venta_nombre : '' ?>">
+            <input type="text" name="coche_modelo" class="form-control" placeholder="venta" value="<?= isset($venta_nombre) ? $venta_nombre : '' ?>">
             <input type="text" name="usuario_nombre" class="form-control" placeholder="Usuario" value="<?= isset($usuario_nombre) ? $usuario_nombre : '' ?>">
             <input type="number" name="fecha" class="form-control" placeholder="Fecha" value="<?= isset($fecha) ? $fecha : '' ?>">
             <input type="number" name="precio_venta" class="form-control" placeholder="Precio de venta" value="<?= isset($precio_venta) ? $precio_venta : '' ?>">
@@ -50,7 +50,7 @@
         <table class="table table-bordered">
             <thead>
                 <tr>
-                    <th><a href="<?=base_url('ventas?sort=venta_nombre&order=' . ($sort == 'marca_nombre' && $order == 'asc' ? 'desc' : 'asc'))?>">venta</a></th>
+                    <th><a href="<?=base_url('ventas?sort=coche_modelo&order=' . ($sort == 'marca_nombre' && $order == 'asc' ? 'desc' : 'asc'))?>">venta</a></th>
                     <th><a href="<?=base_url('ventas?sort=usuario_nombre&order=' . ($sort == 'modelo' && $order == 'asc' ? 'desc' : 'asc'))?>">Usuario</a></th>
                     <th><a href="<?=base_url('ventas?sort=fecha&order=' . ($sort == 'año' && $order == 'asc' ? 'desc' : 'asc'))?>">Fecha</a></th>
                     <th><a href="<?=base_url('ventas?sort=precio_venta&order=' . ($sort == 'precio' && $order == 'asc' ? 'desc' : 'asc'))?>">Precio de venta</a></th>
@@ -58,23 +58,24 @@
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($ventas as $venta): ?>
-                    <tr>
-                        <td><?= esc($venta['marca_nombre']) ?></td>
-                        <td><?= esc($venta['usuario_nombre']) ?></td>
-                        <td><?= esc($venta['fecha']) ?></td>
-                        <td><?= esc($venta['precio_venta']) ?></td>
-                        <td>
-                            <a href="<?= base_url('ventas/save/' . $venta['id']) ?>" class="btn btn-warning">Editar</a>
-                            <?php if (is_null($venta['fecha_baja'])): ?>
-                                <a href="<?= base_url('ventas/archive/' . $venta['id']) ?>" class="btn btn-danger">Archivar</a>
-                            <?php else: ?>
-                                <a href="<?= base_url('ventas/unarchive/' . $venta['id']) ?>" class="btn btn-success">Desarchivar</a>
-                            <?php endif; ?>
-                        </td>
-                    </tr>
-                <?php endforeach; ?>
-            </tbody>
+            <?php foreach ($ventas as $venta): ?>
+                <tr>
+                    <td><?= esc($venta['coche_modelo']) ?></td>
+                    <td><?= isset($venta['usuario_nombre']) ? esc($venta['usuario_nombre']) : 'Usuario desconocido' ?></td>
+                    <td><?= esc($venta['fecha']) ?></td>
+                    <td><?= esc($venta['precio_venta']) ?></td>
+                    <td>
+                        <a href="<?= base_url('ventas/save/' . $venta['id']) ?>" class="btn btn-warning">Editar</a>
+                        <?php if (is_null($venta['fecha_baja'])): ?>
+                            <a href="<?= base_url('ventas/archive/' . $venta['id']) ?>" class="btn btn-danger">Archivar</a>
+                        <?php else: ?>
+                            <a href="<?= base_url('ventas/unarchive/' . $venta['id']) ?>" class="btn btn-success">Desarchivar</a>
+                        <?php endif; ?>
+                    </td>
+                </tr>
+            <?php endforeach; ?>
+        </tbody>
+
         </table>
         <!--Paginador-->
         <div class="mt-4">
