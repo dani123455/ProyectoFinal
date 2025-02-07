@@ -3,16 +3,24 @@
 namespace App\Controllers;
 
 use App\Models\SaleModel;
+use App\Models\CarModel;
+use App\Models\UserModel;
 
 class SaleController extends BaseController
 {
     public function index()
     {
         $saleModel = new SaleModel();
+        $userModel = new UserModel();
+        $carModel = new CarModel();
+
+        $data['ventas'] = $saleModel->findAll();
+        $data['coches'] = $carModel->findAll();
+        $data['usuarios'] = $userModel->findAll();
 
         // Filtrar coches si se proporciona nombre
         $coche_id = $this->request->getVar('coche_id');
-        $cliente_id = $this->request->getVar('cliente_id');
+        $usuarios_id = $this->request->getVar('usuarios_id');
         $fecha = $this->request->getVar('fecha');
         $precio_venta = $this->request->getVar('precio_venta');
         $sort = $this->request->getVar('sort');
@@ -21,14 +29,14 @@ class SaleController extends BaseController
 
         $query = $saleModel->select('ventas.*, coches.modelo as coche_modelo, usuarios.nombre as usuario_nombre')
                 ->join('coches', 'ventas.coche_id = coches.id')
-                ->join('usuarios', 'ventas.usuario_id = usuarios.id');
+                ->join('usuarios', 'ventas.usuarios_id = usuarios.id'); // Cambiar a usuarios_id
 
         if ($coche_id) {
             $query = $query->like('coches.modelo', $coche_id);
         }
 
-        if ($cliente_id) {
-            $query = $query->like('usuarios.nombre', $cliente_id);
+        if ($usuarios_id) {
+            $query = $query->like('usuarios.nombre', $usuarios_id);
         }
 
         if ($fecha) {
@@ -55,7 +63,7 @@ class SaleController extends BaseController
         $data['pager'] = $saleModel->pager;
 
         $data['coche_id'] = $coche_id;
-        $data['cliente_id'] = $cliente_id;
+        $data['usuarios_id'] = $usuarios_id;
         $data['fecha'] = $fecha;
         $data['precio_venta'] = $precio_venta;
         $data['sort'] = $sort;
@@ -69,19 +77,21 @@ class SaleController extends BaseController
     public function saveSale($id = null)
     {
         $saleModel = new SaleModel();
+        $userModel = new UserModel();
+        $carModel = new CarModel();
+
         helper(['form', 'url']);
-        
-        // Cargar datos de la venta si es edición
+
         $data['venta'] = $id ? $saleModel->find($id) : null;
         $data['isEdit'] = $id ? true : false;
+        $data['usuarios'] = $userModel->findAll();
+        $data['coches'] = $carModel->findAll();
 
         if ($this->request->getMethod() == 'POST') {
 
             // Reglas de validación
             $validation = \Config\Services::validation();
             $validation->setRules([
-                'coche_id' => 'required',
-                'usuario_id' => 'required',
                 'fecha' => 'required|valid_date[Y-m-d]',
                 'precio_venta' => 'required|numeric|greater_than_equal_to[0]',
             ]);
@@ -93,7 +103,7 @@ class SaleController extends BaseController
                 // Preparar datos del formulario
                 $saleData = [
                     'coche_id' => $this->request->getPost('coche_id'),
-                    'usuario_id' => $this->request->getPost('usuario_id'),
+                    'usuarios_id' => $this->request->getPost('usuarios_id'),
                     'fecha' => $this->request->getPost('fecha'),
                     'precio_venta' => $this->request->getPost('precio_venta'),
                 ];
@@ -160,3 +170,5 @@ class SaleController extends BaseController
         }
     }
 }
+
+

@@ -19,3 +19,4 @@ class CarModel extends Model
                     ->findAll();
     }
 }
+

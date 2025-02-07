@@ -78,10 +78,17 @@ class UserController extends BaseController
     {
         $userModel = new UserModel();
         helper(['form', 'url']);
+
+        $roles = [
+            ['id' => 1, 'nombre' => 'Admin'],
+            ['id' => 2, 'nombre' => 'Editor'],
+            ['id' => 3, 'nombre' => 'Usuario']
+        ];
         
         // Cargar datos del usuario si es edición
         $data['usuario'] = $id ? $userModel->find($id) : null;
         $data['isEdit'] = $id ? true : false;
+        $data['roles'] = $roles;
 
         if ($this->request->getMethod() == 'POST') {
 

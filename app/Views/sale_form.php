@@ -22,13 +22,19 @@
         <?= csrf_field(); ?>
         <div class="mb-3">
             <label for="coche_id" class="form-label">Coche</label>
-            <input type="text" name="coche_id" id="coche" class="form-control" 
-                value="<?= isset($venta) ? esc($venta['coche_id']) : '' ?>" required>
+            <select name="coche_id" id="coche_id" class="form-control" required>
+                <?php foreach($coches as $coche): ?>
+                    <option value="<?= $coche['id'] ?>" <?= isset($venta['coche_id']) && $venta['coche_id'] == $coche['id'] ? 'selected' : '' ?>><?= $coche['modelo'] ?></option>
+                <?php endforeach; ?>
+            </select>
         </div>
         <div class="mb-3">
             <label for="usuario_id" class="form-label">Usuario</label>
-            <input type="text" name="usuario_id" id="usuario" class="form-control" 
-                value="<?= isset($venta) ? esc($venta['usuario_id']) : '' ?>" required>
+            <select name="usuario_id" id="usuario_id" class="form-control" required>
+                <?php foreach($usuarios as $usuario): ?>
+                    <option value="<?= $usuario['id'] ?>" <?= isset($venta['usuarios_id']) && $venta['usuarios_id'] == $usuario['id'] ? 'selected' : '' ?>><?= $usuario['nombre'] ?></option>
+                <?php endforeach; ?>
+            </select>
         </div>
         <div class="mb-3">
             <label for="fecha" class="form-label">Fecha</label>

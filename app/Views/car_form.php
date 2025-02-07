@@ -20,11 +20,12 @@
     <!-- Formulario -->
     <form action="<?= isset($coche) ? base_url('coches/save/' . $coche['id']) : base_url('coches/save') ?>" method="post">
         <?= csrf_field(); ?>
-        <div class="mb-3">
             <label for="marca_id" class="form-label">Marca</label>
-            <input type="text" name="marca_id" id="marca" class="form-control" 
-                value="<?= isset($coche) ? esc($coche['marca_id']) : '' ?>" required>
-        </div>
+                <select name="marca_id" id="marca_id" class="form-control">
+                    <?php foreach($marcas as $marca): ?>
+                        <option value="<?= $marca['id'] ?>" <?= isset($coche['marca_id']) && $coche['marca_id'] == $marca['id'] ? 'selected' : '' ?>><?= $marca['nombre'] ?></option>
+                    <?php endforeach; ?>
+                </select>
         <div class="mb-3">
             <label for="modelo" class="form-label">Modelo</label>
             <input type="text" name="modelo" id="modelo" class="form-control" 

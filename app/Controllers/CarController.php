@@ -3,14 +3,17 @@
 namespace App\Controllers;
 
 use App\Models\CarModel;
+use App\Models\BrandModel;
 
 class CarController extends BaseController
 {
     public function index()
     {
+        $brandModel = new BrandModel();
         $carModel = new CarModel();
 
         $data['coches'] = $carModel->getCochesConMarca();
+        $data['marcas'] = $brandModel->findAll();
 
         // Filtrar coches si se proporciona nombre
         $marca_id = $this->request->getVar('marca_id');
@@ -22,9 +25,8 @@ class CarController extends BaseController
         $order = $this->request->getVar('order') == 'desc' ? 'desc' : 'asc';
         $status = $this->request->getVar('status');
 
-                $query = $carModel->select('coches.*, marcas.nombre as marca_nombre')
-                            ->join('marcas', 'coches.marca_id = marcas.id');
-                            
+        $query = $carModel->select('coches.*, marcas.nombre as marca_nombre')
+                        ->join('marcas', 'coches.marca_id = marcas.id');
 
         if ($marca_id) {
             $query = $query->like('marcas.nombre', $marca_id);
@@ -46,7 +48,7 @@ class CarController extends BaseController
             $query = $query->like('coches.disponible', $disponible);
         }
 
-        if ($sort && in_array($sort, ['marca_nombre','modelo','año','precio','disponible'])) {
+        if ($sort && in_array($sort, ['marca_nombre', 'modelo', 'año', 'precio', 'disponible'])) {
             $query = $query->orderBy($sort, $order);
         }
 
@@ -77,11 +79,13 @@ class CarController extends BaseController
     public function saveCar($id = null)
     {
         $carModel = new CarModel();
+        $brandModel = new BrandModel(); // Añadido para obtener las marcas
         helper(['form', 'url']);
-        
-        // Cargar datos de el coche si es edición
+
+        // Cargar datos del coche si es edición
         $data['coche'] = $id ? $carModel->find($id) : null;
         $data['isEdit'] = $id ? true : false;
+        $data['marcas'] = $brandModel->findAll(); // Pasar las marcas a la vista
 
         if ($this->request->getMethod() == 'POST') {
 
@@ -90,10 +94,9 @@ class CarController extends BaseController
             $validation->setRules([
                 'marca_id' => 'required',
                 'modelo' => 'required|min_length[3]|max_length[50]',
-                'año' => 'required|numeric|exact_length[4]|greater_than_equal_to[1900]|less_than_equal_to['.date('Y').']',
+                'año' => 'required|numeric|exact_length[4]|greater_than_equal_to[1900]|less_than_equal_to[' . date('Y') . ']',
                 'precio' => 'required|numeric|greater_than_equal_to[0]',
                 'disponible' => 'required|numeric'
-
             ]);
 
             if (!$validation->withRequest($this->request)->run()) {
@@ -106,17 +109,17 @@ class CarController extends BaseController
                     'modelo' => $this->request->getPost('modelo'),
                     'año' => $this->request->getPost('año'),
                     'precio' => $this->request->getPost('precio'),
-                    'disponible' => $this->request->getPost('disponible'),
+                    'disponible' => $this->request->getPost('disponible')
                 ];
 
                 if ($id) {
                     // Actualizar coche existente
                     $carModel->update($id, $carData);
-                    $message = 'Coche actualizada correctamente.';
+                    $message = 'Coche actualizado correctamente.';
                 } else {
-                    // Crear nueva marca
+                    // Crear nuevo coche
                     $carModel->save($carData);
-                    $message = 'Coche creada correctamente.';
+                    $message = 'Coche creado correctamente.';
                 }
 
                 // Redirigir al listado con un mensaje de éxito

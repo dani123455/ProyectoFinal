@@ -1,0 +1,545 @@
+ERROR - 2025-02-07 10:38:27 --> mysqli_sql_exception: Unknown column 'ventas.usuario_id' in 'on clause' in C:\wamp64\www\ProyectoFinal\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\wamp64\www\ProyectoFinal\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\wamp64\www\ProyectoFinal\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\wamp64\www\ProyectoFinal\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\wamp64\www\ProyectoFinal\system\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\wamp64\www\ProyectoFinal\system\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+#5 C:\wamp64\www\ProyectoFinal\system\BaseModel.php(1283): CodeIgniter\Model->countAllResults(false)
+#6 C:\wamp64\www\ProyectoFinal\app\Controllers\SaleController.php(54): CodeIgniter\BaseModel->paginate(10)
+#7 C:\wamp64\www\ProyectoFinal\system\CodeIgniter.php(933): App\Controllers\SaleController->index()
+#8 C:\wamp64\www\ProyectoFinal\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SaleController))
+#9 C:\wamp64\www\ProyectoFinal\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\wamp64\www\ProyectoFinal\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\wamp64\www\ProyectoFinal\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\wamp64\www\ProyectoFinal\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-02-07 10:38:27 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'ventas.usuario_id' in 'on clause'
+[Method: GET, Route: ventas]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `ventas`
+JOIN `coches` ON `ventas`.`coche_id` = `coches`.`id`
+JOIN `usuarios` ON `ventas`.`usuario_id` = `usuarios`.`id`', [], false)
+ 2 SYSTEMPATH\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 3 SYSTEMPATH\BaseModel.php(1283): CodeIgniter\Model->countAllResults(false)
+ 4 APPPATH\Controllers\SaleController.php(54): CodeIgniter\BaseModel->paginate(10)
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SaleController->index()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SaleController))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-07 10:38:27 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'ventas.usuario_id' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `ventas`
+JOIN `coches` ON `ventas`.`coche_id` = `coches`.`id`
+JOIN `usuarios` ON `ventas`.`usuario_id` = `usuarios`.`id`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `ventas`
+JOIN `coches` ON `ventas`.`coche_id` = `coches`.`id`
+JOIN `usuarios` ON `ventas`.`usuario_id` = `usuarios`.`id`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `ventas`
+JOIN `coches` ON `ventas`.`coche_id` = `coches`.`id`
+JOIN `usuarios` ON `ventas`.`usuario_id` = `usuarios`.`id`', [], false)
+ 4 SYSTEMPATH\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 5 SYSTEMPATH\BaseModel.php(1283): CodeIgniter\Model->countAllResults(false)
+ 6 APPPATH\Controllers\SaleController.php(54): CodeIgniter\BaseModel->paginate(10)
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SaleController->index()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SaleController))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-07 10:38:27 --> [Caused by] mysqli_sql_exception: Unknown column 'ventas.usuario_id' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `ventas`
+JOIN `coches` ON `ventas`.`coche_id` = `coches`.`id`
+JOIN `usuarios` ON `ventas`.`usuario_id` = `usuarios`.`id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `ventas`
+JOIN `coches` ON `ventas`.`coche_id` = `coches`.`id`
+JOIN `usuarios` ON `ventas`.`usuario_id` = `usuarios`.`id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `ventas`
+JOIN `coches` ON `ventas`.`coche_id` = `coches`.`id`
+JOIN `usuarios` ON `ventas`.`usuario_id` = `usuarios`.`id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `ventas`
+JOIN `coches` ON `ventas`.`coche_id` = `coches`.`id`
+JOIN `usuarios` ON `ventas`.`usuario_id` = `usuarios`.`id`', [], false)
+ 5 SYSTEMPATH\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 6 SYSTEMPATH\BaseModel.php(1283): CodeIgniter\Model->countAllResults(false)
+ 7 APPPATH\Controllers\SaleController.php(54): CodeIgniter\BaseModel->paginate(10)
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SaleController->index()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SaleController))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-07 10:53:36 --> Error: Class "App\Controllers\brandModel" not found
+[Method: GET, Route: coches]
+in APPPATH\Controllers\CarController.php on line 11.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CarController->index()
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CarController))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-07 10:55:48 --> ErrorException: Cannot declare class App\Models\BrandModel, because the name is already in use
+[Method: GET, Route: coches]
+in APPPATH\Models\CarModel.php on line 18.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2025-02-07 10:55:51 --> ErrorException: Cannot declare class App\Models\BrandModel, because the name is already in use
+[Method: GET, Route: coches]
+in APPPATH\Models\CarModel.php on line 18.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2025-02-07 10:56:34 --> BadMethodCallException: Call to undefined method App\Models\CarModel::getCochesConMarca
+[Method: GET, Route: coches]
+in SYSTEMPATH\Model.php on line 930.
+ 1 APPPATH\Controllers\CarController.php(15): CodeIgniter\Model->__call('getCochesConMarca', [])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CarController->index()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CarController))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-07 10:58:10 --> BadMethodCallException: Call to undefined method App\Models\CarModel::getCochesConMarca
+[Method: GET, Route: coches]
+in SYSTEMPATH\Model.php on line 930.
+ 1 APPPATH\Controllers\CarController.php(15): CodeIgniter\Model->__call('getCochesConMarca', [])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CarController->index()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CarController))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-07 10:58:57 --> ErrorException: Undefined variable $marcas
+[Method: GET, Route: coches/save]
+in APPPATH\Views\car_form.php on line 25.
+ 1 APPPATH\Views\car_form.php(25): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $marcas', 'C:\\wamp64\\www\\ProyectoFinal\\app\\Views\\car_form.php', 25)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\wamp64\\www\\ProyectoFinal\\app\\Views\\car_form.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('car_form', [], true)
+ 5 APPPATH\Controllers\CarController.php(131): view('car_form', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CarController->saveCar()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CarController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-07 11:28:30 --> ErrorException: foreach() argument must be of type array|object, null given
+[Method: GET, Route: usuarios/save]
+in APPPATH\Views\user_form.php on line 36.
+ 1 APPPATH\Views\user_form.php(36): CodeIgniter\Debug\Exceptions->errorHandler(2, 'foreach() argument must be of type array|object, null given', 'C:\\wamp64\\www\\ProyectoFinal\\app\\Views\\user_form.php', 36)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\wamp64\\www\\ProyectoFinal\\app\\Views\\user_form.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('user_form', [], true)
+ 5 APPPATH\Controllers\UserController.php(130): view('user_form', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController->saveUser()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-07 11:45:13 --> ErrorException: Undefined variable $usuarios
+[Method: GET, Route: ventas/save]
+in APPPATH\Views\sale_form.php on line 31.
+ 1 APPPATH\Views\sale_form.php(31): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $usuarios', 'C:\\wamp64\\www\\ProyectoFinal\\app\\Views\\sale_form.php', 31)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\wamp64\\www\\ProyectoFinal\\app\\Views\\sale_form.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('sale_form', [], true)
+ 5 APPPATH\Controllers\SaleController.php(125): view('sale_form', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SaleController->saveSale()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SaleController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-07 11:49:23 --> ErrorException: Undefined variable $usuarios
+[Method: GET, Route: ventas/save]
+in APPPATH\Views\sale_form.php on line 31.
+ 1 APPPATH\Views\sale_form.php(31): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $usuarios', 'C:\\wamp64\\www\\ProyectoFinal\\app\\Views\\sale_form.php', 31)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\wamp64\\www\\ProyectoFinal\\app\\Views\\sale_form.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('sale_form', [], true)
+ 5 APPPATH\Controllers\SaleController.php(125): view('sale_form', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SaleController->saveSale()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SaleController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-07 11:52:34 --> ErrorException: Undefined variable $isEdit
+[Method: GET, Route: ventas/save]
+in APPPATH\Views\sale_form.php on line 11.
+ 1 APPPATH\Views\sale_form.php(11): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $isEdit', 'C:\\wamp64\\www\\ProyectoFinal\\app\\Views\\sale_form.php', 11)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\wamp64\\www\\ProyectoFinal\\app\\Views\\sale_form.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('sale_form', [], true)
+ 5 APPPATH\Controllers\SaleController.php(130): view('sale_form', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SaleController->saveSale()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SaleController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-07 11:52:35 --> ErrorException: Undefined variable $isEdit
+[Method: GET, Route: ventas/save]
+in APPPATH\Views\sale_form.php on line 11.
+ 1 APPPATH\Views\sale_form.php(11): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $isEdit', 'C:\\wamp64\\www\\ProyectoFinal\\app\\Views\\sale_form.php', 11)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\wamp64\\www\\ProyectoFinal\\app\\Views\\sale_form.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('sale_form', [], true)
+ 5 APPPATH\Controllers\SaleController.php(130): view('sale_form', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SaleController->saveSale()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SaleController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-07 11:52:39 --> ErrorException: Undefined variable $isEdit
+[Method: GET, Route: ventas/save]
+in APPPATH\Views\sale_form.php on line 11.
+ 1 APPPATH\Views\sale_form.php(11): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $isEdit', 'C:\\wamp64\\www\\ProyectoFinal\\app\\Views\\sale_form.php', 11)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\wamp64\\www\\ProyectoFinal\\app\\Views\\sale_form.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('sale_form', [], true)
+ 5 APPPATH\Controllers\SaleController.php(130): view('sale_form', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SaleController->saveSale()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SaleController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-02-07 12:02:34 --> mysqli_sql_exception: Unknown column 'ventas.usuario_id' in 'on clause' in C:\wamp64\www\ProyectoFinal\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\wamp64\www\ProyectoFinal\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\wamp64\www\ProyectoFinal\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\wamp64\www\ProyectoFinal\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\wamp64\www\ProyectoFinal\system\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\wamp64\www\ProyectoFinal\system\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+#5 C:\wamp64\www\ProyectoFinal\system\BaseModel.php(1283): CodeIgniter\Model->countAllResults(false)
+#6 C:\wamp64\www\ProyectoFinal\app\Controllers\SaleController.php(62): CodeIgniter\BaseModel->paginate(10)
+#7 C:\wamp64\www\ProyectoFinal\system\CodeIgniter.php(933): App\Controllers\SaleController->index()
+#8 C:\wamp64\www\ProyectoFinal\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SaleController))
+#9 C:\wamp64\www\ProyectoFinal\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\wamp64\www\ProyectoFinal\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\wamp64\www\ProyectoFinal\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\wamp64\www\ProyectoFinal\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-02-07 12:02:34 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'ventas.usuario_id' in 'on clause'
+[Method: GET, Route: ventas]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `ventas`
+JOIN `coches` ON `ventas`.`coche_id` = `coches`.`id`
+JOIN `usuarios` ON `ventas`.`usuario_id` = `usuarios`.`id`', [], false)
+ 2 SYSTEMPATH\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 3 SYSTEMPATH\BaseModel.php(1283): CodeIgniter\Model->countAllResults(false)
+ 4 APPPATH\Controllers\SaleController.php(62): CodeIgniter\BaseModel->paginate(10)
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SaleController->index()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SaleController))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-07 12:02:34 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'ventas.usuario_id' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `ventas`
+JOIN `coches` ON `ventas`.`coche_id` = `coches`.`id`
+JOIN `usuarios` ON `ventas`.`usuario_id` = `usuarios`.`id`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `ventas`
+JOIN `coches` ON `ventas`.`coche_id` = `coches`.`id`
+JOIN `usuarios` ON `ventas`.`usuario_id` = `usuarios`.`id`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `ventas`
+JOIN `coches` ON `ventas`.`coche_id` = `coches`.`id`
+JOIN `usuarios` ON `ventas`.`usuario_id` = `usuarios`.`id`', [], false)
+ 4 SYSTEMPATH\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 5 SYSTEMPATH\BaseModel.php(1283): CodeIgniter\Model->countAllResults(false)
+ 6 APPPATH\Controllers\SaleController.php(62): CodeIgniter\BaseModel->paginate(10)
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SaleController->index()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SaleController))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-07 12:02:34 --> [Caused by] mysqli_sql_exception: Unknown column 'ventas.usuario_id' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `ventas`
+JOIN `coches` ON `ventas`.`coche_id` = `coches`.`id`
+JOIN `usuarios` ON `ventas`.`usuario_id` = `usuarios`.`id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `ventas`
+JOIN `coches` ON `ventas`.`coche_id` = `coches`.`id`
+JOIN `usuarios` ON `ventas`.`usuario_id` = `usuarios`.`id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `ventas`
+JOIN `coches` ON `ventas`.`coche_id` = `coches`.`id`
+JOIN `usuarios` ON `ventas`.`usuario_id` = `usuarios`.`id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `ventas`
+JOIN `coches` ON `ventas`.`coche_id` = `coches`.`id`
+JOIN `usuarios` ON `ventas`.`usuario_id` = `usuarios`.`id`', [], false)
+ 5 SYSTEMPATH\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 6 SYSTEMPATH\BaseModel.php(1283): CodeIgniter\Model->countAllResults(false)
+ 7 APPPATH\Controllers\SaleController.php(62): CodeIgniter\BaseModel->paginate(10)
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SaleController->index()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SaleController))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-02-07 12:04:52 --> mysqli_sql_exception: Unknown column 'ventas.usuario_id' in 'on clause' in C:\wamp64\www\ProyectoFinal\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\wamp64\www\ProyectoFinal\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\wamp64\www\ProyectoFinal\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\wamp64\www\ProyectoFinal\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\wamp64\www\ProyectoFinal\system\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\wamp64\www\ProyectoFinal\system\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+#5 C:\wamp64\www\ProyectoFinal\system\BaseModel.php(1283): CodeIgniter\Model->countAllResults(false)
+#6 C:\wamp64\www\ProyectoFinal\app\Controllers\SaleController.php(62): CodeIgniter\BaseModel->paginate(10)
+#7 C:\wamp64\www\ProyectoFinal\system\CodeIgniter.php(933): App\Controllers\SaleController->index()
+#8 C:\wamp64\www\ProyectoFinal\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SaleController))
+#9 C:\wamp64\www\ProyectoFinal\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\wamp64\www\ProyectoFinal\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\wamp64\www\ProyectoFinal\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\wamp64\www\ProyectoFinal\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-02-07 12:04:52 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'ventas.usuario_id' in 'on clause'
+[Method: GET, Route: ventas]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `ventas`
+JOIN `coches` ON `ventas`.`coche_id` = `coches`.`id`
+JOIN `usuarios` ON `ventas`.`usuario_id` = `usuarios`.`id`', [], false)
+ 2 SYSTEMPATH\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 3 SYSTEMPATH\BaseModel.php(1283): CodeIgniter\Model->countAllResults(false)
+ 4 APPPATH\Controllers\SaleController.php(62): CodeIgniter\BaseModel->paginate(10)
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SaleController->index()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SaleController))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-07 12:04:52 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'ventas.usuario_id' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `ventas`
+JOIN `coches` ON `ventas`.`coche_id` = `coches`.`id`
+JOIN `usuarios` ON `ventas`.`usuario_id` = `usuarios`.`id`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `ventas`
+JOIN `coches` ON `ventas`.`coche_id` = `coches`.`id`
+JOIN `usuarios` ON `ventas`.`usuario_id` = `usuarios`.`id`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `ventas`
+JOIN `coches` ON `ventas`.`coche_id` = `coches`.`id`
+JOIN `usuarios` ON `ventas`.`usuario_id` = `usuarios`.`id`', [], false)
+ 4 SYSTEMPATH\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 5 SYSTEMPATH\BaseModel.php(1283): CodeIgniter\Model->countAllResults(false)
+ 6 APPPATH\Controllers\SaleController.php(62): CodeIgniter\BaseModel->paginate(10)
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SaleController->index()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SaleController))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-07 12:04:52 --> [Caused by] mysqli_sql_exception: Unknown column 'ventas.usuario_id' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `ventas`
+JOIN `coches` ON `ventas`.`coche_id` = `coches`.`id`
+JOIN `usuarios` ON `ventas`.`usuario_id` = `usuarios`.`id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `ventas`
+JOIN `coches` ON `ventas`.`coche_id` = `coches`.`id`
+JOIN `usuarios` ON `ventas`.`usuario_id` = `usuarios`.`id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `ventas`
+JOIN `coches` ON `ventas`.`coche_id` = `coches`.`id`
+JOIN `usuarios` ON `ventas`.`usuario_id` = `usuarios`.`id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `ventas`
+JOIN `coches` ON `ventas`.`coche_id` = `coches`.`id`
+JOIN `usuarios` ON `ventas`.`usuario_id` = `usuarios`.`id`', [], false)
+ 5 SYSTEMPATH\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 6 SYSTEMPATH\BaseModel.php(1283): CodeIgniter\Model->countAllResults(false)
+ 7 APPPATH\Controllers\SaleController.php(62): CodeIgniter\BaseModel->paginate(10)
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SaleController->index()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SaleController))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-02-07 12:04:56 --> mysqli_sql_exception: Unknown column 'ventas.usuario_id' in 'on clause' in C:\wamp64\www\ProyectoFinal\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\wamp64\www\ProyectoFinal\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\wamp64\www\ProyectoFinal\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\wamp64\www\ProyectoFinal\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\wamp64\www\ProyectoFinal\system\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\wamp64\www\ProyectoFinal\system\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+#5 C:\wamp64\www\ProyectoFinal\system\BaseModel.php(1283): CodeIgniter\Model->countAllResults(false)
+#6 C:\wamp64\www\ProyectoFinal\app\Controllers\SaleController.php(62): CodeIgniter\BaseModel->paginate(10)
+#7 C:\wamp64\www\ProyectoFinal\system\CodeIgniter.php(933): App\Controllers\SaleController->index()
+#8 C:\wamp64\www\ProyectoFinal\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SaleController))
+#9 C:\wamp64\www\ProyectoFinal\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\wamp64\www\ProyectoFinal\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\wamp64\www\ProyectoFinal\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\wamp64\www\ProyectoFinal\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-02-07 12:04:56 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'ventas.usuario_id' in 'on clause'
+[Method: GET, Route: ventas]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `ventas`
+JOIN `coches` ON `ventas`.`coche_id` = `coches`.`id`
+JOIN `usuarios` ON `ventas`.`usuario_id` = `usuarios`.`id`', [], false)
+ 2 SYSTEMPATH\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 3 SYSTEMPATH\BaseModel.php(1283): CodeIgniter\Model->countAllResults(false)
+ 4 APPPATH\Controllers\SaleController.php(62): CodeIgniter\BaseModel->paginate(10)
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SaleController->index()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SaleController))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-07 12:04:56 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'ventas.usuario_id' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `ventas`
+JOIN `coches` ON `ventas`.`coche_id` = `coches`.`id`
+JOIN `usuarios` ON `ventas`.`usuario_id` = `usuarios`.`id`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `ventas`
+JOIN `coches` ON `ventas`.`coche_id` = `coches`.`id`
+JOIN `usuarios` ON `ventas`.`usuario_id` = `usuarios`.`id`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `ventas`
+JOIN `coches` ON `ventas`.`coche_id` = `coches`.`id`
+JOIN `usuarios` ON `ventas`.`usuario_id` = `usuarios`.`id`', [], false)
+ 4 SYSTEMPATH\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 5 SYSTEMPATH\BaseModel.php(1283): CodeIgniter\Model->countAllResults(false)
+ 6 APPPATH\Controllers\SaleController.php(62): CodeIgniter\BaseModel->paginate(10)
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SaleController->index()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SaleController))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-07 12:04:56 --> [Caused by] mysqli_sql_exception: Unknown column 'ventas.usuario_id' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `ventas`
+JOIN `coches` ON `ventas`.`coche_id` = `coches`.`id`
+JOIN `usuarios` ON `ventas`.`usuario_id` = `usuarios`.`id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `ventas`
+JOIN `coches` ON `ventas`.`coche_id` = `coches`.`id`
+JOIN `usuarios` ON `ventas`.`usuario_id` = `usuarios`.`id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `ventas`
+JOIN `coches` ON `ventas`.`coche_id` = `coches`.`id`
+JOIN `usuarios` ON `ventas`.`usuario_id` = `usuarios`.`id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `ventas`
+JOIN `coches` ON `ventas`.`coche_id` = `coches`.`id`
+JOIN `usuarios` ON `ventas`.`usuario_id` = `usuarios`.`id`', [], false)
+ 5 SYSTEMPATH\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 6 SYSTEMPATH\BaseModel.php(1283): CodeIgniter\Model->countAllResults(false)
+ 7 APPPATH\Controllers\SaleController.php(62): CodeIgniter\BaseModel->paginate(10)
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SaleController->index()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SaleController))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-02-07 12:05:02 --> mysqli_sql_exception: Unknown column 'ventas.usuario_id' in 'on clause' in C:\wamp64\www\ProyectoFinal\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\wamp64\www\ProyectoFinal\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\wamp64\www\ProyectoFinal\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\wamp64\www\ProyectoFinal\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\wamp64\www\ProyectoFinal\system\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\wamp64\www\ProyectoFinal\system\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+#5 C:\wamp64\www\ProyectoFinal\system\BaseModel.php(1283): CodeIgniter\Model->countAllResults(false)
+#6 C:\wamp64\www\ProyectoFinal\app\Controllers\SaleController.php(62): CodeIgniter\BaseModel->paginate(10)
+#7 C:\wamp64\www\ProyectoFinal\system\CodeIgniter.php(933): App\Controllers\SaleController->index()
+#8 C:\wamp64\www\ProyectoFinal\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SaleController))
+#9 C:\wamp64\www\ProyectoFinal\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\wamp64\www\ProyectoFinal\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\wamp64\www\ProyectoFinal\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\wamp64\www\ProyectoFinal\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-02-07 12:05:02 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'ventas.usuario_id' in 'on clause'
+[Method: GET, Route: ventas]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `ventas`
+JOIN `coches` ON `ventas`.`coche_id` = `coches`.`id`
+JOIN `usuarios` ON `ventas`.`usuario_id` = `usuarios`.`id`', [], false)
+ 2 SYSTEMPATH\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 3 SYSTEMPATH\BaseModel.php(1283): CodeIgniter\Model->countAllResults(false)
+ 4 APPPATH\Controllers\SaleController.php(62): CodeIgniter\BaseModel->paginate(10)
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SaleController->index()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SaleController))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-07 12:05:02 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'ventas.usuario_id' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `ventas`
+JOIN `coches` ON `ventas`.`coche_id` = `coches`.`id`
+JOIN `usuarios` ON `ventas`.`usuario_id` = `usuarios`.`id`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `ventas`
+JOIN `coches` ON `ventas`.`coche_id` = `coches`.`id`
+JOIN `usuarios` ON `ventas`.`usuario_id` = `usuarios`.`id`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `ventas`
+JOIN `coches` ON `ventas`.`coche_id` = `coches`.`id`
+JOIN `usuarios` ON `ventas`.`usuario_id` = `usuarios`.`id`', [], false)
+ 4 SYSTEMPATH\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 5 SYSTEMPATH\BaseModel.php(1283): CodeIgniter\Model->countAllResults(false)
+ 6 APPPATH\Controllers\SaleController.php(62): CodeIgniter\BaseModel->paginate(10)
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SaleController->index()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SaleController))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-07 12:05:02 --> [Caused by] mysqli_sql_exception: Unknown column 'ventas.usuario_id' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `ventas`
+JOIN `coches` ON `ventas`.`coche_id` = `coches`.`id`
+JOIN `usuarios` ON `ventas`.`usuario_id` = `usuarios`.`id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `ventas`
+JOIN `coches` ON `ventas`.`coche_id` = `coches`.`id`
+JOIN `usuarios` ON `ventas`.`usuario_id` = `usuarios`.`id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `ventas`
+JOIN `coches` ON `ventas`.`coche_id` = `coches`.`id`
+JOIN `usuarios` ON `ventas`.`usuario_id` = `usuarios`.`id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `ventas`
+JOIN `coches` ON `ventas`.`coche_id` = `coches`.`id`
+JOIN `usuarios` ON `ventas`.`usuario_id` = `usuarios`.`id`', [], false)
+ 5 SYSTEMPATH\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 6 SYSTEMPATH\BaseModel.php(1283): CodeIgniter\Model->countAllResults(false)
+ 7 APPPATH\Controllers\SaleController.php(62): CodeIgniter\BaseModel->paginate(10)
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SaleController->index()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SaleController))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

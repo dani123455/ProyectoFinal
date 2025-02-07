@@ -31,9 +31,12 @@
                 value="<?= isset($usuario) ? esc($usuario['email']) : '' ?>" required>
         </div>
         <div class="mb-3">
-            <label for="rol_id" class="form-label">Rol ID</label>
-            <input type="number" name="rol_id" id="rol_id" class="form-control" 
-                value="<?= isset($usuario) ? esc($usuario['rol_id']) : '' ?>" required>
+            <label for="rol_id" class="form-label">Rol</label>
+            <select name="rol_id" id="rol_id" class="form-control" required>
+                <?php foreach ($roles as $rol): ?>
+                    <option value="<?= $rol['id'] ?>" <?= isset($usuario['rol_id']) && $usuario['rol_id'] == $rol['id'] ? 'selected' : '' ?>><?= $rol['nombre'] ?></option>
+                <?php endforeach; ?>
+            </select>
         </div>
         <div class="mb-3">
             <label for="telefono" class="form-label">Teléfono</label>
