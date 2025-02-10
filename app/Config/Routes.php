@@ -38,4 +38,14 @@ $routes->post('ventas/save', 'SaleController::saveSale'); // Crear marca (POST)
 $routes->post('ventas/save/(:num)', 'SaleController::saveSale/$1'); // Editar marca (POST)
 $routes->get('ventas/archive/(:num)', 'SaleController::archive/$1'); // Archivar marca
 $routes->get('ventas/unarchive/(:num)', 'SaleController::unarchive/$1'); // Desarchivar marca
+//Inicio de sesion y registro
+$routes->get('auth/register', 'Auth::register');
+$routes->post('auth/register', 'Auth::register');
+$routes->get('auth/login', 'Auth::login');
+$routes->post('auth/login', 'Auth::login');
+$routes->get('auth/logout', 'Auth::logout');
+//Roles
+$routes->get('admin/dashboard', 'AdminController::dashboard', ['filter' => 'role:1']);
+$routes->get('employee/dashboard', 'EmployeeController::dashboard', ['filter' => 'role:2']);
+$routes->get('customer/dashboard', 'CustomerController::dashboard', ['filter' => 'role:3']);
 

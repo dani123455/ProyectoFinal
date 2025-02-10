@@ -45,7 +45,7 @@ class BrandController extends BaseController
         $data['perPage'] = $perPage;
         $data['status'] = $status;
 
-        return view('brand_list', $data);
+        return view('brand/brand_list', $data);
     }
 
     public function saveBrand($id = null)
@@ -90,7 +90,7 @@ class BrandController extends BaseController
         }
 
         // Cargar la vista del formulario (crear/editar)
-        return view('brand_form', $data);
+        return view('brand/brand_form', $data);
     }
 
     public function archive($id)

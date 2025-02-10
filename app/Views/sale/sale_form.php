@@ -29,8 +29,8 @@
             </select>
         </div>
         <div class="mb-3">
-            <label for="usuario_id" class="form-label">Usuario</label>
-            <select name="usuario_id" id="usuario_id" class="form-control" required>
+            <label for="usuarios_id" class="form-label">Usuario</label> <!-- Cambié "usuario_id" a "usuarios_id" -->
+            <select name="usuarios_id" id="usuarios_id" class="form-control" required>
                 <?php foreach($usuarios as $usuario): ?>
                     <option value="<?= $usuario['id'] ?>" <?= isset($venta['usuarios_id']) && $venta['usuarios_id'] == $usuario['id'] ? 'selected' : '' ?>><?= $usuario['nombre'] ?></option>
                 <?php endforeach; ?>

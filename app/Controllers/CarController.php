@@ -73,7 +73,7 @@ class CarController extends BaseController
         $data['perPage'] = $perPage;
         $data['status'] = $status;
 
-        return view('car_list', $data);
+        return view('car/car_list', $data);
     }
 
     public function saveCar($id = null)
@@ -128,7 +128,7 @@ class CarController extends BaseController
         }
 
         // Cargar la vista del formulario (crear/editar)
-        return view('car_form', $data);
+        return view('car/car_form', $data);
     }
 
     public function archive($id)

@@ -71,7 +71,7 @@ class SaleController extends BaseController
         $data['perPage'] = $perPage;
         $data['status'] = $status;
 
-        return view('sale_list', $data);
+        return view('sale/sale_list', $data);
     }
 
     public function saveSale($id = null)
@@ -124,7 +124,7 @@ class SaleController extends BaseController
         }
 
         // Cargar la vista del formulario (crear/editar)
-        return view('sale_form', $data);
+        return view('sale/sale_form', $data);
     }
 
     public function archive($id)

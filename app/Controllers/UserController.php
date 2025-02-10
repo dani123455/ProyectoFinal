@@ -71,7 +71,7 @@ class UserController extends BaseController
         $data['perPage'] = $perPage;
         $data['status'] = $status;
 
-        return view('user_list', $data);
+        return view('user/user_list', $data);
     }
 
     public function saveUser($id = null)
@@ -131,7 +131,7 @@ class UserController extends BaseController
         }
 
         // Cargar la vista del formulario (crear/editar)
-        return view('user_form', $data);
+        return view('user/user_form', $data);
     }
 
     public function archive($id)

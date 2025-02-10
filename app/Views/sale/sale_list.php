@@ -31,8 +31,8 @@
     <form method="GET" action="<?=base_url('ventas')?>">
     <div class="container d-flex mb-2">
         <div class="input-group w-auto">
-            <input type="text" name="coche_modelo" class="form-control" placeholder="venta" value="<?= isset($venta_nombre) ? $venta_nombre : '' ?>">
-            <input type="text" name="usuarios_nombre" class="form-control" placeholder="Usuario" value="<?= isset($usuarios_nombre) ? $usuarios_nombre : '' ?>">
+            <input type="text" name="coche_id" class="form-control" placeholder="coche" value="<?= isset($coche_id) ? $coche_id : '' ?>">
+            <input type="text" name="usuarios_id" class="form-control" placeholder="Usuario" value="<?= isset($usuarios_id) ? $usuarios_id : '' ?>">
             <input type="number" name="fecha" class="form-control" placeholder="Fecha" value="<?= isset($fecha) ? $fecha : '' ?>">
             <input type="number" name="precio_venta" class="form-control" placeholder="Precio de venta" value="<?= isset($precio_venta) ? $precio_venta : '' ?>">
             <select name="status" class="form-control">

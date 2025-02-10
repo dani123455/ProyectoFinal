@@ -1,0 +1,449 @@
+CRITICAL - 2025-02-10 09:31:02 --> TypeError: trim(): Argument #1 ($string) must be of type string, array given
+[Method: GET, Route: /]
+in SYSTEMPATH\Filters\Filters.php on line 857.
+ 1 SYSTEMPATH\Filters\Filters.php(857): trim([...], '/ ')
+ 2 SYSTEMPATH\Filters\Filters.php(820): CodeIgniter\Filters\Filters->checkPseudoRegex('', [...])
+ 3 SYSTEMPATH\Filters\Filters.php(691): CodeIgniter\Filters\Filters->pathApplies('', [...])
+ 4 SYSTEMPATH\Filters\Filters.php(398): CodeIgniter\Filters\Filters->processFilters('')
+ 5 SYSTEMPATH\Filters\Filters.php(181): CodeIgniter\Filters\Filters->initialize('')
+ 6 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('', 'before')
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-10 09:31:04 --> TypeError: trim(): Argument #1 ($string) must be of type string, array given
+[Method: GET, Route: /]
+in SYSTEMPATH\Filters\Filters.php on line 857.
+ 1 SYSTEMPATH\Filters\Filters.php(857): trim([...], '/ ')
+ 2 SYSTEMPATH\Filters\Filters.php(820): CodeIgniter\Filters\Filters->checkPseudoRegex('', [...])
+ 3 SYSTEMPATH\Filters\Filters.php(691): CodeIgniter\Filters\Filters->pathApplies('', [...])
+ 4 SYSTEMPATH\Filters\Filters.php(398): CodeIgniter\Filters\Filters->processFilters('')
+ 5 SYSTEMPATH\Filters\Filters.php(181): CodeIgniter\Filters\Filters->initialize('')
+ 6 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('', 'before')
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-10 09:31:06 --> TypeError: trim(): Argument #1 ($string) must be of type string, array given
+[Method: GET, Route: marcas]
+in SYSTEMPATH\Filters\Filters.php on line 857.
+ 1 SYSTEMPATH\Filters\Filters.php(857): trim([...], '/ ')
+ 2 SYSTEMPATH\Filters\Filters.php(820): CodeIgniter\Filters\Filters->checkPseudoRegex('marcas', [...])
+ 3 SYSTEMPATH\Filters\Filters.php(691): CodeIgniter\Filters\Filters->pathApplies('marcas', [...])
+ 4 SYSTEMPATH\Filters\Filters.php(398): CodeIgniter\Filters\Filters->processFilters('marcas')
+ 5 SYSTEMPATH\Filters\Filters.php(181): CodeIgniter\Filters\Filters->initialize('marcas')
+ 6 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('marcas', 'before')
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-10 09:31:06 --> TypeError: trim(): Argument #1 ($string) must be of type string, array given
+[Method: GET, Route: ventas]
+in SYSTEMPATH\Filters\Filters.php on line 857.
+ 1 SYSTEMPATH\Filters\Filters.php(857): trim([...], '/ ')
+ 2 SYSTEMPATH\Filters\Filters.php(820): CodeIgniter\Filters\Filters->checkPseudoRegex('ventas', [...])
+ 3 SYSTEMPATH\Filters\Filters.php(691): CodeIgniter\Filters\Filters->pathApplies('ventas', [...])
+ 4 SYSTEMPATH\Filters\Filters.php(398): CodeIgniter\Filters\Filters->processFilters('ventas')
+ 5 SYSTEMPATH\Filters\Filters.php(181): CodeIgniter\Filters\Filters->initialize('ventas')
+ 6 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('ventas', 'before')
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-10 09:31:06 --> TypeError: trim(): Argument #1 ($string) must be of type string, array given
+[Method: GET, Route: ventas]
+in SYSTEMPATH\Filters\Filters.php on line 857.
+ 1 SYSTEMPATH\Filters\Filters.php(857): trim([...], '/ ')
+ 2 SYSTEMPATH\Filters\Filters.php(820): CodeIgniter\Filters\Filters->checkPseudoRegex('ventas', [...])
+ 3 SYSTEMPATH\Filters\Filters.php(691): CodeIgniter\Filters\Filters->pathApplies('ventas', [...])
+ 4 SYSTEMPATH\Filters\Filters.php(398): CodeIgniter\Filters\Filters->processFilters('ventas')
+ 5 SYSTEMPATH\Filters\Filters.php(181): CodeIgniter\Filters\Filters->initialize('ventas')
+ 6 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('ventas', 'before')
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-10 09:31:06 --> TypeError: trim(): Argument #1 ($string) must be of type string, array given
+[Method: GET, Route: ventas]
+in SYSTEMPATH\Filters\Filters.php on line 857.
+ 1 SYSTEMPATH\Filters\Filters.php(857): trim([...], '/ ')
+ 2 SYSTEMPATH\Filters\Filters.php(820): CodeIgniter\Filters\Filters->checkPseudoRegex('ventas', [...])
+ 3 SYSTEMPATH\Filters\Filters.php(691): CodeIgniter\Filters\Filters->pathApplies('ventas', [...])
+ 4 SYSTEMPATH\Filters\Filters.php(398): CodeIgniter\Filters\Filters->processFilters('ventas')
+ 5 SYSTEMPATH\Filters\Filters.php(181): CodeIgniter\Filters\Filters->initialize('ventas')
+ 6 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('ventas', 'before')
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-10 09:31:07 --> TypeError: trim(): Argument #1 ($string) must be of type string, array given
+[Method: GET, Route: ventas]
+in SYSTEMPATH\Filters\Filters.php on line 857.
+ 1 SYSTEMPATH\Filters\Filters.php(857): trim([...], '/ ')
+ 2 SYSTEMPATH\Filters\Filters.php(820): CodeIgniter\Filters\Filters->checkPseudoRegex('ventas', [...])
+ 3 SYSTEMPATH\Filters\Filters.php(691): CodeIgniter\Filters\Filters->pathApplies('ventas', [...])
+ 4 SYSTEMPATH\Filters\Filters.php(398): CodeIgniter\Filters\Filters->processFilters('ventas')
+ 5 SYSTEMPATH\Filters\Filters.php(181): CodeIgniter\Filters\Filters->initialize('ventas')
+ 6 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('ventas', 'before')
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-10 09:31:07 --> TypeError: trim(): Argument #1 ($string) must be of type string, array given
+[Method: GET, Route: ventas]
+in SYSTEMPATH\Filters\Filters.php on line 857.
+ 1 SYSTEMPATH\Filters\Filters.php(857): trim([...], '/ ')
+ 2 SYSTEMPATH\Filters\Filters.php(820): CodeIgniter\Filters\Filters->checkPseudoRegex('ventas', [...])
+ 3 SYSTEMPATH\Filters\Filters.php(691): CodeIgniter\Filters\Filters->pathApplies('ventas', [...])
+ 4 SYSTEMPATH\Filters\Filters.php(398): CodeIgniter\Filters\Filters->processFilters('ventas')
+ 5 SYSTEMPATH\Filters\Filters.php(181): CodeIgniter\Filters\Filters->initialize('ventas')
+ 6 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('ventas', 'before')
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-10 09:31:07 --> TypeError: trim(): Argument #1 ($string) must be of type string, array given
+[Method: GET, Route: ventas]
+in SYSTEMPATH\Filters\Filters.php on line 857.
+ 1 SYSTEMPATH\Filters\Filters.php(857): trim([...], '/ ')
+ 2 SYSTEMPATH\Filters\Filters.php(820): CodeIgniter\Filters\Filters->checkPseudoRegex('ventas', [...])
+ 3 SYSTEMPATH\Filters\Filters.php(691): CodeIgniter\Filters\Filters->pathApplies('ventas', [...])
+ 4 SYSTEMPATH\Filters\Filters.php(398): CodeIgniter\Filters\Filters->processFilters('ventas')
+ 5 SYSTEMPATH\Filters\Filters.php(181): CodeIgniter\Filters\Filters->initialize('ventas')
+ 6 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('ventas', 'before')
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-10 09:31:07 --> TypeError: trim(): Argument #1 ($string) must be of type string, array given
+[Method: GET, Route: ventas]
+in SYSTEMPATH\Filters\Filters.php on line 857.
+ 1 SYSTEMPATH\Filters\Filters.php(857): trim([...], '/ ')
+ 2 SYSTEMPATH\Filters\Filters.php(820): CodeIgniter\Filters\Filters->checkPseudoRegex('ventas', [...])
+ 3 SYSTEMPATH\Filters\Filters.php(691): CodeIgniter\Filters\Filters->pathApplies('ventas', [...])
+ 4 SYSTEMPATH\Filters\Filters.php(398): CodeIgniter\Filters\Filters->processFilters('ventas')
+ 5 SYSTEMPATH\Filters\Filters.php(181): CodeIgniter\Filters\Filters->initialize('ventas')
+ 6 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('ventas', 'before')
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-10 09:31:07 --> TypeError: trim(): Argument #1 ($string) must be of type string, array given
+[Method: GET, Route: ventas]
+in SYSTEMPATH\Filters\Filters.php on line 857.
+ 1 SYSTEMPATH\Filters\Filters.php(857): trim([...], '/ ')
+ 2 SYSTEMPATH\Filters\Filters.php(820): CodeIgniter\Filters\Filters->checkPseudoRegex('ventas', [...])
+ 3 SYSTEMPATH\Filters\Filters.php(691): CodeIgniter\Filters\Filters->pathApplies('ventas', [...])
+ 4 SYSTEMPATH\Filters\Filters.php(398): CodeIgniter\Filters\Filters->processFilters('ventas')
+ 5 SYSTEMPATH\Filters\Filters.php(181): CodeIgniter\Filters\Filters->initialize('ventas')
+ 6 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('ventas', 'before')
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-10 09:31:08 --> TypeError: trim(): Argument #1 ($string) must be of type string, array given
+[Method: GET, Route: ventas]
+in SYSTEMPATH\Filters\Filters.php on line 857.
+ 1 SYSTEMPATH\Filters\Filters.php(857): trim([...], '/ ')
+ 2 SYSTEMPATH\Filters\Filters.php(820): CodeIgniter\Filters\Filters->checkPseudoRegex('ventas', [...])
+ 3 SYSTEMPATH\Filters\Filters.php(691): CodeIgniter\Filters\Filters->pathApplies('ventas', [...])
+ 4 SYSTEMPATH\Filters\Filters.php(398): CodeIgniter\Filters\Filters->processFilters('ventas')
+ 5 SYSTEMPATH\Filters\Filters.php(181): CodeIgniter\Filters\Filters->initialize('ventas')
+ 6 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('ventas', 'before')
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-10 09:31:09 --> TypeError: trim(): Argument #1 ($string) must be of type string, array given
+[Method: GET, Route: ventas]
+in SYSTEMPATH\Filters\Filters.php on line 857.
+ 1 SYSTEMPATH\Filters\Filters.php(857): trim([...], '/ ')
+ 2 SYSTEMPATH\Filters\Filters.php(820): CodeIgniter\Filters\Filters->checkPseudoRegex('ventas', [...])
+ 3 SYSTEMPATH\Filters\Filters.php(691): CodeIgniter\Filters\Filters->pathApplies('ventas', [...])
+ 4 SYSTEMPATH\Filters\Filters.php(398): CodeIgniter\Filters\Filters->processFilters('ventas')
+ 5 SYSTEMPATH\Filters\Filters.php(181): CodeIgniter\Filters\Filters->initialize('ventas')
+ 6 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('ventas', 'before')
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-10 09:31:09 --> TypeError: trim(): Argument #1 ($string) must be of type string, array given
+[Method: GET, Route: ventas]
+in SYSTEMPATH\Filters\Filters.php on line 857.
+ 1 SYSTEMPATH\Filters\Filters.php(857): trim([...], '/ ')
+ 2 SYSTEMPATH\Filters\Filters.php(820): CodeIgniter\Filters\Filters->checkPseudoRegex('ventas', [...])
+ 3 SYSTEMPATH\Filters\Filters.php(691): CodeIgniter\Filters\Filters->pathApplies('ventas', [...])
+ 4 SYSTEMPATH\Filters\Filters.php(398): CodeIgniter\Filters\Filters->processFilters('ventas')
+ 5 SYSTEMPATH\Filters\Filters.php(181): CodeIgniter\Filters\Filters->initialize('ventas')
+ 6 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('ventas', 'before')
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-10 09:31:09 --> TypeError: trim(): Argument #1 ($string) must be of type string, array given
+[Method: GET, Route: ventas]
+in SYSTEMPATH\Filters\Filters.php on line 857.
+ 1 SYSTEMPATH\Filters\Filters.php(857): trim([...], '/ ')
+ 2 SYSTEMPATH\Filters\Filters.php(820): CodeIgniter\Filters\Filters->checkPseudoRegex('ventas', [...])
+ 3 SYSTEMPATH\Filters\Filters.php(691): CodeIgniter\Filters\Filters->pathApplies('ventas', [...])
+ 4 SYSTEMPATH\Filters\Filters.php(398): CodeIgniter\Filters\Filters->processFilters('ventas')
+ 5 SYSTEMPATH\Filters\Filters.php(181): CodeIgniter\Filters\Filters->initialize('ventas')
+ 6 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('ventas', 'before')
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-10 09:34:14 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "sale_list.php"
+[Method: GET, Route: ventas]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('sale_list.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('sale_list', [], true)
+ 3 APPPATH\Controllers\SaleController.php(74): view('sale_list', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SaleController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SaleController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-10 09:34:15 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "sale_list.php"
+[Method: GET, Route: ventas]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('sale_list.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('sale_list', [], true)
+ 3 APPPATH\Controllers\SaleController.php(74): view('sale_list', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SaleController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SaleController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-10 09:34:15 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "sale_list.php"
+[Method: GET, Route: ventas]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('sale_list.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('sale_list', [], true)
+ 3 APPPATH\Controllers\SaleController.php(74): view('sale_list', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SaleController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SaleController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-10 09:34:16 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "sale_list.php"
+[Method: GET, Route: ventas]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('sale_list.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('sale_list', [], true)
+ 3 APPPATH\Controllers\SaleController.php(74): view('sale_list', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SaleController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SaleController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-10 09:34:21 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "car_list.php"
+[Method: GET, Route: coches]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('car_list.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('car_list', [], true)
+ 3 APPPATH\Controllers\CarController.php(76): view('car_list', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CarController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CarController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-10 09:34:35 --> TypeError: trim(): Argument #1 ($string) must be of type string, array given
+[Method: GET, Route: /]
+in SYSTEMPATH\Filters\Filters.php on line 857.
+ 1 SYSTEMPATH\Filters\Filters.php(857): trim([...], '/ ')
+ 2 SYSTEMPATH\Filters\Filters.php(820): CodeIgniter\Filters\Filters->checkPseudoRegex('', [...])
+ 3 SYSTEMPATH\Filters\Filters.php(691): CodeIgniter\Filters\Filters->pathApplies('', [...])
+ 4 SYSTEMPATH\Filters\Filters.php(398): CodeIgniter\Filters\Filters->processFilters('')
+ 5 SYSTEMPATH\Filters\Filters.php(181): CodeIgniter\Filters\Filters->initialize('')
+ 6 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('', 'before')
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-10 09:36:05 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "car_list.php"
+[Method: GET, Route: coches]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('car_list.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('car_list', [], true)
+ 3 APPPATH\Controllers\CarController.php(76): view('car_list', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CarController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CarController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-10 09:41:00 --> TypeError: trim(): Argument #1 ($string) must be of type string, array given
+[Method: GET, Route: /]
+in SYSTEMPATH\Filters\Filters.php on line 857.
+ 1 SYSTEMPATH\Filters\Filters.php(857): trim([...], '/ ')
+ 2 SYSTEMPATH\Filters\Filters.php(820): CodeIgniter\Filters\Filters->checkPseudoRegex('', [...])
+ 3 SYSTEMPATH\Filters\Filters.php(691): CodeIgniter\Filters\Filters->pathApplies('', [...])
+ 4 SYSTEMPATH\Filters\Filters.php(398): CodeIgniter\Filters\Filters->processFilters('')
+ 5 SYSTEMPATH\Filters\Filters.php(181): CodeIgniter\Filters\Filters->initialize('')
+ 6 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('', 'before')
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-10 09:41:19 --> TypeError: trim(): Argument #1 ($string) must be of type string, array given
+[Method: GET, Route: /]
+in SYSTEMPATH\Filters\Filters.php on line 857.
+ 1 SYSTEMPATH\Filters\Filters.php(857): trim([...], '/ ')
+ 2 SYSTEMPATH\Filters\Filters.php(820): CodeIgniter\Filters\Filters->checkPseudoRegex('', [...])
+ 3 SYSTEMPATH\Filters\Filters.php(691): CodeIgniter\Filters\Filters->pathApplies('', [...])
+ 4 SYSTEMPATH\Filters\Filters.php(398): CodeIgniter\Filters\Filters->processFilters('')
+ 5 SYSTEMPATH\Filters\Filters.php(181): CodeIgniter\Filters\Filters->initialize('')
+ 6 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('', 'before')
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-10 09:50:02 --> TypeError: trim(): Argument #1 ($string) must be of type string, array given
+[Method: GET, Route: /]
+in SYSTEMPATH\Filters\Filters.php on line 857.
+ 1 SYSTEMPATH\Filters\Filters.php(857): trim([...], '/ ')
+ 2 SYSTEMPATH\Filters\Filters.php(820): CodeIgniter\Filters\Filters->checkPseudoRegex('', [...])
+ 3 SYSTEMPATH\Filters\Filters.php(691): CodeIgniter\Filters\Filters->pathApplies('', [...])
+ 4 SYSTEMPATH\Filters\Filters.php(398): CodeIgniter\Filters\Filters->processFilters('')
+ 5 SYSTEMPATH\Filters\Filters.php(181): CodeIgniter\Filters\Filters->initialize('')
+ 6 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('', 'before')
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-10 09:50:03 --> TypeError: trim(): Argument #1 ($string) must be of type string, array given
+[Method: GET, Route: coches]
+in SYSTEMPATH\Filters\Filters.php on line 857.
+ 1 SYSTEMPATH\Filters\Filters.php(857): trim([...], '/ ')
+ 2 SYSTEMPATH\Filters\Filters.php(820): CodeIgniter\Filters\Filters->checkPseudoRegex('coches', [...])
+ 3 SYSTEMPATH\Filters\Filters.php(691): CodeIgniter\Filters\Filters->pathApplies('coches', [...])
+ 4 SYSTEMPATH\Filters\Filters.php(398): CodeIgniter\Filters\Filters->processFilters('coches')
+ 5 SYSTEMPATH\Filters\Filters.php(181): CodeIgniter\Filters\Filters->initialize('coches')
+ 6 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('coches', 'before')
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-10 09:50:05 --> TypeError: trim(): Argument #1 ($string) must be of type string, array given
+[Method: GET, Route: coches]
+in SYSTEMPATH\Filters\Filters.php on line 857.
+ 1 SYSTEMPATH\Filters\Filters.php(857): trim([...], '/ ')
+ 2 SYSTEMPATH\Filters\Filters.php(820): CodeIgniter\Filters\Filters->checkPseudoRegex('coches', [...])
+ 3 SYSTEMPATH\Filters\Filters.php(691): CodeIgniter\Filters\Filters->pathApplies('coches', [...])
+ 4 SYSTEMPATH\Filters\Filters.php(398): CodeIgniter\Filters\Filters->processFilters('coches')
+ 5 SYSTEMPATH\Filters\Filters.php(181): CodeIgniter\Filters\Filters->initialize('coches')
+ 6 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('coches', 'before')
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-10 09:50:05 --> TypeError: trim(): Argument #1 ($string) must be of type string, array given
+[Method: GET, Route: coches]
+in SYSTEMPATH\Filters\Filters.php on line 857.
+ 1 SYSTEMPATH\Filters\Filters.php(857): trim([...], '/ ')
+ 2 SYSTEMPATH\Filters\Filters.php(820): CodeIgniter\Filters\Filters->checkPseudoRegex('coches', [...])
+ 3 SYSTEMPATH\Filters\Filters.php(691): CodeIgniter\Filters\Filters->pathApplies('coches', [...])
+ 4 SYSTEMPATH\Filters\Filters.php(398): CodeIgniter\Filters\Filters->processFilters('coches')
+ 5 SYSTEMPATH\Filters\Filters.php(181): CodeIgniter\Filters\Filters->initialize('coches')
+ 6 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('coches', 'before')
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-10 09:51:21 --> TypeError: trim(): Argument #1 ($string) must be of type string, array given
+[Method: GET, Route: coches]
+in SYSTEMPATH\Filters\Filters.php on line 857.
+ 1 SYSTEMPATH\Filters\Filters.php(857): trim([...], '/ ')
+ 2 SYSTEMPATH\Filters\Filters.php(820): CodeIgniter\Filters\Filters->checkPseudoRegex('coches', [...])
+ 3 SYSTEMPATH\Filters\Filters.php(691): CodeIgniter\Filters\Filters->pathApplies('coches', [...])
+ 4 SYSTEMPATH\Filters\Filters.php(398): CodeIgniter\Filters\Filters->processFilters('coches')
+ 5 SYSTEMPATH\Filters\Filters.php(181): CodeIgniter\Filters\Filters->initialize('coches')
+ 6 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('coches', 'before')
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-10 09:51:21 --> TypeError: trim(): Argument #1 ($string) must be of type string, array given
+[Method: GET, Route: coches]
+in SYSTEMPATH\Filters\Filters.php on line 857.
+ 1 SYSTEMPATH\Filters\Filters.php(857): trim([...], '/ ')
+ 2 SYSTEMPATH\Filters\Filters.php(820): CodeIgniter\Filters\Filters->checkPseudoRegex('coches', [...])
+ 3 SYSTEMPATH\Filters\Filters.php(691): CodeIgniter\Filters\Filters->pathApplies('coches', [...])
+ 4 SYSTEMPATH\Filters\Filters.php(398): CodeIgniter\Filters\Filters->processFilters('coches')
+ 5 SYSTEMPATH\Filters\Filters.php(181): CodeIgniter\Filters\Filters->initialize('coches')
+ 6 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('coches', 'before')
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-10 09:52:23 --> TypeError: trim(): Argument #1 ($string) must be of type string, array given
+[Method: GET, Route: coches]
+in SYSTEMPATH\Filters\Filters.php on line 857.
+ 1 SYSTEMPATH\Filters\Filters.php(857): trim([...], '/ ')
+ 2 SYSTEMPATH\Filters\Filters.php(820): CodeIgniter\Filters\Filters->checkPseudoRegex('coches', [...])
+ 3 SYSTEMPATH\Filters\Filters.php(691): CodeIgniter\Filters\Filters->pathApplies('coches', [...])
+ 4 SYSTEMPATH\Filters\Filters.php(398): CodeIgniter\Filters\Filters->processFilters('coches')
+ 5 SYSTEMPATH\Filters\Filters.php(181): CodeIgniter\Filters\Filters->initialize('coches')
+ 6 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('coches', 'before')
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-10 09:52:26 --> TypeError: trim(): Argument #1 ($string) must be of type string, array given
+[Method: GET, Route: coches]
+in SYSTEMPATH\Filters\Filters.php on line 857.
+ 1 SYSTEMPATH\Filters\Filters.php(857): trim([...], '/ ')
+ 2 SYSTEMPATH\Filters\Filters.php(820): CodeIgniter\Filters\Filters->checkPseudoRegex('coches', [...])
+ 3 SYSTEMPATH\Filters\Filters.php(691): CodeIgniter\Filters\Filters->pathApplies('coches', [...])
+ 4 SYSTEMPATH\Filters\Filters.php(398): CodeIgniter\Filters\Filters->processFilters('coches')
+ 5 SYSTEMPATH\Filters\Filters.php(181): CodeIgniter\Filters\Filters->initialize('coches')
+ 6 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('coches', 'before')
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-10 09:52:26 --> TypeError: trim(): Argument #1 ($string) must be of type string, array given
+[Method: GET, Route: coches]
+in SYSTEMPATH\Filters\Filters.php on line 857.
+ 1 SYSTEMPATH\Filters\Filters.php(857): trim([...], '/ ')
+ 2 SYSTEMPATH\Filters\Filters.php(820): CodeIgniter\Filters\Filters->checkPseudoRegex('coches', [...])
+ 3 SYSTEMPATH\Filters\Filters.php(691): CodeIgniter\Filters\Filters->pathApplies('coches', [...])
+ 4 SYSTEMPATH\Filters\Filters.php(398): CodeIgniter\Filters\Filters->processFilters('coches')
+ 5 SYSTEMPATH\Filters\Filters.php(181): CodeIgniter\Filters\Filters->initialize('coches')
+ 6 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('coches', 'before')
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-10 09:52:26 --> TypeError: trim(): Argument #1 ($string) must be of type string, array given
+[Method: GET, Route: coches]
+in SYSTEMPATH\Filters\Filters.php on line 857.
+ 1 SYSTEMPATH\Filters\Filters.php(857): trim([...], '/ ')
+ 2 SYSTEMPATH\Filters\Filters.php(820): CodeIgniter\Filters\Filters->checkPseudoRegex('coches', [...])
+ 3 SYSTEMPATH\Filters\Filters.php(691): CodeIgniter\Filters\Filters->pathApplies('coches', [...])
+ 4 SYSTEMPATH\Filters\Filters.php(398): CodeIgniter\Filters\Filters->processFilters('coches')
+ 5 SYSTEMPATH\Filters\Filters.php(181): CodeIgniter\Filters\Filters->initialize('coches')
+ 6 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('coches', 'before')
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-10 09:52:30 --> TypeError: trim(): Argument #1 ($string) must be of type string, array given
+[Method: GET, Route: /]
+in SYSTEMPATH\Filters\Filters.php on line 857.
+ 1 SYSTEMPATH\Filters\Filters.php(857): trim([...], '/ ')
+ 2 SYSTEMPATH\Filters\Filters.php(820): CodeIgniter\Filters\Filters->checkPseudoRegex('', [...])
+ 3 SYSTEMPATH\Filters\Filters.php(691): CodeIgniter\Filters\Filters->pathApplies('', [...])
+ 4 SYSTEMPATH\Filters\Filters.php(398): CodeIgniter\Filters\Filters->processFilters('')
+ 5 SYSTEMPATH\Filters\Filters.php(181): CodeIgniter\Filters\Filters->initialize('')
+ 6 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('', 'before')
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

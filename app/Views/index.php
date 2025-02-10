@@ -1525,7 +1525,7 @@ License: For each use you must have a valid license purchased only from above li
 					<!--begin::Footer-->
 					<div style="background-color:#21273a" class="aside-footer flex-column-auto pt-5 pb-7 px-5" id="kt_aside_footer">
 						<a href="../../demo1/dist/documentation/getting-started.html" class="btn btn-custom btn-primary w-100" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-dismiss-="click" title="200+ in-house components and 3rd-party plugins">
-							<span class="btn-label">Docs &amp; Components</span>
+							<span class="btn-label">Iniciar sesión</span>
 							<!--begin::Svg Icon | path: icons/duotune/general/gen005.svg-->
 							<span class="svg-icon btn-icon svg-icon-2">
 								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
