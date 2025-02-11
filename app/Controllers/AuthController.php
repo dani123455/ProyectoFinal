@@ -65,9 +65,9 @@ class Auth extends Controller
                         case 1:
                             return redirect()->to('/admin/dashboard');
                         case 2:
-                            return redirect()->to('/empleado/dashboard');
+                            return redirect()->to('/employee/dashboard');
                         case 3:
-                            return redirect()->to('/cliente/dashboard');
+                            return redirect()->to('/customer/dashboard');
                         default:
                             return redirect()->to('/auth/login');
                     }

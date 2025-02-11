@@ -25,8 +25,9 @@
             toastr.success('<?= session()->getFlashdata('success'); ?>');
         </script>
     <?php endif; ?>
-
-    <a href="<?= base_url('usuarios/save') ?>" class="btn btn-primary mb-3">Crear Usuario</a>
+    <?php if (session()->get('rol_id') == 1): ?>
+        <a href="<?= base_url('usuarios/save') ?>" class="btn btn-primary mb-3">Crear Usuario</a>
+    <?php endif; ?>
     <!--Formulario de busqueda-->
     <form method="GET" action="<?=base_url('usuarios')?>">
     <div class="container d-flex mb-2">
@@ -68,12 +69,14 @@
                         <td><?= esc($usuario['telefono']) ?></td>
                         <td><?= esc($usuario['direccion']) ?></td>
                         <td>
+                        <?php if (session()->get('rol_id') == 1): ?>
                             <a href="<?= base_url('usuarios/save/' . $usuario['id']) ?>" class="btn btn-warning">Editar</a>
                             <?php if (is_null($usuario['fecha_baja'])): ?>
                                 <a href="<?= base_url('usuarios/archive/' . $usuario['id']) ?>" class="btn btn-danger">Archivar</a>
                             <?php else: ?>
                                 <a href="<?= base_url('usuarios/unarchive/' . $usuario['id']) ?>" class="btn btn-success">Desarchivar</a>
                             <?php endif; ?>
+                        <?php endif; ?>
                         </td>
                     </tr>
                 <?php endforeach; ?>

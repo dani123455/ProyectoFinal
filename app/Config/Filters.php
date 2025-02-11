@@ -34,6 +34,7 @@ class Filters extends BaseFilters
         'forcehttps'    => ForceHTTPS::class,
         'pagecache'     => PageCache::class,
         'performance'   => PerformanceMetrics::class,
+        'roles' => \App\Filters\RoleFilter::class,
     ];
 
     /**
@@ -103,5 +104,16 @@ class Filters extends BaseFilters
      *
      * @var array<string, array<string, list<string>>>
      */
-    public array $filters = [];
+
+    public array $filters = [
+        'roles' => [
+            'before' => [
+                'empleado/*',
+                'cliente/*',
+                'admin/*',
+            ],
+        ],
+    ];
+    
 }
+
