@@ -46,7 +46,10 @@ $routes->group('admin_empleado', ['filter' => 'roles:admin,empleado'], function(
 
 $routes->get('ventas', 'SaleController::index'); // Listar ventas
 $routes->get('usuarios', 'UserController::index');//Listar usuarios
+
 });
+
+
 
 $routes->group('admin_empleado_cliente', ['filter' => 'roles:admin,empleado,cliente'], function($routes) {
 
@@ -59,11 +62,11 @@ $routes->get('coches', 'CarController::index'); // Listar coches
 
 
 //Inicio de sesion y registro
-$routes->get('auth/register', 'Auth::register');
-$routes->post('auth/register', 'Auth::register');
-$routes->get('auth/login', 'Auth::login');
-$routes->post('auth/login', 'Auth::login');
-$routes->get('auth/logout', 'Auth::logout');
+$routes->get('auth/register', 'auth::register');
+$routes->post('auth/register', 'auth::register');
+$routes->get('auth/login', 'AuthController::login');
+$routes->post('auth/login', 'auth::login');
+$routes->get('auth/logout', 'auth::logout');
 //Roles
 $routes->get('admin/dashboard', 'AdminController::dashboard', ['filter' => 'role:1']);
 $routes->get('employee/dashboard', 'EmployeeController::dashboard', ['filter' => 'role:2']);

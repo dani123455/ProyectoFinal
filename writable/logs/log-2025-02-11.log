@@ -40,3 +40,15 @@ in SYSTEMPATH\Filters\Filters.php on line 857.
  8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
 10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-11 12:08:46 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "login.php"
+[Method: GET, Route: auth/login]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('login.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('login', [], true)
+ 3 APPPATH\Controllers\AuthController.php(82): view('login', [])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->login()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

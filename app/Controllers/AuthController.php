@@ -5,7 +5,7 @@ namespace App\Controllers;
 use App\Models\UserModel;
 use CodeIgniter\Controller;
 
-class Auth extends Controller
+class AuthController extends Controller
 {
     public function register()
     {
@@ -40,7 +40,7 @@ class Auth extends Controller
             }
         }
 
-        return view('register', $data ?? []);
+        return view('auth/register', $data ?? []);
     }
 
     public function login()
@@ -79,7 +79,7 @@ class Auth extends Controller
             }
         }
     
-        return view('login', $data ?? []);
+        return view('auth/login', $data ?? []);
     }
     
 
