@@ -57,22 +57,26 @@ class AuthController extends Controller
                 $model = new UserModel();
                 $user = $model->where('email', $this->request->getPost('email'))->first();
     
-                if ($user && password_verify($this->request->getPost('password'), $user['password'])) {
-                    $this->setUserSession($user);
+                if ($user) {
+                    if (password_verify($this->request->getPost('password'), $user['password'])) {
+                        $this->setUserSession($user);
     
-                    // Redirigir según el rol del usuario
-                    switch ($user['rol_id']) {
-                        case 1:
-                            return redirect()->to('/admin/dashboard');
-                        case 2:
-                            return redirect()->to('/employee/dashboard');
-                        case 3:
-                            return redirect()->to('/customer/dashboard');
-                        default:
-                            return redirect()->to('/auth/login');
+                        // Redirigir según el rol del usuario
+                        switch ($user['rol_id']) {
+                            case 1:
+                                return redirect()->to('/admin/dashboard');
+                            case 2:
+                                return redirect()->to('/employee/dashboard');
+                            case 3:
+                                return redirect()->to('/customer/dashboard');
+                            default:
+                                return redirect()->to('/auth/login')->with('error', 'Rol de usuario no válido.');
+                        }
+                    } else {
+                        $data['validation'] = 'Contraseña incorrecta.';
                     }
                 } else {
-                    $data['validation'] = 'Email o contraseña incorrectos.';
+                    $data['validation'] = 'Email no encontrado.';
                 }
             } else {
                 $data['validation'] = $this->validator;
@@ -81,6 +85,7 @@ class AuthController extends Controller
     
         return view('auth/login', $data ?? []);
     }
+    
     
 
     private function setUserSession($user)
