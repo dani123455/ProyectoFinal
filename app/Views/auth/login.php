@@ -58,7 +58,7 @@ License: For each use you must have a valid license purchased only from above li
 								<!--end::Title-->
 								<!--begin::Link-->
 								<div class="text-gray-400 fw-bold fs-4">New Here?
-								<a href="../../demo1/dist/authentication/flows/basic/sign-up.html" class="fw-bolder " style="color: #21273a;">Create an Account</a></div>
+								<a href="<?= base_url('auth/register')?>" class="fw-bolder " style="color: #21273a;">Create an Account</a></div>
 								<!--end::Link-->
 							</div>
 							<!--begin::Heading-->
