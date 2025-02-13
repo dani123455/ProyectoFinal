@@ -52,10 +52,11 @@ $routes->group('admin_empleado_cliente', ['filter' => 'roles:admin,empleado,clie
 
 // Inicio de sesion y registro
 $routes->get('auth/register', 'AuthController::register');
-$routes->post('auth/register', 'AuthController::register');
+$routes->post('auth/register/process', 'AuthController::processRegister');
 $routes->get('auth/login', 'AuthController::login');
-$routes->post('auth/login', 'AuthController::login');
+$routes->post('auth/login/process', 'AuthController::processLogin');
 $routes->get('auth/logout', 'AuthController::logout');
+
 
 // Rutas de los dashboard según el rol
 $routes->get('admin/dashboard', 'AdminController::dashboard', ['filter' => 'roles:admin']);

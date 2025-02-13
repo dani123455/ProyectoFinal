@@ -18,4 +18,15 @@ class UserModel extends Model
                     ->join('roles', 'usuarios.rol_id = roles.id')
                     ->findAll();
     }
+
+    /**
+     * Obtener información de usuario por email
+     * 
+     * @param string $email
+     * @return array|null
+     */
+    public function findByEmail(string $email)
+    {
+        return $this->where('email', $email)->first();
+    }
 }
