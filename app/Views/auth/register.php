@@ -34,7 +34,7 @@ License: For each use you must have a valid license purchased only from above li
 	</head>
 	<!--end::Head-->
 	<!--begin::Body-->
-	<body id="kt_body" class="bg-body">
+	<body id="kt_body" style="background-color:#0c1e35 ;">
 		<!--begin::Main-->
 		<div class="d-flex flex-column flex-root">
 			<!--begin::Authentication - Sign-up -->
@@ -43,21 +43,21 @@ License: For each use you must have a valid license purchased only from above li
 				<div class="d-flex flex-center flex-column flex-column-fluid p-10 pb-lg-20">
 					<!--begin::Logo-->
 					<a href="../../demo1/dist/index.html" class="mb-12">
-						<img alt="Logo" src="../assets/media/logos/LogoTiendaCoche.png" class="h-40px" />
+						<img alt="Logo" src="../../assets/media/logos/LogoTiendaCoche.png" style="width: 250px;" />
 					</a>
 					<!--end::Logo-->
 					<!--begin::Wrapper-->
 					<div class="w-lg-600px bg-body rounded shadow-sm p-10 p-lg-15 mx-auto">
 						<!--begin::Form-->
-						<form class="form w-100" novalidate="novalidate" id="kt_sign_up_form" action="<?= base_url('/auth/processRegister') ?>" method="post">
+						<form class="form w-100" novalidate="novalidate" id="kt_sign_up_form" action="<?= base_url('auth/register/process') ?>" method="post">
 							<!--begin::Heading-->
 							<div class="mb-10 text-center">
 								<!--begin::Title-->
-								<h1 class="text-dark mb-3">Create an Account</h1>
+								<h1 class="mb-3" style="color: #21273a;">Create an Account</h1>
 								<!--end::Title-->
 								<!--begin::Link-->
 								<div class="text-gray-400 fw-bold fs-4">Already have an account?
-								<a href="../../demo1/dist/authentication/flows/basic/sign-in.html" class="link-primary fw-bolder">Sign in here</a></div>
+								<a href="<?= base_url('auth/login')?>" class="fw-bolder" style="color: #21273a;">Sign in here</a></div>
 								<!--end::Link-->
 							</div>
 							<!--end::Heading-->
@@ -72,25 +72,25 @@ License: For each use you must have a valid license purchased only from above li
 							<div class="row fv-row mb-7">
 								<!--begin::Col-->
 								<div class="col-xl-6">
-									<label class="form-label fw-bolder text-dark fs-6">First Name</label>
-									<input class="form-control form-control-lg form-control-solid" type="text" placeholder="" name="first-name" autocomplete="off" />
+									<label class="form-label fw-bolder fs-6" style="color: #21273a;">First Name</label>
+									<input class="form-control form-control-lg form-control-solid" style="border:1px solid" type="text" placeholder="" name="first-name" autocomplete="off" />
 								</div>
 								<div class="col-xl-6">
-									<label class="form-label fw-bolder text-dark fs-6">Phone</label>
-									<input class="form-control form-control-lg form-control-solid" type="tel" name="telefono" autocomplete="off" />
+									<label class="form-label fw-bolder fs-6" style="color: #21273a;">Phone</label>
+									<input class="form-control form-control-lg form-control-solid" style="border:1px solid" type="tel" name="telefono" autocomplete="off" />
 								</div>
 								<!--end::Col-->
 							</div>
 							<!--end::Input group-->
 							<!--begin::Input group-->
 							<div class="fv-row mb-7">
-								<label class="form-label fw-bolder text-dark fs-6">Email</label>
-								<input class="form-control form-control-lg form-control-solid" type="email" placeholder="" name="email" autocomplete="off" />
+								<label class="form-label fw-bolder fs-6" style="color: #21273a;">Email</label>
+								<input class="form-control form-control-lg form-control-solid" style="border:1px solid" type="email" placeholder="" name="email" autocomplete="off" />
 							</div>
 
-							<div class="col-xl-6">
-									<label class="form-label fw-bolder text-dark fs-6">Address</label>
-									<input class="form-control form-control-lg form-control-solid" type="text" name="direccion" autocomplete="off" />
+							<div class="fv-row mb-7">
+									<label class="form-label fw-bolder fs-6" style="color: #21273a;">Address</label>
+									<input class="form-control form-control-lg form-control-solid" style="border:1px solid" type="text" name="direccion" autocomplete="off" />
 							</div>
 							<!--end::Input group-->
 							<!--begin::Input group-->
@@ -98,11 +98,11 @@ License: For each use you must have a valid license purchased only from above li
 								<!--begin::Wrapper-->
 								<div class="mb-1">
 									<!--begin::Label-->
-									<label class="form-label fw-bolder text-dark fs-6">Password</label>
+									<label class="form-label fw-bolder fs-6" style="color: #21273a;">Password</label>
 									<!--end::Label-->
 									<!--begin::Input wrapper-->
 									<div class="position-relative mb-3">
-										<input class="form-control form-control-lg form-control-solid" type="password" placeholder="" name="password" autocomplete="off" />
+										<input class="form-control form-control-lg form-control-solid" style="border:1px solid" type="password" placeholder="" name="password" autocomplete="off" />
 										<span class="btn btn-sm btn-icon position-absolute translate-middle top-50 end-0 me-n2" data-kt-password-meter-control="visibility">
 											<i class="bi bi-eye-slash fs-2"></i>
 											<i class="bi bi-eye fs-2 d-none"></i>
@@ -126,16 +126,16 @@ License: For each use you must have a valid license purchased only from above li
 							<!--end::Input group=-->
 							<!--begin::Input group-->
 							<div class="fv-row mb-5">
-								<label class="form-label fw-bolder text-dark fs-6">Confirm Password</label>
-								<input class="form-control form-control-lg form-control-solid" type="password" placeholder="" name="confirm-password" autocomplete="off" />
+								<label class="form-label fw-bolder fs-6" style="color: #21273a;">Confirm Password</label>
+								<input class="form-control form-control-lg form-control-solid" style="border:1px solid" type="password" placeholder="" name="confirm-password" autocomplete="off" />
 							</div>
 							<!--end::Input group-->
 							<!--begin::Input group-->
 							<div class="fv-row mb-10">
 								<label class="form-check form-check-custom form-check-solid form-check-inline">
-									<input class="form-check-input" type="checkbox" name="toc" value="1" />
+									<input class="form-check-input" type="checkbox" name="toc" value="1" style="color: #21273a; border:solid 1px" />
 									<span class="form-check-label fw-bold text-gray-700 fs-6">I Agree
-									<a href="#" class="ms-1 link-primary">Terms and conditions</a>.</span>
+									<a href="#" class="ms-1" style="color: #21273a;">Terms and conditions</a>.</span>
 								</label>
 							</div>
 							<!--end::Input group-->
