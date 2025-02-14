@@ -73,7 +73,7 @@ License: For each use you must have a valid license purchased only from above li
 								<!--begin::Col-->
 								<div class="col-xl-6">
 									<label class="form-label fw-bolder fs-6" style="color: #21273a;">First Name</label>
-									<input class="form-control form-control-lg form-control-solid" style="border:1px solid" type="text" placeholder="" name="first-name" autocomplete="off" />
+									<input class="form-control form-control-lg form-control-solid" style="border:1px solid" type="text" placeholder="" name="nombre" autocomplete="off" />
 								</div>
 								<div class="col-xl-6">
 									<label class="form-label fw-bolder fs-6" style="color: #21273a;">Phone</label>

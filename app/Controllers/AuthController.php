@@ -32,13 +32,6 @@ class AuthController extends BaseController
             'direccion' => 'required|min_length[5]|max_length[255]', // La dirección es obligatoria y debe tener entre 5 y 255 caracteres.
         ];
 
-        // Si la validación falla, volvemos a mostrar el formulario con los errores.
-        if (!$this->validate($rules)) {
-            return view('auth/register', [
-                'validation' => $this->validator, // Pasamos los errores de validación a la vista.
-            ]);
-        }
-
         // Si la validación pasa, procedemos a guardar el usuario en la base de datos.
         $userModel = new UserModel();
         $userModel->save([
