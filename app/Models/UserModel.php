@@ -6,27 +6,36 @@ use CodeIgniter\Model;
 
 class UserModel extends Model
 {
-    protected $table = 'usuarios'; // Nombre de la tabla en la base de datos
-    protected $primaryKey = 'id'; // Clave primaria de la tabla
+    protected $table = 'usuarios';
+    protected $primaryKey = 'id';
+    protected $allowedFields = ['nombre', 'password', 'email', 'rol_id', 'telefono', 'direccion', 'fecha_baja'];
 
-    protected $allowedFields = ['nombre', 'email', 'rol_id', 'telefono', 'direccion', 'fecha_baja'];
+    protected $beforeInsert = ['hashPassword'];
+    protected $beforeUpdate = ['hashPassword'];
 
-    // Nueva función para obtener los usuarios con el nombre del rol
+    protected function hashPassword(array $data)
+    {
+        // Solo aplicar hash si se proporciona una contraseña y no está vacía
+        if (isset($data['data']['password']) && !empty($data['data']['password'])) {
+            $data['data']['password'] = password_hash($data['data']['password'], PASSWORD_DEFAULT);
+        } else {
+            // Si no hay contraseña, eliminarla del array para no actualizar este campo
+            unset($data['data']['password']);
+        }
+        return $data;
+    }
+
     public function getUsuariosConRoles()
     {
-        return $this->select('usuarios.*, roles.nombre as nombre')
+        return $this->select('usuarios.*, roles.nombre as nombre_rol')
                     ->join('roles', 'usuarios.rol_id = roles.id')
                     ->findAll();
     }
 
-    /**
-     * Obtener información de usuario por email
-     * 
-     * @param string $email
-     * @return array|null
-     */
     public function findByEmail(string $email)
     {
-        return $this->where('email', $email)->first();
+        return $this->where('email', $email)
+                    ->where('fecha_baja IS NULL')  // Solo usuarios activos
+                    ->first();
     }
 }

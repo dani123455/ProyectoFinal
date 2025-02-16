@@ -38,7 +38,7 @@ class AuthController extends BaseController
             'nombre' => $this->request->getPost('nombre'), // Obtenemos el nombre del formulario.
             'email' => $this->request->getPost('email'), // Obtenemos el correo del formulario.
             'password' => password_hash($this->request->getPost('password'), PASSWORD_DEFAULT), // Encriptamos la contraseña antes de guardarla.
-            'rol_id' => $this->request->getPost('rol_id'), // Obtenemos el rol del formulario.
+            'rol_id' => 3,
             'telefono' => $this->request->getPost('telefono'), // Obtenemos el teléfono del formulario.
             'direccion' => $this->request->getPost('direccion'), // Obtenemos la dirección del formulario.
         ]);
@@ -60,43 +60,43 @@ class AuthController extends BaseController
      */
     public function processLogin()
     {
-        helper(['form', 'url']); // Carga los helpers necesarios para trabajar con formularios y URLs.
-        $session = session(); // Inicia una sesión para el usuario.
-
-        // Configuración de las reglas de validación del formulario.
+        helper(['form', 'url', 'session']);
+        $session = session();
+    
         $rules = [
-            'email' => 'required|valid_email', // El correo es obligatorio y debe ser válido.
-            'password' => 'required|min_length[8]', // La contraseña es obligatoria y debe tener al menos 8 caracteres.
+            'email' => 'required|valid_email',
+            'password' => 'required|min_length[8]',
         ];
-
-        // Si la validación falla, volvemos a mostrar el formulario con los errores.
+    
         if (!$this->validate($rules)) {
-            return view('auth/login', [
-                'validation' => $this->validator, // Pasamos los errores de validación a la vista.
-            ]);
+            return redirect()->back()->withInput()->with('error', $this->validator->listErrors());
         }
-
-        // Si la validación pasa, verificamos las credenciales.
+    
+        $email = $this->request->getPost('email');
+        $password = $this->request->getPost('password');
+    
         $userModel = new UserModel();
-        $user = $userModel->findByEmail($this->request->getPost('email')); // Buscamos al usuario por su correo.
-
-        if ($user && password_verify($this->request->getPost('password'), $user['password'])) {
-            // Si las credenciales son correctas, guardamos datos del usuario en la sesión.
+        $user = $userModel->findByEmail($email);
+    
+        if ($user && password_verify($password, $user['password'])) {
             $this->setUserSession($user);
-
-            // Redirigir según el rol del usuario
-            switch ($user['rol_id']) {
-                case 1:
-                    return redirect()->to('/admin/dashboard');
-                case 2:
-                    return redirect()->to('/employee/dashboard');
-                case 3:
-                    return redirect()->to('/customer/dashboard');
-                default:
-                    return redirect()->to('/auth/login')->with('error', 'Rol de usuario no válido.');
-            }
+            return redirect()->to($this->getDashboardRoute($user['rol_id']))->with('success', 'Inicio de sesión exitoso.');
         } else {
-            return redirect()->to('/auth/login')->with('error', 'Correo o contraseña incorrectos.');
+            return redirect()->back()->withInput()->with('error', 'Correo o contraseña incorrectos.');
+        }
+    }
+    
+    private function getDashboardRoute($rolId)
+    {
+        switch ($rolId) {
+            case 1:
+                return '/admin/dashboard';
+            case 2:
+                return '/employee/dashboard';
+            case 3:
+                return '/customer/dashboard';
+            default:
+                return '/';
         }
     }
 

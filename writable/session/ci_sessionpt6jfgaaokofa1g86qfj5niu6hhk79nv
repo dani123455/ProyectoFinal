@@ -1,0 +1,7 @@
+__ci_last_regenerate|i:1739726346;_ci_previous_url|s:58:"http://localhost/ProyectoFinal/public/index.php/auth/login";_ci_old_input|a:2:{s:3:"get";a:0:{}s:4:"post";a:7:{s:6:"nombre";s:4:"toni";s:8:"telefono";s:8:"32423424";s:5:"email";s:14:"toni@gmail.com";s:9:"direccion";s:11:"jhdfjkfdhvf";s:8:"password";s:8:"Toni#111";s:16:"confirm-password";s:8:"Toni#111";s:3:"toc";s:1:"1";}}__ci_vars|a:3:{s:13:"_ci_old_input";s:3:"new";s:21:"_ci_validation_errors";s:3:"new";s:5:"error";s:3:"new";}_ci_validation_errors|a:2:{s:12:"confpassword";s:35:"The confpassword field is required.";s:8:"telefono";s:60:"The telefono field must be at least 10 characters in length.";}error|s:191:"	<div class="errors" role="alert">
+		<ul>
+					<li>The confpassword field is required.</li>
+					<li>The telefono field must be at least 10 characters in length.</li>
+				</ul>
+	</div>
+";

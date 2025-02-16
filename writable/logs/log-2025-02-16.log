@@ -1,0 +1,234 @@
+ERROR - 2025-02-16 11:47:33 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: YES) in C:\wamp64\www\ProyectoFinal\system\Database\MySQLi\Connection.php:186
+Stack trace:
+#0 C:\wamp64\www\ProyectoFinal\system\Database\MySQLi\Connection.php(186): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'tienda_coches', 3306, '', 0)
+#1 C:\wamp64\www\ProyectoFinal\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\wamp64\www\ProyectoFinal\system\Database\BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\wamp64\www\ProyectoFinal\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `usuario...', Array, false)
+#4 C:\wamp64\www\ProyectoFinal\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\wamp64\www\ProyectoFinal\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\wamp64\www\ProyectoFinal\app\Models\UserModel.php(19): CodeIgniter\BaseModel->findAll()
+#7 C:\wamp64\www\ProyectoFinal\app\Controllers\UserController.php(14): App\Models\UserModel->getUsuariosConRoles()
+#8 C:\wamp64\www\ProyectoFinal\system\CodeIgniter.php(933): App\Controllers\UserController->index()
+#9 C:\wamp64\www\ProyectoFinal\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#10 C:\wamp64\www\ProyectoFinal\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\wamp64\www\ProyectoFinal\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 C:\wamp64\www\ProyectoFinal\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\wamp64\www\ProyectoFinal\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' (using password: YES) in C:\wamp64\www\ProyectoFinal\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 C:\wamp64\www\ProyectoFinal\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\wamp64\www\ProyectoFinal\system\Database\BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\wamp64\www\ProyectoFinal\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `usuario...', Array, false)
+#3 C:\wamp64\www\ProyectoFinal\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\wamp64\www\ProyectoFinal\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\wamp64\www\ProyectoFinal\app\Models\UserModel.php(19): CodeIgniter\BaseModel->findAll()
+#6 C:\wamp64\www\ProyectoFinal\app\Controllers\UserController.php(14): App\Models\UserModel->getUsuariosConRoles()
+#7 C:\wamp64\www\ProyectoFinal\system\CodeIgniter.php(933): App\Controllers\UserController->index()
+#8 C:\wamp64\www\ProyectoFinal\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#9 C:\wamp64\www\ProyectoFinal\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\wamp64\www\ProyectoFinal\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\wamp64\www\ProyectoFinal\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\wamp64\www\ProyectoFinal\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-02-16 11:47:33 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using password: YES)
+[Method: GET, Route: usuarios]
+in SYSTEMPATH\Database\BaseConnection.php on line 467.
+ 1 SYSTEMPATH\Database\BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `usuarios`.*, `roles`.`nombre` as `nombre`
+FROM `usuarios`
+JOIN `roles` ON `usuarios`.`rol_id` = `roles`.`id`', [], false)
+ 3 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Models\UserModel.php(19): CodeIgniter\BaseModel->findAll()
+ 6 APPPATH\Controllers\UserController.php(14): App\Models\UserModel->getUsuariosConRoles()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController->index()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-02-16 11:51:30 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: YES) in C:\wamp64\www\ProyectoFinal\system\Database\MySQLi\Connection.php:186
+Stack trace:
+#0 C:\wamp64\www\ProyectoFinal\system\Database\MySQLi\Connection.php(186): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'tienda_coches', 3306, '', 0)
+#1 C:\wamp64\www\ProyectoFinal\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\wamp64\www\ProyectoFinal\system\Database\BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\wamp64\www\ProyectoFinal\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `usuario...', Array, false)
+#4 C:\wamp64\www\ProyectoFinal\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\wamp64\www\ProyectoFinal\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\wamp64\www\ProyectoFinal\app\Models\UserModel.php(19): CodeIgniter\BaseModel->findAll()
+#7 C:\wamp64\www\ProyectoFinal\app\Controllers\UserController.php(14): App\Models\UserModel->getUsuariosConRoles()
+#8 C:\wamp64\www\ProyectoFinal\system\CodeIgniter.php(933): App\Controllers\UserController->index()
+#9 C:\wamp64\www\ProyectoFinal\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#10 C:\wamp64\www\ProyectoFinal\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\wamp64\www\ProyectoFinal\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 C:\wamp64\www\ProyectoFinal\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\wamp64\www\ProyectoFinal\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' (using password: YES) in C:\wamp64\www\ProyectoFinal\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 C:\wamp64\www\ProyectoFinal\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\wamp64\www\ProyectoFinal\system\Database\BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\wamp64\www\ProyectoFinal\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `usuario...', Array, false)
+#3 C:\wamp64\www\ProyectoFinal\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\wamp64\www\ProyectoFinal\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\wamp64\www\ProyectoFinal\app\Models\UserModel.php(19): CodeIgniter\BaseModel->findAll()
+#6 C:\wamp64\www\ProyectoFinal\app\Controllers\UserController.php(14): App\Models\UserModel->getUsuariosConRoles()
+#7 C:\wamp64\www\ProyectoFinal\system\CodeIgniter.php(933): App\Controllers\UserController->index()
+#8 C:\wamp64\www\ProyectoFinal\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#9 C:\wamp64\www\ProyectoFinal\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\wamp64\www\ProyectoFinal\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\wamp64\www\ProyectoFinal\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\wamp64\www\ProyectoFinal\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-02-16 11:51:30 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using password: YES)
+[Method: GET, Route: usuarios]
+in SYSTEMPATH\Database\BaseConnection.php on line 467.
+ 1 SYSTEMPATH\Database\BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `usuarios`.*, `roles`.`nombre` as `nombre`
+FROM `usuarios`
+JOIN `roles` ON `usuarios`.`rol_id` = `roles`.`id`', [], false)
+ 3 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Models\UserModel.php(19): CodeIgniter\BaseModel->findAll()
+ 6 APPPATH\Controllers\UserController.php(14): App\Models\UserModel->getUsuariosConRoles()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController->index()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-02-16 11:51:31 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: YES) in C:\wamp64\www\ProyectoFinal\system\Database\MySQLi\Connection.php:186
+Stack trace:
+#0 C:\wamp64\www\ProyectoFinal\system\Database\MySQLi\Connection.php(186): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'tienda_coches', 3306, '', 0)
+#1 C:\wamp64\www\ProyectoFinal\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\wamp64\www\ProyectoFinal\system\Database\BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\wamp64\www\ProyectoFinal\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `usuario...', Array, false)
+#4 C:\wamp64\www\ProyectoFinal\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\wamp64\www\ProyectoFinal\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\wamp64\www\ProyectoFinal\app\Models\UserModel.php(19): CodeIgniter\BaseModel->findAll()
+#7 C:\wamp64\www\ProyectoFinal\app\Controllers\UserController.php(14): App\Models\UserModel->getUsuariosConRoles()
+#8 C:\wamp64\www\ProyectoFinal\system\CodeIgniter.php(933): App\Controllers\UserController->index()
+#9 C:\wamp64\www\ProyectoFinal\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#10 C:\wamp64\www\ProyectoFinal\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\wamp64\www\ProyectoFinal\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 C:\wamp64\www\ProyectoFinal\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\wamp64\www\ProyectoFinal\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' (using password: YES) in C:\wamp64\www\ProyectoFinal\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 C:\wamp64\www\ProyectoFinal\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\wamp64\www\ProyectoFinal\system\Database\BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\wamp64\www\ProyectoFinal\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `usuario...', Array, false)
+#3 C:\wamp64\www\ProyectoFinal\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\wamp64\www\ProyectoFinal\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\wamp64\www\ProyectoFinal\app\Models\UserModel.php(19): CodeIgniter\BaseModel->findAll()
+#6 C:\wamp64\www\ProyectoFinal\app\Controllers\UserController.php(14): App\Models\UserModel->getUsuariosConRoles()
+#7 C:\wamp64\www\ProyectoFinal\system\CodeIgniter.php(933): App\Controllers\UserController->index()
+#8 C:\wamp64\www\ProyectoFinal\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#9 C:\wamp64\www\ProyectoFinal\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\wamp64\www\ProyectoFinal\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\wamp64\www\ProyectoFinal\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\wamp64\www\ProyectoFinal\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-02-16 11:51:31 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using password: YES)
+[Method: GET, Route: usuarios]
+in SYSTEMPATH\Database\BaseConnection.php on line 467.
+ 1 SYSTEMPATH\Database\BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `usuarios`.*, `roles`.`nombre` as `nombre`
+FROM `usuarios`
+JOIN `roles` ON `usuarios`.`rol_id` = `roles`.`id`', [], false)
+ 3 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Models\UserModel.php(19): CodeIgniter\BaseModel->findAll()
+ 6 APPPATH\Controllers\UserController.php(14): App\Models\UserModel->getUsuariosConRoles()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController->index()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-02-16 11:52:01 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: YES) in C:\wamp64\www\ProyectoFinal\system\Database\MySQLi\Connection.php:186
+Stack trace:
+#0 C:\wamp64\www\ProyectoFinal\system\Database\MySQLi\Connection.php(186): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'tienda_coches', 3306, '', 0)
+#1 C:\wamp64\www\ProyectoFinal\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\wamp64\www\ProyectoFinal\system\Database\BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\wamp64\www\ProyectoFinal\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `usuario...', Array, false)
+#4 C:\wamp64\www\ProyectoFinal\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\wamp64\www\ProyectoFinal\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\wamp64\www\ProyectoFinal\app\Models\UserModel.php(19): CodeIgniter\BaseModel->findAll()
+#7 C:\wamp64\www\ProyectoFinal\app\Controllers\UserController.php(14): App\Models\UserModel->getUsuariosConRoles()
+#8 C:\wamp64\www\ProyectoFinal\system\CodeIgniter.php(933): App\Controllers\UserController->index()
+#9 C:\wamp64\www\ProyectoFinal\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#10 C:\wamp64\www\ProyectoFinal\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\wamp64\www\ProyectoFinal\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 C:\wamp64\www\ProyectoFinal\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\wamp64\www\ProyectoFinal\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' (using password: YES) in C:\wamp64\www\ProyectoFinal\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 C:\wamp64\www\ProyectoFinal\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\wamp64\www\ProyectoFinal\system\Database\BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\wamp64\www\ProyectoFinal\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `usuario...', Array, false)
+#3 C:\wamp64\www\ProyectoFinal\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\wamp64\www\ProyectoFinal\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\wamp64\www\ProyectoFinal\app\Models\UserModel.php(19): CodeIgniter\BaseModel->findAll()
+#6 C:\wamp64\www\ProyectoFinal\app\Controllers\UserController.php(14): App\Models\UserModel->getUsuariosConRoles()
+#7 C:\wamp64\www\ProyectoFinal\system\CodeIgniter.php(933): App\Controllers\UserController->index()
+#8 C:\wamp64\www\ProyectoFinal\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#9 C:\wamp64\www\ProyectoFinal\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\wamp64\www\ProyectoFinal\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\wamp64\www\ProyectoFinal\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\wamp64\www\ProyectoFinal\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-02-16 11:52:01 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using password: YES)
+[Method: GET, Route: usuarios]
+in SYSTEMPATH\Database\BaseConnection.php on line 467.
+ 1 SYSTEMPATH\Database\BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `usuarios`.*, `roles`.`nombre` as `nombre`
+FROM `usuarios`
+JOIN `roles` ON `usuarios`.`rol_id` = `roles`.`id`', [], false)
+ 3 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Models\UserModel.php(19): CodeIgniter\BaseModel->findAll()
+ 6 APPPATH\Controllers\UserController.php(14): App\Models\UserModel->getUsuariosConRoles()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController->index()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-16 18:20:26 --> ErrorException: Undefined variable $coches
+[Method: GET, Route: auth/login]
+in APPPATH\Views\auth\login.php on line 13.
+ 1 APPPATH\Views\auth\login.php(13): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $coches', 'C:\\wamp64\\www\\ProyectoFinal\\app\\Views\\auth\\login.php', 13)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\wamp64\\www\\ProyectoFinal\\app\\Views\\auth\\login.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('auth/login', [], true)
+ 5 APPPATH\Controllers\AuthController.php(55): view('auth/login')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->login()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-16 18:44:56 --> ParseError: syntax error, unexpected token ")"
+[Method: GET, Route: usuarios]
+in APPPATH\Views\user\user_list.php on line 72.
+ 1 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('user/user_list', [], true)
+ 3 APPPATH\Controllers\UserController.php(74): view('user/user_list', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

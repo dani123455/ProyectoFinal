@@ -8,4 +8,10 @@ class Home extends BaseController
     {
         return view('index');
     }
+
+    public function noPermission()
+    {
+        return view('errors/no_permission'); // Vista de acceso denegado
+    }
 }
+
