@@ -12,7 +12,7 @@ License: For each use you must have a valid license purchased only from above li
 -->
 <html lang="en">
 	<!--begin::Head-->
-	<head><base href="../../">
+	<head><base href="ProyectoFinal">
 		<title>Metronic - the world's #1 selling Bootstrap Admin Theme Ecosystem for HTML, Vue, React, Angular &amp; Laravel by Keenthemes</title>
 		<meta name="description" content="The most advanced Bootstrap Admin Theme on Themeforest trusted by 94,000 beginners and professionals. Multi-demo, Dark Mode, RTL support and complete React, Angular, Vue &amp; Laravel versions. Grab your copy now and get life-time updates for free." />
 		<meta name="keywords" content="Metronic, bootstrap, bootstrap 5, Angular, VueJs, React, Laravel, admin themes, web design, figma, web development, free templates, free admin themes, bootstrap theme, bootstrap template, bootstrap dashboard, bootstrap dak mode, bootstrap button, bootstrap datepicker, bootstrap timepicker, fullcalendar, datatables, flaticon" />
@@ -24,16 +24,16 @@ License: For each use you must have a valid license purchased only from above li
 		<meta property="og:url" content="https://keenthemes.com/metronic" />
 		<meta property="og:site_name" content="Keenthemes | Metronic" />
 		<link rel="canonical" href="https://preview.keenthemes.com/metronic8" />
-		<link rel="shortcut icon" href="assets/media/logos/favicon.ico" />
+		<link rel="shortcut icon" href="../assets/media/logos/favicon.ico" />
 		<!--begin::Fonts-->
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
 		<!--end::Fonts-->
 		<!--begin::Page Vendor Stylesheets(used by this page)-->
-		<link href="assets/plugins/custom/datatables/datatables.bundle.css" rel="stylesheet" type="text/css" />
+		<link href="../assets/plugins/custom/datatables/datatables.bundle.css" rel="stylesheet" type="text/css" />
 		<!--end::Page Vendor Stylesheets-->
 		<!--begin::Global Stylesheets Bundle(used by all pages)-->
-		<link href="assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
-		<link href="assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
+		<link href="../assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
+		<link href="../assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
 		<!--end::Global Stylesheets Bundle-->
 	</head>
 	<!--end::Head-->
@@ -368,26 +368,12 @@ License: For each use you must have a valid license purchased only from above li
 															<label class="form-label fs-5 fw-bold mb-3">Status</label>
 															<!--end::Label-->
 															<!--begin::Options-->
-															<div class="d-flex flex-column flex-wrap fw-bold" data-kt-customer-table-filter="payment_type">
-																<!--begin::Option-->
-																<label class="form-check form-check-sm form-check-custom form-check-solid mb-3 me-5">
-																	<input class="form-check-input" type="radio" name="payment_type" value="all" checked="checked" />
-																	<span class="form-check-label text-gray-600">All</span>
-																</label>
-																<!--end::Option-->
-																<!--begin::Option-->
-																<label class="form-check form-check-sm form-check-custom form-check-solid mb-3 me-5">
-																	<input class="form-check-input" type="radio"/>
-																	<span class="form-check-label text-gray-600">Discharged</span>
-																</label>
-																<!--end::Option-->
-																<!--begin::Option-->
-																<label class="form-check form-check-sm form-check-custom form-check-solid mb-3">
-																	<input class="form-check-input" type="radio"/>
-																	<span class="form-check-label text-gray-600">Admitted</span>
-																</label>
-																<!--end::Option-->
-															</div>
+															<select class="form-select form-select-solid fw-bolder" data-kt-select2="true" data-placeholder="Select option" data-allow-clear="true" data-kt-customer-table-filter="status" data-dropdown-parent="#kt-toolbar-filter">
+																<option value="">Todos</option>
+																<option value="alta" <?= isset($status) && $status == 'alta' ? 'selected' : '' ?>>Admitted</option>
+																<option value="baja" <?= isset($status) && $status == 'baja' ? 'selected' : '' ?>>Discharged</option>
+															</select>
+													
 															<!--end::Options-->
 														</div>
 														<!--end::Input group-->
@@ -433,6 +419,7 @@ License: For each use you must have a valid license purchased only from above li
 									<!--begin::Card body-->
 									<div class="card-body pt-0">
 										<!--begin::Table-->
+										<?php if (!empty($usuarios) && is_array($usuarios)): ?>
 										<table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_customers_table">
 											<!--begin::Table head-->
 											<thead>
@@ -443,11 +430,11 @@ License: For each use you must have a valid license purchased only from above li
 															<input class="form-check-input" type="checkbox" data-kt-check="true" data-kt-check-target="#kt_customers_table .form-check-input" value="1" />
 														</div>
 													</th>
-													<th class="min-w-125px">User Name</th>
-													<th class="min-w-125px">Email</th>
-													<th class="min-w-125px">Rol</th>
-													<th class="min-w-125px">Phone</th>
-													<th class="min-w-125px">Adress</th>
+													<th class="min-w-125px"><a href="<?=base_url('usuarios?sort=nombre&order=' . ($sort == 'nombre' && $order == 'asc' ? 'desc' : 'asc'))?>"></a>User</a></th>
+													<th class="min-w-125px"><a href="<?=base_url('usuarios?sort=email&order=' . ($sort == 'email' && $order == 'asc' ? 'desc' : 'asc'))?>">Email</a></th>
+													<th class="min-w-125px"><a href="<?=base_url('usuarios?sort=rol_nombre&order=' . ($sort == 'rol_nombre' && $order == 'asc' ? 'desc' : 'asc'))?>">Rol</a></th>
+													<th class="min-w-125px"><a href="<?=base_url('usuarios?sort=telefono&order=' . ($sort == 'telefono' && $order == 'asc' ? 'desc' : 'asc'))?>">Phone</a></th>
+													<th class="min-w-125px"><a href="<?=base_url('usuarios?sort=direccion&order=' . ($sort == 'direccion' && $order == 'asc' ? 'desc' : 'asc'))?>">Dirección</a></th>
 													<th class="text-end min-w-70px">Actions</th>
 												</tr>
 												<!--end::Table row-->
@@ -455,6 +442,7 @@ License: For each use you must have a valid license purchased only from above li
 											<!--end::Table head-->
 											<!--begin::Table body-->
 											<tbody class="fw-bold text-gray-600">
+											<?php foreach ($usuarios as $usuario): ?>
 												<tr>
 													<!--begin::Checkbox-->
 													<td>
@@ -464,26 +452,22 @@ License: For each use you must have a valid license purchased only from above li
 													</td>
 													<!--end::Checkbox-->
 													<!--begin::Name=-->
-													<td>
-														<a href="../../demo1/dist/apps/customers/view.html" class="text-gray-800 text-hover-primary mb-1"><?= esc($usuario['nombre']) ?></a>
-													</td>
+													<td style="<?= is_null($usuario['fecha_baja']) ? '' : 'color: red;' ?>"><?= esc($usuario['nombre']) ?></td>
 													<!--end::Name=-->
 													<!--begin::Email=-->
-													<td>
-														<a href="#" class="text-gray-600 text-hover-primary mb-1"><?= esc($usuario['email']) ?></a>
-													</td>
+													<td style="<?= is_null($usuario['fecha_baja']) ? '' : 'color: red;' ?>"><?= esc($usuario['email']) ?></td>
 													<!--end::Email=-->
 													<!--begin::Company=-->
-													<td><?= esc($usuario['rol_nombre']) ?></td>
+													<td style="<?= is_null($usuario['fecha_baja']) ? '' : 'color: red;' ?>"><?= esc($usuario['rol_nombre']) ?></td>
 													<!--end::Company=-->
 													<!--begin::Payment method=-->
-													<td><?= esc($usuario['telefono']) ?></td>
+													<td style="<?= is_null($usuario['fecha_baja']) ? '' : 'color: red;' ?>"><?= esc($usuario['telefono']) ?></td>
 													<!--end::Payment method=-->
 													<!--begin::Date=-->
-													<td><?= esc($usuario['direccion']) ?></td>
+													<td style="<?= is_null($usuario['fecha_baja']) ? '' : 'color: red;' ?>"><?= esc($usuario['direccion']) ?></td>
 													<!--end::Date=-->
 													<!--begin::Action=-->
-													<td class="text-end">
+														<td class="text-end">
 														<a href="#" class="btn btn-sm btn-light btn-active-light-primary" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">Actions
 														<!--begin::Svg Icon | path: icons/duotune/arrows/arr072.svg-->
 														<span class="svg-icon svg-icon-5 m-0">
@@ -496,24 +480,33 @@ License: For each use you must have a valid license purchased only from above li
 														<div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-bold fs-7 w-125px py-4" data-kt-menu="true">
 															<!--begin::Menu item-->
 															<div class="menu-item px-3">
-																<a href="../../demo1/dist/apps/customers/view.html" class="menu-link px-3">View</a>
+																<a href="<?= base_url('usuarios/save/' . $usuario['id']) ?>" class="menu-link px-3">Edit</a>
 															</div>
 															<!--end::Menu item-->
 															<!--begin::Menu item-->
 															<div class="menu-item px-3">
-																<a href="#" class="menu-link px-3" data-kt-customer-table-filter="delete_row">Delete</a>
+																<a href="#" class="menu-link px-3" data-kt-customer-table-filter="delete_row">
+																	<?php if (is_null($usuario['fecha_baja'])): ?>
+                                										<a class="menu-link text-success px-3" href="<?= base_url('usuarios/archive/' . $usuario['id']) ?>">Archivar</a>
+                            										<?php else: ?>
+                                										<a class="menu-link text-danger px-3" href="<?= base_url('usuarios/unarchive/' . $usuario['id']) ?>">Desarchivar</a>
+                            										<?php endif; ?>
+																</a>
 															</div>
 															<!--end::Menu item-->
 														</div>
 														<!--end::Menu-->
 													</td>
+													</td>
 													<!--end::Action=-->
 												</tr>
+												<?php endforeach; ?>
 												
 													<!--begin::Checkbox-->
 											</tbody>
 											<!--end::Table body-->
 										</table>
+									<?php endif?>
 										<!--end::Table-->
 									</div>
 									<!--end::Card body-->
@@ -845,23 +838,23 @@ License: For each use you must have a valid license purchased only from above li
 		</div>
 		<!--end::Scrolltop-->
 		<!--end::Main-->
-		<script>var hostUrl = "assets/";</script>
+		<script>var hostUrl = "../assets/";</script>
 		<!--begin::Javascript-->
 		<!--begin::Global Javascript Bundle(used by all pages)-->
-		<script src="assets/plugins/global/plugins.bundle.js"></script>
-		<script src="assets/js/scripts.bundle.js"></script>
+		<script src="../assets/plugins/global/plugins.bundle.js"></script>
+		<script src="../assets/js/scripts.bundle.js"></script>
 		<!--end::Global Javascript Bundle-->
 		<!--begin::Page Vendors Javascript(used by this page)-->
-		<script src="assets/plugins/custom/datatables/datatables.bundle.js"></script>
+		<script src="../assets/plugins/custom/datatables/datatables.bundle.js"></script>
 		<!--end::Page Vendors Javascript-->
 		<!--begin::Page Custom Javascript(used by this page)-->
-		<script src="assets/js/custom/apps/customers/list/export.js"></script>
-		<script src="assets/js/custom/apps/customers/list/list.js"></script>
-		<script src="assets/js/custom/apps/customers/add.js"></script>
-		<script src="assets/js/custom/widgets.js"></script>
-		<script src="assets/js/custom/apps/chat/chat.js"></script>
-		<script src="assets/js/custom/modals/create-app.js"></script>
-		<script src="assets/js/custom/modals/upgrade-plan.js"></script>
+		<script src="../assets/js/custom/apps/customers/list/export.js"></script>
+		<script src="../assets/js/custom/apps/customers/list/list.js"></script>
+		<script src="../assets/js/custom/apps/customers/add.js"></script>
+		<script src="../assets/js/custom/widgets.js"></script>
+		<script src="../assets/js/custom/apps/chat/chat.js"></script>
+		<script src="../assets/js/custom/modals/create-app.js"></script>
+		<script src="../assets/js/custom/modals/upgrade-plan.js"></script>
 		<!--end::Page Custom Javascript-->
 		<!--end::Javascript-->
 	</body>
