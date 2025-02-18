@@ -8,7 +8,7 @@ use CodeIgniter\Router\RouteCollection;
 $routes->get('/', 'Home::index');
 
 // Agrupación de rutas para el rol de administrador
-$routes->group('admin', ['filter' => 'roles:admin'], function($routes) {
+
     $routes->get('dashboard', 'AdminController::dashboard');
 
     $routes->get('usuarios/save', 'UserController::saveUser'); // Mostrar formulario para crear usuario
@@ -38,17 +38,17 @@ $routes->group('admin', ['filter' => 'roles:admin'], function($routes) {
     $routes->post('ventas/save/(:num)', 'SaleController::saveSale/$1'); // Editar venta (POST)
     $routes->get('ventas/archive/(:num)', 'SaleController::archive/$1'); // Archivar venta
     $routes->get('ventas/unarchive/(:num)', 'SaleController::unarchive/$1'); // Desarchivar venta
-});
 
-$routes->group('admin_empleado', ['filter' => 'roles:admin,empleado'], function($routes) {
+
+
     $routes->get('ventas', 'SaleController::index'); // Listar ventas
     $routes->get('usuarios', 'UserController::index'); // Listar usuarios
-});
 
-$routes->group('admin_empleado_cliente', ['filter' => 'roles:admin,empleado,cliente'], function($routes) {
+
+
     $routes->get('marcas', 'BrandController::index'); // Listar marcas
     $routes->get('coches', 'CarController::index'); // Listar coches
-});
+
 
 // Inicio de sesion y registro
 $routes->get('auth/register', 'AuthController::register');
