@@ -49,7 +49,7 @@ License: For each use you must have a valid license purchased only from above li
 					<!--begin::Brand-->
 					<div class="aside-logo flex-column-auto p-2" style="background-color:#21273a;" id="kt_aside_logo">
 						<!--begin::Logo-->
-						<a href="<?= base_url('index.php') ?>">
+						<a href="<?= base_url('employee/dashboard') ?>">
 							<img alt="Logo" src="../assets/media/logos/LogoTiendaCoche.png" class="logo" style="width: 200px;" />
 						</a>
 						<!--end::Logo-->
@@ -401,7 +401,9 @@ License: For each use you must have a valid license purchased only from above li
 												<!--end::Svg Icon-->Export</button>
 												<!--end::Export-->
 												<!--begin::Add customer-->
-												<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_add_customer">Add Customer</button>
+												<?php if (session()->get('rol_id') == 1): ?>
+													<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_add_customer">Add Customer</button>
+												<?php endif?>
 												<!--end::Add customer-->
 											</div>
 											<!--end::Toolbar-->
@@ -434,8 +436,10 @@ License: For each use you must have a valid license purchased only from above li
 													<th class="min-w-125px"><a href="<?=base_url('usuarios?sort=email&order=' . ($sort == 'email' && $order == 'asc' ? 'desc' : 'asc'))?>">Email</a></th>
 													<th class="min-w-125px"><a href="<?=base_url('usuarios?sort=rol_nombre&order=' . ($sort == 'rol_nombre' && $order == 'asc' ? 'desc' : 'asc'))?>">Rol</a></th>
 													<th class="min-w-125px"><a href="<?=base_url('usuarios?sort=telefono&order=' . ($sort == 'telefono' && $order == 'asc' ? 'desc' : 'asc'))?>">Phone</a></th>
-													<th class="min-w-125px"><a href="<?=base_url('usuarios?sort=direccion&order=' . ($sort == 'direccion' && $order == 'asc' ? 'desc' : 'asc'))?>">Dirección</a></th>
-													<th class="text-end min-w-70px">Actions</th>
+													<th class="min-w-125px"><a href="<?=base_url('usuarios?sort=direccion&order=' . ($sort == 'direccion' && $order == 'asc' ? 'desc' : 'asc'))?>">Address</a></th>
+													<?php if (session()->get('rol_id') == 1): ?>
+														<th class="text-end min-w-70px">Actions</th>
+													<?php endif?>
 												</tr>
 												<!--end::Table row-->
 											</thead>
@@ -467,6 +471,7 @@ License: For each use you must have a valid license purchased only from above li
 													<td style="<?= is_null($usuario['fecha_baja']) ? '' : 'color: red;' ?>"><?= esc($usuario['direccion']) ?></td>
 													<!--end::Date=-->
 													<!--begin::Action=-->
+													<?php if (session()->get('rol_id') == 1): ?>
 														<td class="text-end">
 														<a href="#" class="btn btn-sm btn-light btn-active-light-primary" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">Actions
 														<!--begin::Svg Icon | path: icons/duotune/arrows/arr072.svg-->
@@ -487,14 +492,15 @@ License: For each use you must have a valid license purchased only from above li
 															<div class="menu-item px-3">
 																<a href="#" class="menu-link px-3" data-kt-customer-table-filter="delete_row">
 																	<?php if (is_null($usuario['fecha_baja'])): ?>
-                                										<a class="menu-link text-success px-3" href="<?= base_url('usuarios/archive/' . $usuario['id']) ?>">Archivar</a>
+                                										<a class="menu-link text-success px-3" href="<?= base_url('usuarios/archive/' . $usuario['id']) ?>">Archive</a>
                             										<?php else: ?>
-                                										<a class="menu-link text-danger px-3" href="<?= base_url('usuarios/unarchive/' . $usuario['id']) ?>">Desarchivar</a>
+                                										<a class="menu-link text-danger px-3" href="<?= base_url('usuarios/unarchive/' . $usuario['id']) ?>">Unarchive</a>
                             										<?php endif; ?>
 																</a>
 															</div>
 															<!--end::Menu item-->
 														</div>
+													<?php endif?>
 														<!--end::Menu-->
 													</td>
 													</td>

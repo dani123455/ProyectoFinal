@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 14-02-2025 a las 13:00:31
+-- Tiempo de generación: 19-02-2025 a las 13:50:13
 -- Versión del servidor: 8.0.40
 -- Versión de PHP: 8.2.18
 
@@ -149,7 +149,7 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`),
   KEY `rol_id` (`rol_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=45 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=58 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Volcado de datos para la tabla `usuarios`
@@ -157,31 +157,10 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
 
 INSERT INTO `usuarios` (`id`, `nombre`, `email`, `password`, `rol_id`, `telefono`, `direccion`, `fecha_baja`) VALUES
 (2, 'Maria López', 'maria@example.com', '1', 2, '159-9635', 'Calle falsisima 741', NULL),
-(3, 'Carlos García', 'carlos@example.com', '2', 3, '555-1234', 'Calle Falsa 123', NULL),
-(16, 'Daniel', 'daniel.mg1705@alumnos.alborfp.com', '1234567890876543ç', 1, '0663341922', 'Avenida de espera, calle palos blancos , número 1', '2025-02-06 07:39:01'),
-(17, 'Juan Perez', 'juan.perez@example.com', 'hashed_password_1', 2, '1234567890', 'Calle Falsa 123', NULL),
-(18, 'Ana Lopez', 'ana.lopez@example.com', 'hashed_password_2', 3, '0987654321', 'Avenida Siempre Viva 742', NULL),
-(19, 'Carlos Sanchez', 'carlos.sanchez@example.com', 'hashed_password_3', 2, '5555555555', 'Paseo de la Reforma 100', NULL),
-(20, 'Maria Gonzalez', 'maria.gonzalez@example.com', 'hashed_password_4', 3, '6666666666', 'Plaza Mayor 10', NULL),
-(21, 'Luis Martinez', 'luis.martinez@example.com', 'hashed_password_5', 2, '7777777777', 'Calle del Sol 101', NULL),
-(22, 'Elena Ramirez', 'elena.ramirez@example.com', 'hashed_password_6', 3, '8888888888', 'Avenida de la Luna 202', NULL),
-(23, 'Pedro Fernandez', 'pedro.fernandez@example.com', 'hashed_password_7', 2, '9999999999', 'Calle del Mar 303', NULL),
-(24, 'Laura Rodriguez', 'laura.rodriguez@example.com', 'hashed_password_8', 3, '1111111111', 'Plaza de la Paz 404', NULL),
-(25, 'Miguel Hernandez', 'miguel.hernandez@example.com', 'hashed_password_9', 2, '2222222222', 'Avenida de la Libertad 505', NULL),
-(26, 'Sara Jimenez', 'sara.jimenez@example.com', 'hashed_password_10', 3, '3333333333', 'Calle de la Amistad 606', NULL),
-(27, 'Antonio Moreno', 'antonio.moreno@example.com', 'hashed_password_11', 2, '4444444444', 'Avenida de las Flores 707', NULL),
-(28, 'Isabel Ruiz', 'isabel.ruiz@example.com', 'hashed_password_12', 3, '5555555556', 'Calle de los Arboles 808', NULL),
-(29, 'Jose Torres', 'jose.torres@example.com', 'hashed_password_13', 2, '6666666667', 'Plaza de la Victoria 909', NULL),
-(30, 'Carmen Diaz', 'carmen.diaz@example.com', 'hashed_password_14', 3, '7777777778', 'Avenida del Triunfo 111', NULL),
-(31, 'Francisco Gomez', 'francisco.gomez@example.com', 'hashed_password_15', 2, '8888888889', 'Calle de los Sueños 222', NULL),
-(32, 'Patricia Garcia', 'patricia.garcia@example.com', 'hashed_password_16', 3, '9999999990', 'Plaza de la Esperanza 333', NULL),
-(33, 'Javier Martinez', 'javier.martinez@example.com', 'hashed_password_17', 2, '1111111112', 'Avenida del Futuro 444', NULL),
 (34, 'Monica Alvarez', 'monica.alvarez@example.com', 'hashed_password_18', 3, '2222222223', 'Calle de la Luz 555', NULL),
-(35, 'Rafael Sanchez', 'rafael.sanchez@example.com', 'hashed_password_19', 2, '3333333334', 'Plaza del Encanto 666', NULL),
-(36, 'Sofia Ortega', 'sofia.ortega@example.com', 'hashed_password_20', 3, '4444444445', 'Avenida de los Sueños 777', NULL),
-(42, 'uigyub', 'uhgy7u@xn--tygvfty-cka', '', NULL, '0663341922', 'Avenida de espera, calle palos blancos , número 1', NULL),
-(43, 'fufi', 'fufi@gmail.com', '', NULL, '123456789', 'calle calle caaaaaale', NULL),
-(44, 'rau', 'rau@gmail.com', 'k', NULL, '0663341922', 'Avenida de espera, calle palos blancos , número 1', NULL);
+(55, 'daniAdmin', 'admin@gmail.com', '$2y$10$mLv4Q0LJIIWGnk57FIMAXeuHHSotjupYdxh7wn9hbNHF3GQOiwmeu', 1, '0663341922', 'Avenida de espera, calle palos blancos , número 1', NULL),
+(56, 'daniEmpleado', 'empleado@gmail.com', '$2y$10$6OCTfL.UffQ.FsyzO5Xx0ej3sXEyubXah7yUtKbaVV6XKPC3Zg40C', 2, '0663341922', 'Avenida de espera, calle palos blancos , número 1', NULL),
+(57, 'daniCliente', 'cliente@gmail.com', '$2y$10$l0eAm5Wzeu7i2L3Rj8ZeJuePaAbVEN647BNZLizvOpkG9gPPOlfZ2', 3, '0663341922', 'Avenida de espera, calle palos blancos , número 1', NULL);
 
 -- --------------------------------------------------------
 

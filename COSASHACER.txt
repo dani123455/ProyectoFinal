@@ -1,3 +1,9 @@
-daniel.mg1705@gmail.com   Qq##12Aa //Admin
+admin@gmail.com           Qq##12Aa //Admin
 empleado@gmail.com        hyHY#15An //empleado
 cliente@gmail.com         ihsfvhiID@#4 //cliente
+
+Hacer tablas bonitas y funcionales y poner los de los roles las restricciones de cada uno
+
+en la cuentra de cada uno al darle salir datos de los usuarios
+
+arreglar rutas al iniciar sesion
