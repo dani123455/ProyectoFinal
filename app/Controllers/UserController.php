@@ -3,6 +3,8 @@
 namespace App\Controllers;
 
 use App\Models\UserModel;
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 
 class UserController extends BaseController
 {
@@ -177,5 +179,46 @@ class UserController extends BaseController
     } else {
         return redirect()->to('/usuarios')->with('error', 'Usuario no encontrado.');
     }
+}
+
+public function exportar()
+{
+    // Obtener la lista de usuarios desde tu modelo
+    $userModel = new \App\Models\UserModel();
+    $usuarios = $userModel->findAll();
+
+    // Crear una nueva instancia de Spreadsheet
+    $spreadsheet = new Spreadsheet();
+    $sheet = $spreadsheet->getActiveSheet();
+
+    // Encabezados de la tabla
+    $sheet->setCellValue('A1', 'Name');
+    $sheet->setCellValue('B1', 'Email');
+    $sheet->setCellValue('C1', 'Rol');
+    $sheet->setCellValue('D1', 'Phone');
+    $sheet->setCellValue('E1', 'Address');
+
+    // Llenar la hoja con los datos de los usuarios
+    $row = 2; // Comenzar en la segunda fila (debajo de los encabezados)
+    foreach ($usuarios as $usuario) {
+        $sheet->setCellValue('A' . $row, $usuario['nombre']);
+        $sheet->setCellValue('B' . $row, $usuario['email']);
+        $sheet->setCellValue('C' . $row, $usuario['rol_id']);
+        $sheet->setCellValue('D' . $row, $usuario['telefono']);
+        $sheet->setCellValue('E' . $row, $usuario['direccion']);
+        $row++;
+    }
+
+    // Crear un escritor para el archivo Excel
+    $writer = new Xlsx($spreadsheet);
+
+    // Enviar encabezados para forzar la descarga
+    header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+    header('Content-Disposition: attachment;filename="user_list.xlsx"');
+    header('Cache-Control: max-age=0');
+
+    // Guardar el archivo en la salida (descargar)
+    $writer->save('php://output');
+    exit;
 }
 }

@@ -10,4 +10,7 @@ arreglar rutas al iniciar sesion
 
 validaciones de registro no funciona
 
-exportar excel
+exportar excel ( en usuarfio funciona)
+
+
+de las listas arreglar el añadir y cambiar vista del editar y mirar paginacion 
