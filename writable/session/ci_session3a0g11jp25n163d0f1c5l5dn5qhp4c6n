@@ -1,0 +1,6 @@
+__ci_last_regenerate|i:1740401805;_ci_previous_url|s:56:"http://localhost/ProyectoFinal/public/index.php/usuarios";id|s:2:"60";nombre|s:3:"dsC";email|s:11:"v@gmail.com";rol_id|s:1:"2";telefono|s:1:"A";direccion|s:50:"Avenida de espera, calle palos blancos , número 1";isLoggedIn|b:1;_ci_old_input|a:2:{s:3:"get";a:0:{}s:4:"post";a:2:{s:5:"email";s:18:"cliente@gmail.com ";s:8:"password";s:12:"ihsfvhiID@#4";}}__ci_vars|a:3:{s:13:"_ci_old_input";s:3:"old";s:21:"_ci_validation_errors";s:3:"old";s:5:"error";s:3:"old";}_ci_validation_errors|a:1:{s:5:"email";s:51:"The email field must contain a valid email address.";}error|s:131:"	<div class="errors" role="alert">
+		<ul>
+					<li>The email field must contain a valid email address.</li>
+				</ul>
+	</div>
+";

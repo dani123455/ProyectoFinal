@@ -52,6 +52,8 @@ class AuthController extends BaseController
      */
     public function login()
     {
+        $session=session();
+        $session->destroy();
         return view('auth/login'); // Carga y retorna la vista del formulario de inicio de sesión.
     }
 

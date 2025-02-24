@@ -10,7 +10,12 @@ arreglar rutas al iniciar sesion
 
 validaciones de registro no funciona
 
-exportar excel ( en usuarfio funciona)
+exportar excel ( en usuario funciona)
 
 
 de las listas arreglar el añadir y cambiar vista del editar y mirar paginacion 
+
+
+probar a hacer un solo dashboar y con un if como en las listas oculte las cosas
+
+darle una vuelta al login con roles porque funcionan regula
