@@ -7,3 +7,7 @@ Hacer tablas bonitas y funcionales y poner los de los roles las restricciones de
 en la cuentra de cada uno al darle salir datos de los usuarios
 
 arreglar rutas al iniciar sesion
+
+validaciones de registro no funciona
+
+exportar excel

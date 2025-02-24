@@ -137,13 +137,14 @@ License: For each use you must have a valid license purchased only from above li
 					</div>
 					<!--end::Aside menu-->
 					<!--begin::Footer-->
-					<div style="background-color:#21273a" class="aside-footer pt-5 pb-7 px-10 text-center" id="kt_aside_footer">
+					<div style="background-color:#21273a" class="aside-footer pt-5 pb-7 px-10 flex-column align-items-center" id="kt_aside_footer">
 
-                        <div class="symbol symbol-50px d-flex justify-content-center mb-2">
+                        <div class="symbol symbol-50px mb-2 me-5">
                             <img class="rounded-circle" src="../../assets/media/avatars/150-8.jpg" alt="Avatar"/>
                         </div>
             
-                        <span class="text-muted fs-5"><?= session()->get('nombre') ?> #<?= session()->get('id') ?></span>
+                        <span class="text-muted fs-4 text-center me-5"><?= session()->get('nombre') ?> #<?= session()->get('id') ?></span>
+						<a class="text-danger" href="<?=base_url('auth/logout')?>"><i class="bi bi-box-arrow-in-right"></i></a>
                     </div>
 					<!--end::Footer-->
 				</div>

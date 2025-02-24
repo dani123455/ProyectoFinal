@@ -315,7 +315,10 @@ License: For each use you must have a valid license purchased only from above li
 													</svg>
 												</span>
 												<!--end::Svg Icon-->
-												<input type="text" data-kt-customer-table-filter="search" class="form-control form-control-solid w-250px ps-15" placeholder="Search Customers" />
+												<form method="GET" action="<?=base_url('usuarios')?>">
+													<input type="text" name="nombre" data-kt-customer-table-filter="search" class="form-control form-control-solid w-250px ps-15" placeholder="Search Customers" value="<?= isset($name) ? $name : '' ?>" />
+												</form>
+												
 											</div>
 											<!--end::Search-->
 										</div>
@@ -344,46 +347,46 @@ License: For each use you must have a valid license purchased only from above li
 													<div class="separator border-gray-200"></div>
 													<!--end::Separator-->
 													<!--begin::Content-->
-													<div class="px-7 py-5">
-														<!--begin::Input group-->
-														<div class="mb-10">
-															<!--begin::Label-->
-															<label class="form-label fs-5 fw-bold mb-3">Rol:</label>
-															<!--end::Label-->
-															<!--begin::Input-->
-															<select class="form-select form-select-solid fw-bolder" data-kt-select2="true" data-placeholder="Select option" data-allow-clear="true" data-kt-customer-table-filter="rol" data-dropdown-parent="#kt-toolbar-filter">
-																<option></option>
-																<option></option>
-																<option></option>
-																<option></option>
-																<option></option>
-																<option></option>
-															</select>
-															<!--end::Input-->
+													<form  method="GET" action="<?=base_url('usuarios')?>">
+														<div class="px-7 py-5">
+															<!--begin::Input group-->
+															<div class="mb-10">
+																<!--begin::Label-->
+																<label class="form-label fs-5 fw-bold mb-1">Rol:</label>
+																<!--end::Label-->
+																<!--begin::Input-->
+																<select name="rol" class="form-select form-select-solid fw-bolder"  data-placeholder="Select option" data-allow-clear="true" data-kt-customer-table-filter="rol" >
+																	<option value="">All</option>
+																	<option value="admin" <?= isset($rol) && $rol == 'admin' ? 'selected' : '' ?>>Admin</option>
+																	<option value="empleado" <?= isset($rol) && $rol == 'empleado' ? 'selected' : '' ?>>Employee</option>
+																	<option value="cliente" <?= isset($rol) && $rol == 'cliente' ? 'selected' : '' ?>>Customer</option>
+																</select>
+																<!--end::Input-->
+															</div>
+															<!--end::Input group-->
+															<!--begin::Input group-->
+															<div class="mb-10">
+																<!--begin::Label-->
+																<label class="form-label fs-5 fw-bold mb-1">Status</label>
+																<!--end::Label-->
+																<!--begin::Options-->
+																<select name="status" class="form-select form-select-solid fw-bolder" data-placeholder="Select option" data-allow-clear="true" data-kt-customer-table-filter="status" data-dropdown-parent="#kt-toolbar-filter">
+																	<option value="">All</option>
+																	<option value="alta" <?= isset($status) && $status == 'alta' ? 'selected' : '' ?>>Admitted</option>
+																	<option value="baja" <?= isset($status) && $status == 'baja' ? 'selected' : '' ?>>Discharged</option>
+																</select>
+														
+																<!--end::Options-->
+															</div>
+															<!--end::Input group-->
+															<!--begin::Actions-->
+															<div class="d-flex justify-content-end">
+																<button type="reset" class="btn btn-light btn-active-light-primary me-2" data-kt-menu-dismiss="true" data-kt-customer-table-filter="reset">Reset</button>
+																<button type="submit" class="btn btn-primary" data-kt-menu-dismiss="true" data-kt-customer-table-filter="filter">Apply</button>
+															</div>
+															<!--end::Actions-->
 														</div>
-														<!--end::Input group-->
-														<!--begin::Input group-->
-														<div class="mb-10">
-															<!--begin::Label-->
-															<label class="form-label fs-5 fw-bold mb-3">Status</label>
-															<!--end::Label-->
-															<!--begin::Options-->
-															<select class="form-select form-select-solid fw-bolder" data-kt-select2="true" data-placeholder="Select option" data-allow-clear="true" data-kt-customer-table-filter="status" data-dropdown-parent="#kt-toolbar-filter">
-																<option value="">Todos</option>
-																<option value="alta" <?= isset($status) && $status == 'alta' ? 'selected' : '' ?>>Admitted</option>
-																<option value="baja" <?= isset($status) && $status == 'baja' ? 'selected' : '' ?>>Discharged</option>
-															</select>
-													
-															<!--end::Options-->
-														</div>
-														<!--end::Input group-->
-														<!--begin::Actions-->
-														<div class="d-flex justify-content-end">
-															<button type="reset" class="btn btn-light btn-active-light-primary me-2" data-kt-menu-dismiss="true" data-kt-customer-table-filter="reset">Reset</button>
-															<button type="submit" class="btn btn-primary" data-kt-menu-dismiss="true" data-kt-customer-table-filter="filter">Apply</button>
-														</div>
-														<!--end::Actions-->
-													</div>
+													</form>
 													<!--end::Content-->
 												</div>
 												<!--end::Menu 1-->

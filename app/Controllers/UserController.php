@@ -81,8 +81,8 @@ class UserController extends BaseController
 
         $roles = [
             ['id' => 1, 'nombre' => 'Admin'],
-            ['id' => 2, 'nombre' => 'Editor'],
-            ['id' => 3, 'nombre' => 'Usuario']
+            ['id' => 2, 'nombre' => 'Empleado'],
+            ['id' => 3, 'nombre' => 'Cliente']
         ];
         
         // Cargar datos del usuario si es edición
