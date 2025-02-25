@@ -1,0 +1,38 @@
+CRITICAL - 2025-02-25 07:24:44 --> TypeError: Unsupported operand types: string + string
+[Method: POST, Route: auth/login/process]
+in APPPATH\Controllers\AuthController.php on line 80.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->processLogin()
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-25 07:24:58 --> TypeError: Unsupported operand types: string + string
+[Method: POST, Route: auth/login/process]
+in APPPATH\Controllers\AuthController.php on line 80.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->processLogin()
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-25 08:20:37 --> ArgumentCountError: password_hash() expects at least 2 arguments, 1 given
+[Method: POST, Route: auth/login/process]
+in APPPATH\Controllers\AuthController.php on line 89.
+ 1 APPPATH\Controllers\AuthController.php(89): password_hash(Object(SensitiveParameterValue))
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->processLogin()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-25 08:20:47 --> ArgumentCountError: password_hash() expects at least 2 arguments, 1 given
+[Method: POST, Route: auth/login/process]
+in APPPATH\Controllers\AuthController.php on line 89.
+ 1 APPPATH\Controllers\AuthController.php(89): password_hash(Object(SensitiveParameterValue))
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->processLogin()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

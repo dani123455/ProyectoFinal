@@ -52,8 +52,8 @@ class AuthController extends BaseController
      */
     public function login()
     {
-        $session=session();
-        $session->destroy();
+       // $session=session();
+        //$session->destroy();
         return view('auth/login'); // Carga y retorna la vista del formulario de inicio de sesión.
     }
 
@@ -64,27 +64,34 @@ class AuthController extends BaseController
     {
 
         helper(['form', 'url', 'session']);
-        $session = session();
-    
+        //$session = session();
+
         $rules = [
             'email' => 'required|valid_email',
             'password' => 'required|min_length[8]',
         ];
+
+        $email = $this->request->getPost('email');
+        $password = $this->request->getPost('password');
+ 
     
+
         if (!$this->validate($rules)) {
             return redirect()->back()->withInput()->with('error', $this->validator->listErrors());
         }
-    
-        $email = $this->request->getPost('email');
-        $password = $this->request->getPost('password');
-    
+   
+
+        
         $userModel = new UserModel();
         $user = $userModel->findByEmail($email);
-    
-        if ($user && password_verify($password, $user['password'])) {
+
+
+        if (password_verify($password, $user['password']) ) {
+       
             $this->setUserSession($user);
             return redirect()->to($this->getDashboardRoute($user['rol_id']))->with('success', 'Inicio de sesión exitoso.');
         } else {
+            
             return redirect()->back()->withInput()->with('error', 'Correo o contraseña incorrectos.');
         }
     }
