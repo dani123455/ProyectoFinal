@@ -1,21 +1,19 @@
 admin@gmail.com           Qq##12Aa //Admin
 empleado@gmail.com        hyHY#15An //empleado
-cliente@gmail.com         ihsfvhiID@#4 //cliente
+cliente2@gmail.com         Aasdhu2# //cliente
 
 Hacer tablas bonitas y funcionales y poner los de los roles las restricciones de cada uno
 
 en la cuentra de cada uno al darle salir datos de los usuarios
 
-arreglar rutas al iniciar sesion
 
-validaciones de registro no funciona
+validaciones de registro no funciona ni de inicio de sesion
 
 exportar excel ( en usuario funciona)
 
 
 de las listas arreglar el añadir y cambiar vista del editar y mirar paginacion 
 
+fullcalendar
 
-probar a hacer un solo dashboar y con un if como en las listas oculte las cosas
-
-darle una vuelta al login con roles porque funcionan regula
+añadir funcionalidades 
