@@ -63,3 +63,9 @@ $routes->get('auth/logout', 'AuthController::logout');
 $routes->get('admin/dashboard', 'AdminController::dashboard', ['filter' => 'roles:admin']);
 $routes->get('employee/dashboard', 'EmployeeController::dashboard', ['filter' => 'roles:empleado']);
 $routes->get('customer/dashboard', 'CustomerController::dashboard', ['filter' => 'roles:cliente']);
+
+// Calendario
+$routes->get('fullcalendar', 'EventController::Calendar');
+$routes->get('/fetch-events', 'EventController::fetchEvents');
+$routes->post('/add-event', 'EventController::addEvent');
+$routes->delete('/delete-event/(:num)', 'EventController::deleteEvent/$1');

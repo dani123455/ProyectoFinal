@@ -50,7 +50,7 @@ License: For each use you must have a valid license purchased only from above li
 					<!--begin::Brand-->
 					<div class="aside-logo flex-column-auto p-2" style="background-color:#21273a;" id="kt_aside_logo">
 						<!--begin::Logo-->
-						<a href="<?= base_url('index.php') ?>">
+						<a href="<?= base_url('admin/dashboard') ?>">
 							<img alt="Logo" src="../../assets/media/logos/LogoTiendaCoche.png" class="logo" style="width: 200px;" />
 						</a>
 						<!--end::Logo-->
@@ -130,6 +130,19 @@ License: For each use you must have a valid license purchased only from above li
 										</div>
 									</div>
 								</div>
+								<div class="menu-item">
+											<a class="menu-link" href="<?= base_url('fullcalendar')?>">
+												<span class="menu-icon">
+													<span class="svg-icon svg-icon-2">
+														<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+															<path opacity="0.3" d="M3 4C3 3.4 3.4 3 4 3H20C20.6 3 21 3.4 21 4V5H3V4Z" fill="black"/>
+															<path d="M21 8V19C21 20.1 20.1 21 19 21H5C3.9 21 3 20.1 3 19V8H21ZM9 11H7V13H9V11ZM13 11H11V13H13V11ZM17 11H15V13H17V11ZM9 15H7V17H9V15ZM13 15H11V17H13V15ZM17 15H15V17H17V15Z" fill="black"/>
+														</svg>
+													</span>
+												</span>
+												<span class="menu-title">Calendar</span>
+											</a>
+										</div>
 							</div>
 							<!--end::Menu-->
 						</div>

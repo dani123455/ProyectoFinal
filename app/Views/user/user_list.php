@@ -49,7 +49,7 @@ License: For each use you must have a valid license purchased only from above li
 					<!--begin::Brand-->
 					<div class="aside-logo flex-column-auto p-2" style="background-color:#21273a;" id="kt_aside_logo">
 						<!--begin::Logo-->
-						<a href="<?= base_url('employee/dashboard') ?>">
+						<a href="<?= base_url('/') ?>">
 							<img alt="Logo" src="../assets/media/logos/LogoTiendaCoche.png" class="logo" style="width: 200px;" />
 						</a>
 						<!--end::Logo-->
@@ -194,103 +194,6 @@ License: For each use you must have a valid license purchased only from above li
 									</ul>
 									<!--end::Breadcrumb-->
 								</div>
-								<!--end::Page title-->
-								<!--begin::Actions-->
-								<div class="d-flex align-items-center py-1">
-									<!--begin::Wrapper-->
-									<div class="me-4">
-										<!--begin::Menu-->
-										<a href="#" class="btn btn-sm btn-flex btn-light btn-active-primary fw-bolder" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
-										<!--begin::Svg Icon | path: icons/duotune/general/gen031.svg-->
-										<span class="svg-icon svg-icon-5 svg-icon-gray-500 me-1">
-											<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-												<path d="M19.0759 3H4.72777C3.95892 3 3.47768 3.83148 3.86067 4.49814L8.56967 12.6949C9.17923 13.7559 9.5 14.9582 9.5 16.1819V19.5072C9.5 20.2189 10.2223 20.7028 10.8805 20.432L13.8805 19.1977C14.2553 19.0435 14.5 18.6783 14.5 18.273V13.8372C14.5 12.8089 14.8171 11.8056 15.408 10.964L19.8943 4.57465C20.3596 3.912 19.8856 3 19.0759 3Z" fill="black" />
-											</svg>
-										</span>
-										<!--end::Svg Icon-->Filter</a>
-										<!--begin::Menu 1-->
-										<div class="menu menu-sub menu-sub-dropdown w-250px w-md-300px" data-kt-menu="true" id="kt_menu_61484c49e8c83">
-											<!--begin::Header-->
-											<div class="px-7 py-5">
-												<div class="fs-5 text-dark fw-bolder">Filter Options</div>
-											</div>
-											<!--end::Header-->
-											<!--begin::Menu separator-->
-											<div class="separator border-gray-200"></div>
-											<!--end::Menu separator-->
-											<!--begin::Form-->
-											<div class="px-7 py-5">
-												<!--begin::Input group-->
-												<div class="mb-10">
-													<!--begin::Label-->
-													<label class="form-label fw-bold">Status:</label>
-													<!--end::Label-->
-													<!--begin::Input-->
-													<div>
-														<select class="form-select form-select-solid" data-kt-select2="true" data-placeholder="Select option" data-dropdown-parent="#kt_menu_61484c49e8c83" data-allow-clear="true">
-															<option></option>
-															<option value="1">Approved</option>
-															<option value="2">Pending</option>
-															<option value="2">In Process</option>
-															<option value="2">Rejected</option>
-														</select>
-													</div>
-													<!--end::Input-->
-												</div>
-												<!--end::Input group-->
-												<!--begin::Input group-->
-												<div class="mb-10">
-													<!--begin::Label-->
-													<label class="form-label fw-bold">Member Type:</label>
-													<!--end::Label-->
-													<!--begin::Options-->
-													<div class="d-flex">
-														<!--begin::Options-->
-														<label class="form-check form-check-sm form-check-custom form-check-solid me-5">
-															<input class="form-check-input" type="checkbox" value="1" />
-															<span class="form-check-label">Author</span>
-														</label>
-														<!--end::Options-->
-														<!--begin::Options-->
-														<label class="form-check form-check-sm form-check-custom form-check-solid">
-															<input class="form-check-input" type="checkbox" value="2" checked="checked" />
-															<span class="form-check-label">Customer</span>
-														</label>
-														<!--end::Options-->
-													</div>
-													<!--end::Options-->
-												</div>
-												<!--end::Input group-->
-												<!--begin::Input group-->
-												<div class="mb-10">
-													<!--begin::Label-->
-													<label class="form-label fw-bold">Notifications:</label>
-													<!--end::Label-->
-													<!--begin::Switch-->
-													<div class="form-check form-switch form-switch-sm form-check-custom form-check-solid">
-														<input class="form-check-input" type="checkbox" value="" name="notifications" checked="checked" />
-														<label class="form-check-label">Enabled</label>
-													</div>
-													<!--end::Switch-->
-												</div>
-												<!--end::Input group-->
-												<!--begin::Actions-->
-												<div class="d-flex justify-content-end">
-													<button type="reset" class="btn btn-sm btn-light btn-active-light-primary me-2" data-kt-menu-dismiss="true">Reset</button>
-													<button type="submit" class="btn btn-sm btn-primary" data-kt-menu-dismiss="true">Apply</button>
-												</div>
-												<!--end::Actions-->
-											</div>
-											<!--end::Form-->
-										</div>
-										<!--end::Menu 1-->
-										<!--end::Menu-->
-									</div>
-									<!--end::Wrapper-->
-									<!--begin::Button-->
-									<!--end::Button-->
-								</div>
-								<!--end::Actions-->
 							</div>
 							<!--end::Container-->
 						</div>
@@ -409,18 +312,10 @@ License: For each use you must have a valid license purchased only from above li
 												<!--end::Export-->
 												<!--begin::Add customer-->
 												<?php if (session()->get('rol_id') == 1): ?>
-													<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_add_customer">Add Customer</button>
+													<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_add_customer">Add User</button>
 												<?php endif?>
 												<!--end::Add customer-->
 											</div>
-											<!--end::Toolbar-->
-											<!--begin::Group actions-->
-											<div class="d-flex justify-content-end align-items-center d-none" data-kt-customer-table-toolbar="selected">
-												<div class="fw-bolder me-5">
-												<span class="me-2" data-kt-customer-table-select="selected_count"></span>Selected</div>
-												<button type="button" class="btn btn-danger" data-kt-customer-table-select="delete_selected">Delete Selected</button>
-											</div>
-											<!--end::Group actions-->
 										</div>
 										<!--end::Card toolbar-->
 									</div>
@@ -434,11 +329,6 @@ License: For each use you must have a valid license purchased only from above li
 											<thead>
 												<!--begin::Table row-->
 												<tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
-													<th class="w-10px pe-2">
-														<div class="form-check form-check-sm form-check-custom form-check-solid me-3">
-															<input class="form-check-input" type="checkbox" data-kt-check="true" data-kt-check-target="#kt_customers_table .form-check-input" value="1" />
-														</div>
-													</th>
 													<th class="min-w-125px"><a href="<?=base_url('usuarios?sort=nombre&order=' . ($sort == 'nombre' && $order == 'asc' ? 'desc' : 'asc'))?>"></a>User</a></th>
 													<th class="min-w-125px"><a href="<?=base_url('usuarios?sort=email&order=' . ($sort == 'email' && $order == 'asc' ? 'desc' : 'asc'))?>">Email</a></th>
 													<th class="min-w-125px"><a href="<?=base_url('usuarios?sort=rol_nombre&order=' . ($sort == 'rol_nombre' && $order == 'asc' ? 'desc' : 'asc'))?>">Rol</a></th>
@@ -455,13 +345,6 @@ License: For each use you must have a valid license purchased only from above li
 											<tbody class="fw-bold text-gray-600">
 											<?php foreach ($usuarios as $usuario): ?>
 												<tr>
-													<!--begin::Checkbox-->
-													<td>
-														<div class="form-check form-check-sm form-check-custom form-check-solid">
-															<input class="form-check-input" type="checkbox" value="1" />
-														</div>
-													</td>
-													<!--end::Checkbox-->
 													<!--begin::Name=-->
 													<td style="<?= is_null($usuario['fecha_baja']) ? '' : 'color: red;' ?>"><?= esc($usuario['nombre']) ?></td>
 													<!--end::Name=-->
@@ -492,7 +375,7 @@ License: For each use you must have a valid license purchased only from above li
 														<div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-bold fs-7 w-125px py-4" data-kt-menu="true">
 															<!--begin::Menu item-->
 															<div class="menu-item px-3">
-																<a href="<?= base_url('usuarios/save/' . $usuario['id']) ?>" class="menu-link px-3">Edit</a>
+																<a data-bs-toggle="modal" data-bs-target="#kt_modal_add_customer" href="<?= base_url('usuarios/save/' . $usuario['id']) ?>" class="menu-link px-3">Edit</a>
 															</div>
 															<!--end::Menu item-->
 															<!--begin::Menu item-->
@@ -533,7 +416,8 @@ License: For each use you must have a valid license purchased only from above li
 										<!--begin::Modal content-->
 										<div class="modal-content">
 											<!--begin::Form-->
-											<form class="form" action="<?=base_url('usuarios')?>" id="kt_modal_add_customer_form" data-kt-redirect="../../demo1/dist/apps/customers/list.html">
+											<form action="<?= base_url('usuarios/save') ?>" method="post" id="kt_modal_add_customer_form" class="form">
+
 												<!--begin::Modal header-->
 												<div class="modal-header" id="kt_modal_add_customer_header">
 													<!--begin::Modal title-->
@@ -554,64 +438,69 @@ License: For each use you must have a valid license purchased only from above li
 												</div>
 												<!--end::Modal header-->
 												<!--begin::Modal body-->
-												<div class="modal-body py-10 px-lg-17">
-													<!--begin::Scroll-->
-													<div class="scroll-y me-n7 pe-7" id="kt_modal_add_customer_scroll" data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto" data-kt-scroll-dependencies="#kt_modal_add_customer_header" data-kt-scroll-wrappers="#kt_modal_add_customer_scroll" data-kt-scroll-offset="300px">
-														<!--begin::Input group-->
-														<div class="fv-row mb-7">
-															<!--begin::Label-->
-															<label class="required fs-6 fw-bold mb-2">Name</label>
-															<!--end::Label-->
-															<!--begin::Input-->
-															<input type="text" class="form-control form-control-solid" placeholder="" name="name" value="Sean Bean" />
-															<!--end::Input-->
-														</div>
-														<!--end::Input group-->
-														<!--begin::Input group-->
-														<div class="fv-row mb-7">
-															<!--begin::Label-->
-															<label class="fs-6 fw-bold mb-2">
-																<span class="required">Email</span>
-																<i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="Email address must be active"></i>
-															</label>
-															<!--end::Label-->
-															<!--begin::Input-->
-															<input type="email" class="form-control form-control-solid" placeholder="" name="email" value="sean@dellito.com" />
-															<!--end::Input-->
-														</div>
-														<!--end::Input group-->
-														<!--begin::Input group-->
-														<div class="fv-row mb-15">
-															<!--begin::Label-->
-															<label class="fs-6 fw-bold mb-2">Rol</label>
-															<!--end::Label-->
-															<!--begin::Input-->
-															<input type="text" class="form-control form-control-solid" placeholder="" name="rol" />
-															<!--end::Input-->
-														</div>
-														<!--end::Input group-->
-														<!--begin::Billing form-->
-														<div class="fv-row mb-15">
-															<!--begin::Label-->
-															<label class="fs-6 fw-bold mb-2">Address</label>
-															<!--end::Label-->
-															<!--begin::Input-->
-															<input type="text" class="form-control form-control-solid" placeholder="" name="rol" />
-															<!--end::Input-->
-														</div>
+												
+													<div class="modal-body py-10 px-lg-17">
+														<!--begin::Scroll-->
+														<div class="scroll-y me-n7 pe-7" id="kt_modal_add_customer_scroll" data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto" data-kt-scroll-dependencies="#kt_modal_add_customer_header" data-kt-scroll-wrappers="#kt_modal_add_customer_scroll" data-kt-scroll-offset="300px">
+															<!--begin::Input group-->
+															<div class="fv-row mb-7">
+																<!--begin::Label-->
+																<label for="nombre" class="required fs-6 fw-bold mb-2">Name</label>
+																<!--end::Label-->
+																<!--begin::Input-->
+																<input type="text" class="form-control form-control-solid" placeholder="" name="nombre" id="nombre" value="<?= isset($usuario) ? esc($usuario['nombre']) : '' ?>" />
+																<!--end::Input-->
+															</div>
+															<!--end::Input group-->
+															<!--begin::Input group-->
+															<div class="fv-row mb-7">
+																<!--begin::Label-->
+																<label for="email" class="fs-6 fw-bold mb-2">
+																	<span class="required">Email</span>
+																	<i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="Email address must be active"></i>
+																</label>
+																<!--end::Label-->
+																<!--begin::Input-->
+																<input type="email" class="form-control form-control-solid" placeholder="" name="email" id="email" value="<?= isset($usuario) ? esc($usuario['email']) : '' ?>" required>
+																<!--end::Input-->
+															</div>
+															<!--end::Input group-->
+															<!--begin::Input group-->
+															<div class="fv-row mb-15">
+																<!--begin::Label-->
+																<label for="rol_id" class="fs-6 fw-bold mb-2">Rol</label>
+																<!--end::Label-->
+																<!--begin::Input-->
+																<select name="rol_id" id="rol_id" class="form-control" required>
+																	<?php foreach ($roles as $rol): ?>
+																		<option value="<?= $rol['id'] ?>" <?= isset($usuario['rol_id']) && $usuario['rol_id'] == $rol['id'] ? 'selected' : '' ?>><?= $rol['nombre'] ?></option>
+																	<?php endforeach; ?>
+																</select>
+																<!--end::Input-->
+															</div>
+															<!--end::Input group-->
+															<!--begin::Billing form-->
+															<div class="fv-row mb-15">
+																<!--begin::Label-->
+																<label for="telefono" class="fs-6 fw-bold mb-2">Phone</label>
+																<!--end::Label-->
+																<!--begin::Input-->
+																<input type="text" name="telefono" id="telefono" class="form-control form-control-solid" placeholder="" value="<?= isset($usuario) ? esc($usuario['telefono']) : '' ?>" required>
+																<!--end::Input-->
+															</div>
 
-														<div class="fv-row mb-15">
-															<!--begin::Label-->
-															<label class="fs-6 fw-bold mb-2">Phone</label>
-															<!--end::Label-->
-															<!--begin::Input-->
-															<input type="text" class="form-control form-control-solid" placeholder="" name="rol" />
-															<!--end::Input-->
+															<div class="fv-row mb-15">
+																<!--begin::Label-->
+																<label for="direccion" class="fs-6 fw-bold mb-2">Address</label>
+																<!--end::Label-->
+																<!--begin::Input-->
+																<input type="text" class="form-control form-control-solid" placeholder="" name="direccion" id="direccion" value="<?= isset($usuario) ? esc($usuario['direccion']) : '' ?>" required>
+																<!--end::Input-->
+															</div>
+															<!--end::Billing form-->
 														</div>
-														<!--end::Billing form-->
+														<!--end::Scroll-->
 													</div>
-													<!--end::Scroll-->
-												</div>
 												<!--end::Modal body-->
 												<!--begin::Modal footer-->
 												<div class="modal-footer flex-center">
