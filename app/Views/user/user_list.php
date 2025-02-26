@@ -448,7 +448,7 @@ License: For each use you must have a valid license purchased only from above li
 																<label for="nombre" class="required fs-6 fw-bold mb-2">Name</label>
 																<!--end::Label-->
 																<!--begin::Input-->
-																<input type="text" class="form-control form-control-solid" placeholder="" name="nombre" id="nombre" value="<?= isset($usuario) ? esc($usuario['nombre']) : '' ?>" />
+																<input type="text" class="form-control form-control-solid" placeholder="" name="nombre" id="nombre" value="" />
 																<!--end::Input-->
 															</div>
 															<!--end::Input group-->
@@ -461,7 +461,7 @@ License: For each use you must have a valid license purchased only from above li
 																</label>
 																<!--end::Label-->
 																<!--begin::Input-->
-																<input type="email" class="form-control form-control-solid" placeholder="" name="email" id="email" value="<?= isset($usuario) ? esc($usuario['email']) : '' ?>" required>
+																<input type="email" class="form-control form-control-solid" placeholder="" name="email" id="email" value="" required>
 																<!--end::Input-->
 															</div>
 															<!--end::Input group-->
@@ -485,7 +485,7 @@ License: For each use you must have a valid license purchased only from above li
 																<label for="telefono" class="fs-6 fw-bold mb-2">Phone</label>
 																<!--end::Label-->
 																<!--begin::Input-->
-																<input type="text" name="telefono" id="telefono" class="form-control form-control-solid" placeholder="" value="<?= isset($usuario) ? esc($usuario['telefono']) : '' ?>" required>
+																<input type="text" name="telefono" id="telefono" class="form-control form-control-solid" placeholder="" value="" required>
 																<!--end::Input-->
 															</div>
 
@@ -494,7 +494,7 @@ License: For each use you must have a valid license purchased only from above li
 																<label for="direccion" class="fs-6 fw-bold mb-2">Address</label>
 																<!--end::Label-->
 																<!--begin::Input-->
-																<input type="text" class="form-control form-control-solid" placeholder="" name="direccion" id="direccion" value="<?= isset($usuario) ? esc($usuario['direccion']) : '' ?>" required>
+																<input type="text" class="form-control form-control-solid" placeholder="" name="direccion" id="direccion" value="" required>
 																<!--end::Input-->
 															</div>
 															<!--end::Billing form-->
@@ -508,7 +508,7 @@ License: For each use you must have a valid license purchased only from above li
 													<button type="reset" id="kt_modal_add_customer_cancel" class="btn btn-light me-3">Discard</button>
 													<!--end::Button-->
 													<!--begin::Button-->
-													<button type="submit" id="kt_modal_add_customer_submit" class="btn btn-primary">
+													<button type="submit"  class="btn btn-primary">
 														<span class="indicator-label">Submit</span>
 														<span class="indicator-progress">Please wait...
 														<span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>

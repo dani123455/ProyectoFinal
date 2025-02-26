@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Models\UserModel;
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
+use PhpParser\Node\Expr\NullsafeMethodCall;
 
 class UserController extends BaseController
 {
@@ -80,7 +81,66 @@ class UserController extends BaseController
     return view('user/user_list', $data);
 }
 
+public function saveUser($id = null)
+{
+    $userModel = new UserModel();
+    helper(['form', 'url']);
 
+    $roles = [
+        ['id' => 1, 'nombre' => 'Admin'],
+        ['id' => 2, 'nombre' => 'Empleado'],
+        ['id' => 3, 'nombre' => 'Cliente']
+    ];
+    
+    // Cargar datos del usuario si es edición
+    $data['usuario'] = $id ? $userModel->find($id) : null;
+    $data['isEdit'] = $id ? true : false;
+    $data['roles'] = $roles;
+
+    if ($this->request->getMethod() == 'post') {
+
+        // Reglas de validación
+        $validation = \Config\Services::validation();
+        $validation->setRules([
+            'nombre' => 'required|min_length[3]|max_length[50]',
+            'email' => 'required|valid_email',
+            'rol_id' => 'required',
+            'telefono' => 'required|numeric|min_length[10]|max_length[15]',
+            'direccion' => 'required|min_length[10]|max_length[255]'
+        ]);
+
+        if (!$validation->withRequest($this->request)->run()) {
+            // Mostrar errores de validación
+            $data['validation'] = $validation;
+        } else {
+            // Preparar datos del formulario
+            $userData = [
+                'nombre' => $this->request->getPost('nombre'),
+                'email' => $this->request->getPost('email'),
+                'rol_id' => $this->request->getPost('rol_id'),
+                'telefono' => $this->request->getPost('telefono'),
+                'direccion' => $this->request->getPost('direccion'),
+            ];
+
+            if ($id === null) {
+                // Crear nuevo usuario
+                $userModel->save($userData);
+                $message = 'Usuario creado correctamente.';
+            } else {
+                
+        // Actualizar usuario existente
+                $userModel->update($id, $userData);
+                $message = 'Usuario actualizado correctamente.';
+            }
+
+            // Redirigir al listado con un mensaje de éxito
+            return redirect()->to('/usuarios')->with('success', $message);
+        }
+    }
+
+    // Cargar la vista del formulario (crear/editar)
+    return view('user/user_form', $data);
+}
 
 
     public function archive($id)
