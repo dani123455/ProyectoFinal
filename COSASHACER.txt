@@ -16,4 +16,4 @@ de las listas arreglar el añadir y cambiar vista del editar y mirar paginacion
 
 fullcalendar
 
-añadir funcionalidades 
+añadir funcionalidadess

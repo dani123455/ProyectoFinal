@@ -7,3 +7,175 @@ in APPPATH\Controllers\UserController.php on line 83.
  4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
  5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
  6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-26 20:07:10 --> ErrorException: Trying to access array offset on null
+[Method: POST, Route: auth/login/process]
+in APPPATH\Controllers\AuthController.php on line 88.
+ 1 APPPATH\Controllers\AuthController.php(88): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on null', 'C:\\wamp64\\www\\ProyectoFinal\\app\\Controllers\\AuthController.php', 88)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->processLogin()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-26 20:09:58 --> ErrorException: Trying to access array offset on null
+[Method: POST, Route: auth/login/process]
+in APPPATH\Controllers\AuthController.php on line 88.
+ 1 APPPATH\Controllers\AuthController.php(88): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on null', 'C:\\wamp64\\www\\ProyectoFinal\\app\\Controllers\\AuthController.php', 88)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->processLogin()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-26 20:10:11 --> ErrorException: Trying to access array offset on null
+[Method: POST, Route: auth/login/process]
+in APPPATH\Controllers\AuthController.php on line 88.
+ 1 APPPATH\Controllers\AuthController.php(88): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on null', 'C:\\wamp64\\www\\ProyectoFinal\\app\\Controllers\\AuthController.php', 88)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->processLogin()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-26 20:12:26 --> ErrorException: Trying to access array offset on null
+[Method: POST, Route: auth/login/process]
+in APPPATH\Controllers\AuthController.php on line 88.
+ 1 APPPATH\Controllers\AuthController.php(88): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on null', 'C:\\wamp64\\www\\ProyectoFinal\\app\\Controllers\\AuthController.php', 88)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->processLogin()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-26 20:12:29 --> ErrorException: Trying to access array offset on null
+[Method: POST, Route: auth/login/process]
+in APPPATH\Controllers\AuthController.php on line 88.
+ 1 APPPATH\Controllers\AuthController.php(88): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on null', 'C:\\wamp64\\www\\ProyectoFinal\\app\\Controllers\\AuthController.php', 88)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->processLogin()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-26 20:13:02 --> ErrorException: Trying to access array offset on null
+[Method: POST, Route: auth/login/process]
+in APPPATH\Controllers\AuthController.php on line 88.
+ 1 APPPATH\Controllers\AuthController.php(88): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on null', 'C:\\wamp64\\www\\ProyectoFinal\\app\\Controllers\\AuthController.php', 88)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->processLogin()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-26 20:13:34 --> ErrorException: Trying to access array offset on null
+[Method: POST, Route: auth/login/process]
+in APPPATH\Controllers\AuthController.php on line 88.
+ 1 APPPATH\Controllers\AuthController.php(88): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on null', 'C:\\wamp64\\www\\ProyectoFinal\\app\\Controllers\\AuthController.php', 88)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->processLogin()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-26 20:16:39 --> ErrorException: Trying to access array offset on null
+[Method: POST, Route: auth/login/process]
+in APPPATH\Controllers\AuthController.php on line 88.
+ 1 APPPATH\Controllers\AuthController.php(88): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on null', 'C:\\wamp64\\www\\ProyectoFinal\\app\\Controllers\\AuthController.php', 88)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->processLogin()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-26 20:17:17 --> ErrorException: Trying to access array offset on null
+[Method: POST, Route: auth/login/process]
+in APPPATH\Controllers\AuthController.php on line 88.
+ 1 APPPATH\Controllers\AuthController.php(88): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on null', 'C:\\wamp64\\www\\ProyectoFinal\\app\\Controllers\\AuthController.php', 88)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->processLogin()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-26 20:26:38 --> ErrorException: Trying to access array offset on null
+[Method: POST, Route: auth/login/process]
+in APPPATH\Controllers\AuthController.php on line 88.
+ 1 APPPATH\Controllers\AuthController.php(88): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on null', 'C:\\wamp64\\www\\ProyectoFinal\\app\\Controllers\\AuthController.php', 88)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->processLogin()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-26 20:26:44 --> ErrorException: Trying to access array offset on null
+[Method: POST, Route: auth/login/process]
+in APPPATH\Controllers\AuthController.php on line 88.
+ 1 APPPATH\Controllers\AuthController.php(88): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on null', 'C:\\wamp64\\www\\ProyectoFinal\\app\\Controllers\\AuthController.php', 88)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->processLogin()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-26 20:29:13 --> ErrorException: Trying to access array offset on null
+[Method: POST, Route: auth/login/process]
+in APPPATH\Controllers\AuthController.php on line 89.
+ 1 APPPATH\Controllers\AuthController.php(89): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on null', 'C:\\wamp64\\www\\ProyectoFinal\\app\\Controllers\\AuthController.php', 89)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->processLogin()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-26 21:44:35 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "user_list.php"
+[Method: POST, Route: usuarios/save]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('user_list.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('user_list', [], true)
+ 3 APPPATH\Controllers\UserController.php(141): view('user_list', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController->saveUser()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-26 22:06:01 --> ErrorException: Undefined variable $isEdit
+[Method: GET, Route: usuarios]
+in APPPATH\Views\user\user_list.php on line 420.
+ 1 APPPATH\Views\user\user_list.php(420): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $isEdit', 'C:\\wamp64\\www\\ProyectoFinal\\app\\Views\\user\\user_list.php', 420)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\wamp64\\www\\ProyectoFinal\\app\\Views\\user\\user_list.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('user/user_list', [], true)
+ 5 APPPATH\Controllers\UserController.php(81): view('user/user_list', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-26 22:06:02 --> ErrorException: Undefined variable $isEdit
+[Method: GET, Route: usuarios]
+in APPPATH\Views\user\user_list.php on line 420.
+ 1 APPPATH\Views\user\user_list.php(420): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $isEdit', 'C:\\wamp64\\www\\ProyectoFinal\\app\\Views\\user\\user_list.php', 420)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\wamp64\\www\\ProyectoFinal\\app\\Views\\user\\user_list.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('user/user_list', [], true)
+ 5 APPPATH\Controllers\UserController.php(81): view('user/user_list', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-26 22:08:34 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "user_list.php"
+[Method: POST, Route: usuarios/save/49]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('user_list.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('user_list', [], true)
+ 3 APPPATH\Controllers\UserController.php(153): view('user_list', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController->saveUser('49')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

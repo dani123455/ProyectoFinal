@@ -119,7 +119,7 @@ public function saveUser($id = null)
                 'email' => $this->request->getPost('email'),
                 'rol_id' => $this->request->getPost('rol_id'),
                 'telefono' => $this->request->getPost('telefono'),
-                'direccion' => $this->request->getPost('direccion'),
+                'direccion' => $this->request->getPost('direccion'), 
             ];
 
             if ($id === null) {

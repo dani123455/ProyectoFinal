@@ -73,27 +73,29 @@ class AuthController extends BaseController
 
         $email = $this->request->getPost('email');
         $password = $this->request->getPost('password');
+ 
 
-    
 
         if (!$this->validate($rules)) {
             return redirect()->back()->withInput()->with('error', $this->validator->listErrors());
         }
+   
 
-        
+
         $userModel = new UserModel();
         $user = $userModel->findByEmail($email);
 
 
         if (password_verify($password, $user['password']) ) {
+       
             $this->setUserSession($user);
             return redirect()->to($this->getDashboardRoute($user['rol_id']))->with('success', 'Inicio de sesión exitoso.');
         } else {
-            
+
             return redirect()->back()->withInput()->with('error', 'Correo o contraseña incorrectos.');
         }
     }
-    
+
     private function getDashboardRoute($rolId)
     {
         switch ($rolId) {
