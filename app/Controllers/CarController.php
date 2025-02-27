@@ -4,7 +4,8 @@ namespace App\Controllers;
 
 use App\Models\CarModel;
 use App\Models\BrandModel;
-
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 class CarController extends BaseController
 {
     public function index()
@@ -174,4 +175,45 @@ class CarController extends BaseController
             return redirect()->to('/coches')->with('error', 'Coche no encontrado.');
         }
     }
+
+    public function exportar()
+{
+    // Obtener la lista de usuarios desde tu modelo
+    $userModel = new \App\Models\CarModel();
+    $usuarios = $userModel->findAll();
+
+    // Crear una nueva instancia de Spreadsheet
+    $spreadsheet = new Spreadsheet();
+    $sheet = $spreadsheet->getActiveSheet();
+
+    // Encabezados de la tabla
+    $sheet->setCellValue('A1', 'Brand');
+    $sheet->setCellValue('B1', 'Model');
+    $sheet->setCellValue('C1', 'Year');
+    $sheet->setCellValue('D1', 'Price');
+    $sheet->setCellValue('E1', 'Available');
+
+    // Llenar la hoja con los datos de los usuarios
+    $row = 2; // Comenzar en la segunda fila (debajo de los encabezados)
+    foreach ($usuarios as $usuario) {
+        $sheet->setCellValue('A' . $row, $usuario['marca_id']);
+        $sheet->setCellValue('B' . $row, $usuario['modelo']);
+        $sheet->setCellValue('C' . $row, $usuario['año']);
+        $sheet->setCellValue('D' . $row, $usuario['precio']);
+        $sheet->setCellValue('E' . $row, $usuario['disponible']);
+        $row++;
+    }
+
+    // Crear un escritor para el archivo Excel
+    $writer = new Xlsx($spreadsheet);
+
+    // Enviar encabezados para forzar la descarga
+    header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+    header('Content-Disposition: attachment;filename="car_list.xlsx"');
+    header('Cache-Control: max-age=0');
+
+    // Guardar el archivo en la salida (descargar)
+    $writer->save('php://output');
+    exit;
+}
 }

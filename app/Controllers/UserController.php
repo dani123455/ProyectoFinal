@@ -97,7 +97,7 @@ public function saveUser($id = null)
     $data['isEdit'] = $id ? true : false;
     $data['roles'] = $roles;
 
-    if ($this->request->getMethod() == 'post') {
+    if ($this->request->getMethod() == 'POST') {
 
         // Reglas de validación
         $validation = \Config\Services::validation();
@@ -122,15 +122,16 @@ public function saveUser($id = null)
                 'direccion' => $this->request->getPost('direccion'), 
             ];
 
-            if ($id === null) {
-                // Crear nuevo usuario
-                $userModel->save($userData);
-                $message = 'Usuario creado correctamente.';
-            } else {
-                
-        // Actualizar usuario existente
+            if ($id) {
+                // Actualizar usuario existente
                 $userModel->update($id, $userData);
                 $message = 'Usuario actualizado correctamente.';
+            
+            } else {
+                 // Crear nuevo usuario
+                $userModel->save($userData);
+                $message = 'Usuario creado correctamente.';
+        
             }
 
             // Redirigir al listado con un mensaje de éxito

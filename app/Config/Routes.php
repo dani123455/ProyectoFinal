@@ -17,7 +17,7 @@ $routes->get('/', 'Home::index');
     $routes->post('usuarios/save/(:num)', 'UserController::saveUser/$1'); // Editar usuario (POST)
     $routes->get('usuarios/archive/(:num)', 'UserController::archive/$1'); // Archivar usuario
     $routes->get('usuarios/unarchive/(:num)', 'UserController::unarchive/$1'); // Desarchivar usuario
-    $routes->get('usuarios/export', 'UserController::exportar'); //exportar lista
+    
 
     $routes->get('marcas/save', 'BrandController::saveBrand'); // Mostrar formulario para crear marca
     $routes->get('marcas/save/(:num)', 'BrandController::saveBrand/$1'); // Mostrar formulario para editar marca
@@ -69,3 +69,6 @@ $routes->get('fullcalendar', 'EventController::calendar');
 $routes->get('/fetch-events', 'EventController::fetchEvents');
 $routes->post('/add-event', 'EventController::addEvent');
 $routes->delete('/delete-event/(:num)', 'EventController::deleteEvent/$1');
+
+$routes->get('usuarios/export', 'UserController::exportar'); //exportar lista
+$routes->get('coches/export', 'CarController::exportar'); //exportar lista

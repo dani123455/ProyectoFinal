@@ -189,7 +189,7 @@
         // Cargar eventos desde el servidor
         events: function(fetchInfo, successCallback, failureCallback) {
             $.ajax({
-                url: '/fetch-events', // Ruta que devuelve los eventos
+                url: '<?=base_url('/fetch-events')?>', // Ruta que devuelve los eventos
                 method: 'GET',
                 success: function(data) {
                     successCallback(data); // Pasa los datos al calendario
@@ -213,7 +213,7 @@
 
                 // Enviar datos para agregar el evento
                 $.ajax({
-                    url: '/add-event',
+                    url: '<?=base_url('/add-event')?>',
                     method: 'POST',
                     data: eventData,
                     success: function(data) {
@@ -233,7 +233,7 @@
 
                 // Eliminar el evento
                 $.ajax({
-                    url: '/delete-event/' + eventId,
+                    url: '<?=base_url('/delete-event/')?>' + eventId,
                     method: 'DELETE',
                     success: function() {
                         calendar.refetchEvents(); // Recargar los eventos
