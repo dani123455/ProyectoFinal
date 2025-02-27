@@ -312,7 +312,7 @@ License: For each use you must have a valid license purchased only from above li
 												<!--end::Export-->
 												<!--begin::Add customer-->
 												<?php if (session()->get('rol_id') == 1): ?>
-													<button type="button" class="btn btn-primary"><a class="menu-link text-white" href="<?= base_url('usuarios/save')?>">Add User</a></button>
+													<a class=" btn btn-primary menu-link text-white" href="<?= base_url('usuarios/save')?>">Add User</a>
 												<?php endif?>
 												<!--end::Add customer-->
 											</div>

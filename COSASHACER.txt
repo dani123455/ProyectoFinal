@@ -17,3 +17,10 @@ de las listas arreglar el añadir y cambiar vista del editar y mirar paginacion
 fullcalendar
 
 añadir funcionalidadess
+
+aRREGLA FORM DEL CAR (EL AÑO)
+
+
+al regiustrarse conm un correo que exista que mande iun mensaje no que salga el whooooooops
+
+ajustar dsahboard para los roles

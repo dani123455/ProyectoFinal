@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calendario Dinámico</title>
+    <title>Calendar</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <!-- Metronic CSS -->
@@ -18,7 +18,7 @@
 		<div class="aside-logo flex-column-auto p-2" style="background-color:#21273a;" id="kt_aside_logo">
             <!--begin::Logo-->
 			<a href="<?= base_url('admin/dashboard') ?>">
-				<img alt="Logo" src="../../assets/media/logos/LogoTiendaCoche.png" class="logo" style="width: 200px;" />
+				<img alt="Logo" src="<?= base_url('assets/media/logos/LogoTiendaCoche.png')?>" class="logo" style="width: 200px;" />
 			</a>
 			<!--end::Logo-->
 			<!--begin::Aside toggler-->
@@ -119,7 +119,7 @@
 		<!--begin::Footer-->
 		<div style="background-color:#21273a" class="aside-footer pt-5 pb-7 px-10 flex-column align-items-center" id="kt_aside_footer">
             <div class="symbol symbol-50px mb-2 me-5">
-                <img class="rounded-circle" src="../../assets/media/avatars/150-8.jpg" alt="Avatar"/>
+                <img class="rounded-circle" src="<?= base_url('assets/media/avatars/150-8.jpg')?>" alt="Avatar"/>
             </div>
             <span class="text-muted fs-4 text-center me-5"><?= session()->get('nombre') ?> #<?= session()->get('id') ?></span>
 			<a class="text-danger" href="<?=base_url('auth/logout')?>"><i class="bi bi-box-arrow-in-right"></i></a>
@@ -135,24 +135,10 @@
         <div class="card card-flush">
             <!--begin::Card header-->
             <div class="card-header mt-6">
-                <div class="card-title">
+                <div class="card">
                     <h2 class="fw-bold">Calendar</h2>
                 </div>
-                <div class="card-toolbar">
-                    <div class="d-flex flex-stack">
-                        <div class="d-flex align-items-center my-2">
-                            <button type="button" class="btn btn-primary" id="kt_calendar_add_event">
-                                <span class="svg-icon svg-icon-2">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <rect opacity="0.5" x="11.364" y="20.364" width="16" height="2" rx="1" transform="rotate(-90 11.364 20.364)" fill="currentColor"></rect>
-                                        <rect x="4.36396" y="11.364" width="16" height="2" rx="1" fill="currentColor"></rect>
-                                    </svg>
-                                </span>
-                                Add Event
-                            </button>
-                        </div>
-                    </div>
-                </div>
+                
             </div>
             <!--end::Card header-->
             <!--begin::Card body-->
@@ -167,85 +153,187 @@
     </div>
     <!--end::Container-->
 </div>
+<!-- Modal para agregar evento -->
+<div class="modal fade" id="eventModal" tabindex="-1" role="dialog" aria-labelledby="eventModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="eventModalLabel">Add event </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="eventForm">
+          <div class="form-group">
+            <label for="titulo">Title</label>
+            <input type="text" class="form-control" id="titulo" name="titulo" required>
+          </div>
+          <div class="form-group">
+            <label for="descripcion_es">Description in spanish</label>
+            <textarea class="form-control" id="descripcion_es" name="descripcion_es"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="descripcion_eng">Description in english</label>
+            <textarea class="form-control" id="descripcion_eng" name="descripcion_eng"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="fecha_inicio">Start date</label>
+            <input type="datetime-local" class="form-control" id="fecha_inicio" name="fecha_inicio" required>
+          </div>
+          <div class="form-group">
+            <label for="fecha_fin">End date</label>
+            <input type="datetime-local" class="form-control" id="fecha_fin" name="fecha_fin">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" id="saveEventBtn">Add Event</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <!-- Metronic JS -->
-    <script src="../assets/js/scripts.bundle.js"></script>
+    <script src="path/to/metronic/assets/js/scripts.bundle.js"></script>
     <!-- FullCalendar JS -->
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
     <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
      $(document).ready(function () {
     const calendarEl = document.getElementById('calendar');
-
-    // Inicializar FullCalendar
+    
     const calendar = new FullCalendar.Calendar(calendarEl, {
         initialView: 'dayGridMonth',
         selectable: true,
         editable: true,
+        displayEventTime: false,
+        firstDay: '1',
 
-        locale:'es',
         // Cargar eventos desde el servidor
         events: function(fetchInfo, successCallback, failureCallback) {
             $.ajax({
-                url: '<?=base_url('/fetch-events')?>', // Ruta que devuelve los eventos
+                url: '<?= base_url('/fetch-events') ?>',
                 method: 'GET',
                 success: function(data) {
-                    successCallback(data); // Pasa los datos al calendario
+                    console.log("Eventos cargados desde el servidor: ", data);  // Verificar los eventos
+                    successCallback(data);
                 },
-                error: function() {
-                    failureCallback('Error al cargar los eventos.');
+                error: function(xhr, status, error) {
+                    console.error("Error al cargar los eventos: ", status, error);
+                    failureCallback();
                 }
             });
         },
 
-        // Añadir evento
-        select: function () {
-            const title = prompt('Título del evento:');
-            if (title) {
+        // Acción cuando se selecciona un rango de fechas en el calendario
+        select: function(info) {
+            // Limpiar el formulario cada vez que se abra el modal
+            $('#eventForm')[0].reset();
+            $('#fecha_inicio').val(info.startStr);  // Coloca la fecha de inicio
+            $('#fecha_fin').val(info.endStr);        // Coloca la fecha de fin
+
+            // Mostrar el modal para agregar el evento
+            var myModal = new bootstrap.Modal(document.getElementById('eventModal'), {});
+            myModal.show();
+
+            // Enlazar el evento 'click' para el botón de guardar
+            $('#saveEventBtn').off('click').on('click', function () {
+                // Recoger los datos del formulario
                 const eventData = {
-                    title: title,
-                    description: prompt('Descripción del evento:')
+                    titulo: $('#titulo').val(),
+                    fecha_inicio: $('#fecha_inicio').val(),
+                    fecha_fin: $('#fecha_fin').val(),
+                    descripcion_es: $('#descripcion_es').val(),
+                    descripcion_eng: $('#descripcion_eng').val(),
+                    fecha_eliminacion: $('#fecha_eliminacion').val()
                 };
 
-      
+                // Verificar que el título y la fecha de inicio estén presentes
+                if (!eventData.titulo || !eventData.fecha_inicio) {
+                    alert("El título y la fecha de inicio son obligatorios.");
+                    return;
+                }
 
-                // Enviar datos para agregar el evento
+                // Realizar la petición AJAX para agregar el evento
                 $.ajax({
-                    url: '<?=base_url('/add-event')?>',
+                    url: '<?= base_url('/add-event') ?>',
                     method: 'POST',
                     data: eventData,
-                    success: function(data) {
-                        console.log(data)// Recargar los eventos
+                    success: function(response) {
+                        if (response.status === 'success') {
+                            // Refrescar los eventos y cerrar el modal
+                            calendar.refetchEvents();
+                            myModal.hide();
+                        } else {
+                            alert("Error al agregar el evento: " + response.message);
+                        }
                     },
-                    error: function() {
-                        alert('Error al agregar el evento.');
+                    error: function(xhr, status, error) {
+                        console.error("Error al agregar el evento: ", status, error);
                     }
                 });
-            }
+            });
         },
 
-        // Eliminar evento
-        eventClick: function (info) {
-            if (confirm('¿Deseas eliminar este evento?')) {
-                const eventId = info.event.id;
-
-                // Eliminar el evento
-                $.ajax({
-                    url: '<?=base_url('/delete-event/')?>' + eventId,
-                    method: 'DELETE',
-                    success: function() {
-                        calendar.refetchEvents(); // Recargar los eventos
-                    },
-                    error: function() {
-                        alert('Error al eliminar el evento.');
-                    }
-                });
-            }
+        // Acción cuando se hace clic en un evento (SweetAlert para la eliminación)
+        eventClick: function(info) {
+            Swal.fire({
+                title: '¿Estás seguro?',
+                text: "¡Este evento será eliminado permanentemente!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'Sí, eliminarlo',
+                cancelButtonText: 'No, cancelar',
+                reverseButtons: true
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $.ajax({
+                        url: '<?= base_url('/delete-event') ?>/' + info.event.id,
+                        method: 'DELETE',
+                        success: function(response) {
+                            if (response.status === 'success') {
+                                info.event.remove();
+                                Swal.fire(
+                                    'Eliminado!',
+                                    'El evento ha sido eliminado.',
+                                    'success'
+                                );
+                            } else {
+                                Swal.fire(
+                                    'Error',
+                                    'No se pudo eliminar el evento.',
+                                    'error'
+                                );
+                            }
+                        },
+                        error: function(xhr, status, error) {
+                            console.error("Error en la petición AJAX: ", status, error);
+                            Swal.fire(
+                                'Error',
+                                'Hubo un problema al intentar eliminar el evento.',
+                                'error'
+                            );
+                        }
+                    });
+                } else {
+                    Swal.fire(
+                        'Cancelado',
+                        'El evento no fue eliminado.',
+                        'info'
+                    );
+                }
+            });
         }
     });
 
+    // Inicializar el calendario
     calendar.render();
 });
 
