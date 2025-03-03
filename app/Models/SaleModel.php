@@ -9,7 +9,7 @@ class SaleModel extends Model
     protected $table = 'ventas'; // Nombre de la tabla en la base de datos
     protected $primaryKey = 'id'; // Clave primaria de la tabla
 
-    protected $allowedFields = ['coche_id', 'usuarios_id', 'fecha', 'precio_venta', 'disponible', 'fecha_baja'];
+    protected $allowedFields = ['coche_id', 'usuarios_id', 'fecha', 'precio_venta', 'fecha_baja'];
 
     // Función para obtener los coches con el nombre de la marca
     public function getVentaConCoche()

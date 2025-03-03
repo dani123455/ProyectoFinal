@@ -72,3 +72,5 @@ $routes->delete('/delete-event/(:num)', 'EventController::deleteEvent/$1');
 
 $routes->get('usuarios/export', 'UserController::exportar'); //exportar lista
 $routes->get('coches/export', 'CarController::exportar'); //exportar lista
+$routes->get('ventas/export', 'SaleController::exportar'); //exportar lista
+$routes->get('marcas/export', 'BrandController::exportar'); //exportar lista

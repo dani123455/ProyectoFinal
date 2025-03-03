@@ -1,0 +1,204 @@
+CRITICAL - 2025-03-02 21:53:47 --> ErrorException: Undefined array key "coche_modelo"
+[Method: GET, Route: ventas]
+in APPPATH\Views\sale\sale_list.php on line 335.
+ 1 APPPATH\Views\sale\sale_list.php(335): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "coche_modelo"', 'C:\\wamp64\\www\\ProyectoFinal\\app\\Views\\sale\\sale_list.php', 335)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\wamp64\\www\\ProyectoFinal\\app\\Views\\sale\\sale_list.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('sale/sale_list', [], true)
+ 5 APPPATH\Controllers\SaleController.php(76): view('sale/sale_list', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SaleController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SaleController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-02 21:54:47 --> ErrorException: Undefined array key "marca_nombre"
+[Method: GET, Route: ventas]
+in APPPATH\Views\sale\sale_list.php on line 335.
+ 1 APPPATH\Views\sale\sale_list.php(335): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "marca_nombre"', 'C:\\wamp64\\www\\ProyectoFinal\\app\\Views\\sale\\sale_list.php', 335)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\wamp64\\www\\ProyectoFinal\\app\\Views\\sale\\sale_list.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('sale/sale_list', [], true)
+ 5 APPPATH\Controllers\SaleController.php(76): view('sale/sale_list', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SaleController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SaleController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-02 21:55:33 --> ErrorException: Undefined array key "coche_id"
+[Method: GET, Route: ventas]
+in APPPATH\Views\sale\sale_list.php on line 335.
+ 1 APPPATH\Views\sale\sale_list.php(335): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "coche_id"', 'C:\\wamp64\\www\\ProyectoFinal\\app\\Views\\sale\\sale_list.php', 335)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\wamp64\\www\\ProyectoFinal\\app\\Views\\sale\\sale_list.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('sale/sale_list', [], true)
+ 5 APPPATH\Controllers\SaleController.php(76): view('sale/sale_list', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SaleController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SaleController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-02 21:56:07 --> ErrorException: Undefined array key "coche_modelo"
+[Method: GET, Route: ventas]
+in APPPATH\Views\sale\sale_list.php on line 335.
+ 1 APPPATH\Views\sale\sale_list.php(335): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "coche_modelo"', 'C:\\wamp64\\www\\ProyectoFinal\\app\\Views\\sale\\sale_list.php', 335)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\wamp64\\www\\ProyectoFinal\\app\\Views\\sale\\sale_list.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('sale/sale_list', [], true)
+ 5 APPPATH\Controllers\SaleController.php(76): view('sale/sale_list', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SaleController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SaleController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-02 21:57:47 --> ErrorException: Undefined array key "coches_id"
+[Method: GET, Route: ventas]
+in APPPATH\Views\sale\sale_list.php on line 335.
+ 1 APPPATH\Views\sale\sale_list.php(335): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "coches_id"', 'C:\\wamp64\\www\\ProyectoFinal\\app\\Views\\sale\\sale_list.php', 335)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\wamp64\\www\\ProyectoFinal\\app\\Views\\sale\\sale_list.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('sale/sale_list', [], true)
+ 5 APPPATH\Controllers\SaleController.php(76): view('sale/sale_list', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SaleController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SaleController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-02 21:59:13 --> ErrorException: Undefined array key "coches_modelo"
+[Method: GET, Route: ventas]
+in APPPATH\Views\sale\sale_list.php on line 335.
+ 1 APPPATH\Views\sale\sale_list.php(335): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "coches_modelo"', 'C:\\wamp64\\www\\ProyectoFinal\\app\\Views\\sale\\sale_list.php', 335)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\wamp64\\www\\ProyectoFinal\\app\\Views\\sale\\sale_list.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('sale/sale_list', [], true)
+ 5 APPPATH\Controllers\SaleController.php(76): view('sale/sale_list', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SaleController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SaleController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-02 22:00:22 --> ErrorException: Undefined array key "coches_modelo"
+[Method: GET, Route: ventas]
+in APPPATH\Views\sale\sale_list.php on line 335.
+ 1 APPPATH\Views\sale\sale_list.php(335): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "coches_modelo"', 'C:\\wamp64\\www\\ProyectoFinal\\app\\Views\\sale\\sale_list.php', 335)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\wamp64\\www\\ProyectoFinal\\app\\Views\\sale\\sale_list.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('sale/sale_list', [], true)
+ 5 APPPATH\Controllers\SaleController.php(76): view('sale/sale_list', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SaleController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SaleController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-02 22:01:22 --> ErrorException: Undefined array key "coche_modelo"
+[Method: GET, Route: ventas]
+in APPPATH\Views\sale\sale_list.php on line 335.
+ 1 APPPATH\Views\sale\sale_list.php(335): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "coche_modelo"', 'C:\\wamp64\\www\\ProyectoFinal\\app\\Views\\sale\\sale_list.php', 335)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\wamp64\\www\\ProyectoFinal\\app\\Views\\sale\\sale_list.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('sale/sale_list', [], true)
+ 5 APPPATH\Controllers\SaleController.php(76): view('sale/sale_list', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SaleController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SaleController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-02 22:08:01 --> ErrorException: Undefined array key "coche_id"
+[Method: GET, Route: ventas/export]
+in APPPATH\Controllers\SaleController.php on line 194.
+ 1 APPPATH\Controllers\SaleController.php(194): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "coche_id"', 'C:\\wamp64\\www\\ProyectoFinal\\app\\Controllers\\SaleController.php', 194)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SaleController->exportar()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SaleController))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-02 22:08:35 --> ErrorException: Undefined array key "coche_modelo"
+[Method: GET, Route: ventas/export]
+in APPPATH\Controllers\SaleController.php on line 194.
+ 1 APPPATH\Controllers\SaleController.php(194): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "coche_modelo"', 'C:\\wamp64\\www\\ProyectoFinal\\app\\Controllers\\SaleController.php', 194)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SaleController->exportar()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SaleController))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-02 22:09:28 --> ErrorException: Undefined array key "coche_modelo"
+[Method: GET, Route: ventas/export]
+in APPPATH\Controllers\SaleController.php on line 194.
+ 1 APPPATH\Controllers\SaleController.php(194): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "coche_modelo"', 'C:\\wamp64\\www\\ProyectoFinal\\app\\Controllers\\SaleController.php', 194)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SaleController->exportar()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SaleController))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-02 22:43:58 --> ErrorException: Undefined variable $usurio
+[Method: GET, Route: ventas/save/30]
+in APPPATH\Views\sale\sale_form.php on line 171.
+ 1 APPPATH\Views\sale\sale_form.php(171): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $usurio', 'C:\\wamp64\\www\\ProyectoFinal\\app\\Views\\sale\\sale_form.php', 171)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\wamp64\\www\\ProyectoFinal\\app\\Views\\sale\\sale_form.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('sale/sale_form', [], true)
+ 5 APPPATH\Controllers\SaleController.php(129): view('sale/sale_form', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SaleController->saveSale('30')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SaleController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-02 23:14:36 --> ErrorException: Undefined variable $maraca
+[Method: GET, Route: marcas]
+in APPPATH\Views\brand\brand_list.php on line 332.
+ 1 APPPATH\Views\brand\brand_list.php(332): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $maraca', 'C:\\wamp64\\www\\ProyectoFinal\\app\\Views\\brand\\brand_list.php', 332)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\wamp64\\www\\ProyectoFinal\\app\\Views\\brand\\brand_list.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('brand/brand_list', [], true)
+ 5 APPPATH\Controllers\BrandController.php(50): view('brand/brand_list', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\BrandController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BrandController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-02 23:15:27 --> ErrorException: Undefined variable $venta
+[Method: GET, Route: marcas]
+in APPPATH\Views\brand\brand_list.php on line 357.
+ 1 APPPATH\Views\brand\brand_list.php(357): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $venta', 'C:\\wamp64\\www\\ProyectoFinal\\app\\Views\\brand\\brand_list.php', 357)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\wamp64\\www\\ProyectoFinal\\app\\Views\\brand\\brand_list.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('brand/brand_list', [], true)
+ 5 APPPATH\Controllers\BrandController.php(50): view('brand/brand_list', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\BrandController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BrandController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-02 23:22:14 --> BadMethodCallException: Call to undefined method App\Models\BrandModel::getVentaConCoche
+[Method: GET, Route: marcas/export]
+in SYSTEMPATH\Model.php on line 930.
+ 1 APPPATH\Controllers\BrandController.php(146): CodeIgniter\Model->__call('getVentaConCoche', [])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\BrandController->exportar()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BrandController))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-02 23:24:05 --> BadMethodCallException: Call to undefined method App\Models\BrandModel::getVentaConCoche
+[Method: GET, Route: marcas/export]
+in SYSTEMPATH\Model.php on line 930.
+ 1 APPPATH\Controllers\BrandController.php(146): CodeIgniter\Model->__call('getVentaConCoche', [])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\BrandController->exportar()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BrandController))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

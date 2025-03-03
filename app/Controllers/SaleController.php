@@ -5,6 +5,8 @@ namespace App\Controllers;
 use App\Models\SaleModel;
 use App\Models\CarModel;
 use App\Models\UserModel;
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 
 class SaleController extends BaseController
 {
@@ -55,7 +57,7 @@ class SaleController extends BaseController
             $query = $query->where('ventas.fecha_baja IS NOT NULL');
         } elseif ($status == 'alta') {
             $query = $query->where('ventas.fecha_baja IS NULL');
-        }
+        } 
 
         // Paginación
         $perPage = 10; // Número de elementos por página
@@ -169,6 +171,46 @@ class SaleController extends BaseController
             return redirect()->to('/ventas')->with('error', 'Venta no encontrada.');
         }
     }
+
+    public function exportar()
+{
+    // Obtener la lista de ventas con información del coche
+    $saleModel = new \App\Models\SaleModel();
+    $ventas = $saleModel->getVentaConCoche();
+
+    // Crear una nueva instancia de Spreadsheet
+    $spreadsheet = new Spreadsheet();
+    $sheet = $spreadsheet->getActiveSheet();
+
+    // Encabezados de la tabla
+    $sheet->setCellValue('A1', 'Car Model');
+    $sheet->setCellValue('B1', 'User ID');
+    $sheet->setCellValue('C1', 'Date');
+    $sheet->setCellValue('D1', 'Price');
+
+    // Llenar la hoja con los datos de las ventas
+    $row = 2;
+    foreach ($ventas as $venta) {
+        $sheet->setCellValue('A' . $row, $venta['coche_modelo'] ?? 'No disponible');
+        $sheet->setCellValue('B' . $row, $venta['usuarios_id']);
+        $sheet->setCellValue('C' . $row, $venta['fecha']);
+        $sheet->setCellValue('D' . $row, $venta['precio_venta']); // Agregar precio
+        $row++;
+    }
+
+    // Crear un escritor para el archivo Excel
+    $writer = new Xlsx($spreadsheet);
+
+    // Enviar encabezados para forzar la descarga
+    header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+    header('Content-Disposition: attachment;filename="sale_list.xlsx"');
+    header('Cache-Control: max-age=0');
+
+    // Guardar el archivo en la salida (descargar)
+    $writer->save('php://output');
+    exit;
+}
+
 }
 
 

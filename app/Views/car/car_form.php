@@ -171,7 +171,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="año" class="form-label fw-bold">Year</label>
-                        <input type="number" name="precio" id="precio" class="form-control" 
+                        <input type="number" name="año" id="año" class="form-control" 
                         value="<?= isset($coche) ? esc($coche['año']) : '' ?>" required>
                     </div>
                     <div class="mb-3">

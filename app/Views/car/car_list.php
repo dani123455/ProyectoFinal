@@ -110,23 +110,25 @@ License: For each use you must have a valid license purchased only from above li
 												<span class="menu-item">Brands</span>
 											</a>
 										</div>
-										<div class="menu-item">
-											<a class="menu-link" href="<?= base_url('usuarios') ?>">
+										<?php if (session()->get('rol_id') == 1 ||session()->get('rol_id') == 2 ): ?>
+											<div class="menu-item">
+												<a class="menu-link" href="<?= base_url('usuarios') ?>">
 
-												<span class="menu-bullet">
-													<span class="bullet bullet-dot"></span>
-												</span>
-												<span class="menu-item">Users</span>
-											</a>
-										</div>
-										<div class="menu-item">
-											<a class="menu-link" href="<?= base_url('ventas') ?>">
-												<span class="menu-bullet">
-													<span class="bullet bullet-dot"></span>
-												</span>
-												<span class="menu-item">Sales</span>
-											</a>
-										</div>
+													<span class="menu-bullet">
+														<span class="bullet bullet-dot"></span>
+													</span>
+													<span class="menu-item">Users</span>
+												</a>
+											</div>
+											<div class="menu-item">
+												<a class="menu-link" href="<?= base_url('ventas') ?>">
+													<span class="menu-bullet">
+														<span class="bullet bullet-dot"></span>
+													</span>
+													<span class="menu-item">Sales</span>
+												</a>
+											</div>
+										<?php endif?>
 									</div>
 								</div>
 							</div>
@@ -136,19 +138,17 @@ License: For each use you must have a valid license purchased only from above li
 					</div>
 					<!--end::Aside menu-->
 					<!--begin::Footer-->
-					<div style="background-color:#21273a" class="aside-footer flex-column-auto pt-5 pb-7 px-5" id="kt_aside_footer">
-						<a href="<?= base_url('auth/login') ?>" class="btn btn-custom btn-primary w-100" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-dismiss-="click">
-							<span class="btn-label">Login</span>
-							<!--begin::Svg Icon | path: icons/duotune/general/gen005.svg-->
-							<span class="svg-icon btn-icon svg-icon-2">
-								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-									<path opacity="0.3" d="M19 22H5C4.4 22 4 21.6 4 21V3C4 2.4 4.4 2 5 2H14L20 8V21C20 21.6 19.6 22 19 22ZM15 17C15 16.4 14.6 16 14 16H8C7.4 16 7 16.4 7 17C7 17.6 7.4 18 8 18H14C14.6 18 15 17.6 15 17ZM17 12C17 11.4 16.6 11 16 11H8C7.4 11 7 11.4 7 12C7 12.6 7.4 13 8 13H16C16.6 13 17 12.6 17 12ZM17 7C17 6.4 16.6 6 16 6H8C7.4 6 7 6.4 7 7C7 7.6 7.4 8 8 8H16C16.6 8 17 7.6 17 7Z" fill="black" />
-									<path d="M15 8H20L14 2V7C14 7.6 14.4 8 15 8Z" fill="black" />
-								</svg>
-							</span>
-							<!--end::Svg Icon-->
-						</a>
-					</div>
+					<div style="background-color:#21273a" class="aside-footer pt-5 pb-7 px-10 flex-column align-items-center" id="kt_aside_footer">
+
+                        <div class="symbol symbol-50px mb-2 me-5">
+                            <img class="rounded-circle" src="../assets/media/avatars/150-8.jpg" alt="Avatar"/>
+                        </div>
+            
+                        <span class="text-muted fs-4 text-center me-5"><?= session()->get('nombre') ?> #<?= session()->get('id') ?></span>
+						<a class="text-danger" href="<?=base_url('auth/logout')?>"><i class="bi bi-box-arrow-in-right"></i></a>
+                    </div>
+					<!--end::Footer-->
+				</div>
 					<!--end::Footer-->
 				</div>
 				<!--end::Aside-->
@@ -219,7 +219,7 @@ License: For each use you must have a valid license purchased only from above li
 												</span>
 												<!--end::Svg Icon-->
 												<form method="GET" action="<?=base_url('coches')?>">
-													<input type="text" name="marca_nombre" data-kt-customer-table-filter="search" class="form-control form-control-solid w-250px ps-15" placeholder="Search Brand" value="<?= isset($marca_nombre) ? $marca_nombre : '' ?>" />
+													<input type="text" name="marca_id" data-kt-customer-table-filter="search" class="form-control form-control-solid w-250px ps-15" placeholder="Search Brand" value="<?= isset($maraca_id) ? $maraca_id : '' ?>" />
 												</form>
 												
 											</div>

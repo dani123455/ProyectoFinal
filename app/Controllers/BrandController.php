@@ -2,9 +2,11 @@
 
 namespace App\Controllers;
 
-use App\Models\BrandModel;
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
 
-class BrandController extends BaseController
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
+use App\Models\BrandModel;
+ class BrandController extends BaseController
 {
     public function index()
     {
@@ -136,4 +138,38 @@ class BrandController extends BaseController
             return redirect()->to('/marcas')->with('error', 'Marca no encontrada.');
         }
     }
+
+    public function exportar()
+{
+    // Obtener la lista de ventas con información del coche
+    $brandModel = new \App\Models\BrandModel();
+    $marcas = $brandModel->findAll();
+
+    // Crear una nueva instancia de Spreadsheet
+    $spreadsheet = new Spreadsheet();
+    $sheet = $spreadsheet->getActiveSheet();
+
+    // Encabezados de la tabla
+    $sheet->setCellValue('A1', 'Model');
+
+
+    // Llenar la hoja con los datos de las ventas
+    $row = 2;
+    foreach ($marcas as $marca) {
+        $sheet->setCellValue('A' . $row, $marca['coche_modelo'] ?? 'No disponible');
+        $row++;
+    }
+
+    // Crear un escritor para el archivo Excel
+    $writer = new Xlsx($spreadsheet);
+
+    // Enviar encabezados para forzar la descarga
+    header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+    header('Content-Disposition: attachment;filename="brand_list.xlsx"');
+    header('Cache-Control: max-age=0');
+
+    // Guardar el archivo en la salida (descargar)
+    $writer->save('php://output');
+    exit;
+}
 }
