@@ -11,6 +11,7 @@
     <!-- FullCalendar CSS -->
     <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css" rel="stylesheet">
     <link href="../assets/plugins/custom/fullcalendar/fullcalendar.bundle.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body id="kt_body" class="header-fixed header-tablet-and-mobile-fixed toolbar-enabled toolbar-fixed aside-enabled aside-fixed" style="--kt-toolbar-height:55px;--kt-toolbar-height-tablet-and-mobile:55px">
     <div id="kt_aside" class="aside aside-dark aside-hoverable" data-kt-drawer="true" data-kt-drawer-name="aside" data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true" data-kt-drawer-width="{default:'200px', '300px': '250px'}" data-kt-drawer-direction="start" data-kt-drawer-toggle="#kt_aside_mobile_toggle">
@@ -56,7 +57,7 @@
                                         <path d="M14 6V5H10V6H8V5C8 3.9 8.9 3 10 3H14C15.1 3 16 3.9 16 5V6H14ZM20 15H14V16C14 16.6 13.5 17 13 17H11C10.5 17 10 16.6 10 16V15H4C3.6 15 3.3 14.9 3 14.7V18C3 19.1 3.9 20 5 20H19C20.1 20 21 19.1 21 18V14.7C20.7 14.9 20.4 15 20 15Z" fill="black" />
                                     </svg>
                                 </span>
-                                                <!--end::Svg Icon-->
+                                <!--end::Svg Icon-->
                             </span>
                             <span class="menu-title">Tables</span>
                             <span class="menu-arrow"></span>
@@ -117,16 +118,17 @@
 		</div>
 		<!--end::Aside menu-->
 		<!--begin::Footer-->
-		<div style="background-color:#21273a" class="aside-footer pt-5 pb-7 px-10 flex-column align-items-center" id="kt_aside_footer">
-            <div class="symbol symbol-50px mb-2 me-5">
-                <img class="rounded-circle" src="<?= base_url('assets/media/avatars/150-8.jpg')?>" alt="Avatar"/>
-            </div>
-            <span class="text-muted fs-4 text-center me-5"><?= session()->get('nombre') ?> #<?= session()->get('id') ?></span>
-			<a class="text-danger" href="<?=base_url('auth/logout')?>"><i class="bi bi-box-arrow-in-right"></i></a>
-        </div>
+	<div style="background-color:#21273a" class="aside-footer pt-5 pb-7 px-10 flex-column align-items-center" id="kt_aside_footer">
+
+                        <div class="symbol symbol-50px mb-2 me-5">
+                            <img class="rounded-circle" src="../assets/media/avatars/150-8.jpg" alt="Avatar"/>
+                        </div>
+            
+                        <span class="text-muted fs-4 text-center me-5"><?= session()->get('nombre') ?> #<?= session()->get('id') ?></span>
+						<a class="text-danger" href="<?=base_url('auth/logout')?>"><i class="bi bi-box-arrow-in-right"></i></a>
+                    </div>
 		<!--end::Footer-->
 	</div>
-   <!-- Reemplaza solo la sección del contenido principal, manteniendo el resto igual -->
 
 <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
     <!--begin::Container-->
@@ -198,7 +200,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <!-- Metronic JS -->
-    <script src="path/to/metronic/assets/js/scripts.bundle.js"></script>
+    <script src="<?= base_url('assets/js/scripts.bundle.js')?>"></script>
     <!-- FullCalendar JS -->
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
     <!-- jQuery -->

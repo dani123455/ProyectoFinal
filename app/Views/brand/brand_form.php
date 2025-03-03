@@ -36,8 +36,8 @@
 					<!--begin::Brand-->
 					<div class="aside-logo flex-column-auto p-2" style="background-color:#21273a;" id="kt_aside_logo">
 						<!--begin::Logo-->
-						<a href="<?= base_url('/') ?>">
-							<img alt="Logo" src="<?=base_url('assets/media/logos/LogoTiendaCoche.png')?>" class="logo" style="width: 200px;" />
+						<a href="<?= base_url('admin/dashboard') ?>">
+							<img alt="Logo" src="../assets/media/logos/LogoTiendaCoche.png" class="logo" style="width: 200px;" />
 						</a>
 						<!--end::Logo-->
 						<!--begin::Aside toggler-->
@@ -116,25 +116,33 @@
 										</div>
 									</div>
 								</div>
+								<div class="menu-item">
+									<a class="menu-link" href="<?= base_url('fullcalendar')?>">
+										<span class="menu-icon">
+											<span class="svg-icon svg-icon-2">
+												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+													<path opacity="0.3" d="M3 4C3 3.4 3.4 3 4 3H20C20.6 3 21 3.4 21 4V5H3V4Z" fill="black"/>
+													<path d="M21 8V19C21 20.1 20.1 21 19 21H5C3.9 21 3 20.1 3 19V8H21ZM9 11H7V13H9V11ZM13 11H11V13H13V11ZM17 11H15V13H17V11ZM9 15H7V17H9V15ZM13 15H11V17H13V15ZM17 15H15V17H17V15Z" fill="black"/>
+												</svg>
+											</span>
+										</span>
+										<span class="menu-title">Calendar</span>
+									</a>
+								</div>
 							</div>
-							<!--end::Menu-->
 						</div>
-						<!--end::Aside Menu-->
 					</div>
+	
 					<!--end::Aside menu-->
 					<!--begin::Footer-->
-					<div style="background-color:#21273a" class="aside-footer flex-column-auto pt-5 pb-7 px-5" id="kt_aside_footer">
-						<a href="<?= base_url('auth/login') ?>" class="btn btn-custom btn-primary w-100" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-dismiss-="click">
-							<span class="btn-label">Login</span>
-							<!--begin::Svg Icon | path: icons/duotune/general/gen005.svg-->
-							<span class="svg-icon btn-icon svg-icon-2">
-								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-									<path opacity="0.3" d="M19 22H5C4.4 22 4 21.6 4 21V3C4 2.4 4.4 2 5 2H14L20 8V21C20 21.6 19.6 22 19 22ZM15 17C15 16.4 14.6 16 14 16H8C7.4 16 7 16.4 7 17C7 17.6 7.4 18 8 18H14C14.6 18 15 17.6 15 17ZM17 12C17 11.4 16.6 11 16 11H8C7.4 11 7 11.4 7 12C7 12.6 7.4 13 8 13H16C16.6 13 17 12.6 17 12ZM17 7C17 6.4 16.6 6 16 6H8C7.4 6 7 6.4 7 7C7 7.6 7.4 8 8 8H16C16.6 8 17 7.6 17 7Z" fill="black" />
-									<path d="M15 8H20L14 2V7C14 7.6 14.4 8 15 8Z" fill="black" />
-								</svg>
-							</span>
-							<!--end::Svg Icon-->
-						</a>
+					<div style="background-color:#21273a" class="aside-footer pt-5 pb-7 px-10 flex-column align-items-center" id="kt_aside_footer">
+
+						<div class="symbol symbol-50px mb-2 me-5">
+							<img class="rounded-circle" src="../assets/media/avatars/150-8.jpg" alt="Avatar"/>
+						</div>
+
+						<span class="text-muted fs-4 text-center me-5"><?= session()->get('nombre') ?> #<?= session()->get('id') ?></span>
+						<a class="text-danger" href="<?=base_url('auth/logout')?>"><i class="bi bi-box-arrow-in-right"></i></a>
 					</div>
 					<!--end::Footer-->
 				</div>
