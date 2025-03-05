@@ -246,7 +246,11 @@ License: For each use you must have a valid license purchased only from above li
 																	<div class="px-7 py-5">
 																		<div class="mb-10">
 																			<label class="form-label fs-5 fw-bold mb-1">User:</label>
-																			<input type="text" name="nombre" data-kt-customer-table-filter="search" class="form-control form-control-solid w-250px ps-15" placeholder="Search Customers" value="<?= isset($name) ? $name : '' ?>" />
+																			<input type="text" name="nombre" data-kt-customer-table-filter="search" data-placeholder="Select option" data-allow-clear="true" data-kt-customer-table-filter="status" data-dropdown-parent="#kt-toolbar-filter" class="form-control form-control-solid w-250px ps-15" placeholder="Search Customers" value="<?= isset($name) ? $name : '' ?>" />
+																		</div>
+																		<div class="mb-10">
+																			<label class="form-label fs-5 fw-bold mb-1">Email:</label>
+																			<input type="text" name="email" data-kt-customer-table-filter="search" data-placeholder="Select option" data-allow-clear="true" data-kt-customer-table-filter="status" data-dropdown-parent="#kt-toolbar-filter" class="form-control form-control-solid w-250px ps-15" placeholder="Search email" value="<?= isset($email) ? $email : '' ?>" />
 																		</div>
 																		<!--begin::Input group-->
 																		<div class="mb-10">
@@ -261,6 +265,15 @@ License: For each use you must have a valid license purchased only from above li
 																				<option value="cliente" <?= isset($rol) && $rol == 'cliente' ? 'selected' : '' ?>>Customer</option>
 																			</select>
 																			<!--end::Input-->
+																		</div>
+																		<div class="mb-10">
+																			<label class="form-label fs-5 fw-bold mb-1">Phone:</label>
+																			<input type="tel" name="telefono" data-kt-customer-table-filter="search" data-placeholder="Select option" data-allow-clear="true" data-kt-customer-table-filter="status" data-dropdown-parent="#kt-toolbar-filter" class="form-control form-control-solid w-250px ps-15" placeholder="Search Phone" value="<?= isset($telefono) ? $telefono : '' ?>" />
+																		</div>
+
+																		<div class="mb-10">
+																			<label class="form-label fs-5 fw-bold mb-1">Address:</label>
+																			<input type="text" name="direccion" data-placeholder="Select option" data-allow-clear="true" data-kt-customer-table-filter="status" data-dropdown-parent="#kt-toolbar-filter" data-kt-customer-table-filter="search" class="form-control form-control-solid w-250px ps-15" placeholder="Search Address" value="<?= isset($direccion) ? $direccion : '' ?>" />
 																		</div>
 																		<!--end::Input group-->
 																		<!--begin::Input group-->
@@ -325,11 +338,45 @@ License: For each use you must have a valid license purchased only from above li
 														<thead>
 															<!--begin::Table row-->
 															<tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
-																<th class="min-w-125px"><a href="<?=base_url('usuarios?sort=nombre&order=' . ($sort == 'nombre' && $order == 'asc' ? 'desc' : 'asc'))?>"></a>User</a></th>
-																<th class="min-w-125px"><a href="<?=base_url('usuarios?sort=email&order=' . ($sort == 'email' && $order == 'asc' ? 'desc' : 'asc'))?>">Email</a></th>
-																<th class="min-w-125px"><a href="<?=base_url('usuarios?sort=rol_nombre&order=' . ($sort == 'rol_nombre' && $order == 'asc' ? 'desc' : 'asc'))?>">Rol</a></th>
-																<th class="min-w-125px"><a href="<?=base_url('usuarios?sort=telefono&order=' . ($sort == 'telefono' && $order == 'asc' ? 'desc' : 'asc'))?>">Phone</a></th>
-																<th class="min-w-125px"><a href="<?=base_url('usuarios?sort=direccion&order=' . ($sort == 'direccion' && $order == 'asc' ? 'desc' : 'asc'))?>">Address</a></th>
+															<th class="min-w-125px">
+															
+																	User
+																	<?php if ($sort == 'nombre'): ?>
+																		<span class="icon"><?php echo $order == 'asc' ? '<i class="bi bi-arrow-up fs-3"></i>' : '<i class="bi bi-arrow-down fs-3"></i>'; ?></span>
+																	<?php endif; ?>
+																</a>
+															</th>
+																<th class="min-w-125px">
+																<a href="<?= base_url('usuarios') ?>?nombre=<?= urlencode($name) ?>&email=<?= urlencode($email) ?>&rol=<?= urlencode($rol) ?>&telefono=<?= urlencode($telefono) ?>&direccion=<?= urlencode($direccion) ?>&status=<?= urlencode($status) ?>&sort=email&order=<?= ($order == 'asc') ? 'desc' : 'asc' ?>">
+																		Email
+																	<?php if ($sort == 'email'): ?>
+																		<span class="icon"><?php echo $order == 'asc' ? '<i class="bi bi-arrow-up fs-3"></i>' : '<i class="bi bi-arrow-down fs-3"></i>'; ?></span>
+																	<?php endif; ?></a>
+																</th>
+																<th class="min-w-125px">
+																<a href="<?= base_url('usuarios') ?>?page=<?= $pager->getCurrentPage() ?>&nombre=<?= urlencode($name) ?>&email=<?= urlencode($email) ?>&rol=<?= urlencode($rol) ?>&telefono=<?= urlencode($telefono) ?>&direccion=<?= urlencode($direccion) ?>&status=<?= urlencode($status) ?>&sort=nombre&order=<?= ($order == 'asc') ? 'desc' : 'asc' ?>">
+																		Rol
+																	<?php if ($sort == 'rol_nombre'): ?>
+																		<span class="icon"><?php echo $order == 'asc' ? '<i class="bi bi-arrow-up fs-3"></i>' : '<i class="bi bi-arrow-down fs-3"></i>'; ?></span>
+																	<?php endif; ?>
+																	</a>
+																</th>
+																<th class="min-w-125px">
+																<a href="<?= base_url('usuarios') ?>?page=<?= $pager->getCurrentPage() ?>&nombre=<?= urlencode($name) ?>&email=<?= urlencode($email) ?>&rol=<?= urlencode($rol) ?>&telefono=<?= urlencode($telefono) ?>&direccion=<?= urlencode($direccion) ?>&status=<?= urlencode($status) ?>&sort=nombre&order=<?= ($order == 'asc') ? 'desc' : 'asc' ?>">
+																		Phone
+																	<?php if ($sort == 'telefono'): ?>
+																		<span class="icon"><?php echo $order == 'asc' ? '<i class="bi bi-arrow-up fs-3"></i>' : '<i class="bi bi-arrow-down fs-3"></i>'; ?></span>
+																	<?php endif; ?>
+																	</a>
+																</th>
+																<th class="min-w-125px">
+																<a href="<?= base_url('usuarios') ?>?page=<?= $pager->getCurrentPage() ?>&nombre=<?= urlencode($name) ?>&email=<?= urlencode($email) ?>&rol=<?= urlencode($rol) ?>&telefono=<?= urlencode($telefono) ?>&direccion=<?= urlencode($direccion) ?>&status=<?= urlencode($status) ?>&sort=nombre&order=<?= ($order == 'asc') ? 'desc' : 'asc' ?>">
+																		Address
+																	<?php if ($sort == 'direccion'): ?>
+																		<span class="icon"><?php echo $order == 'asc' ? '<i class="bi bi-arrow-up fs-3"></i>' : '<i class="bi bi-arrow-down fs-3"></i>'; ?></span>
+																	<?php endif; ?>
+																	</a>
+																</th>
 																<?php if (session()->get('rol_id') == 1): ?>
 																	<th class="text-end min-w-70px">Actions</th>
 																<?php endif?>
@@ -400,7 +447,7 @@ License: For each use you must have a valid license purchased only from above li
 													</table>
 												<?php endif?>
 												<div class="mt-4">
-													<?= $pager->only(['name'])->links('default','custom_pagination') ?>
+													<?= $pager->only(['nombre', 'email', 'rol', 'telefono', 'direccion', 'status', 'sort', 'order'])->links('default', 'custom_pagination') ?>
 												</div>
 									
 													<!--end::Table-->

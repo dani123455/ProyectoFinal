@@ -77,6 +77,12 @@ class UserController extends BaseController
     $data['perPage'] = $perPage;
     $data['status'] = $status;
 
+    if (!in_array($sort, ['usuarios.nombre', 'usuarios.email', 'rol_nombre', 'usuarios.telefono', 'usuarios.direccion'])) {
+        $sort = 'usuarios.nombre'; // Valor por defecto
+    }
+    $query = $query->orderBy($sort, $order);
+    
+
     // Pasar los roles a la vista
     return view('user/user_list', $data);
 }
