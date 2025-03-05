@@ -1,0 +1,7 @@
+__ci_last_regenerate|i:1741074272;__ci_vars|a:4:{s:13:"_ci_old_input";s:3:"old";s:21:"_ci_validation_errors";s:3:"old";s:5:"error";s:3:"old";s:7:"success";s:3:"new";}_ci_old_input|a:2:{s:3:"get";a:0:{}s:4:"post";a:2:{s:5:"email";s:1:"g";s:8:"password";s:1:"g";}}_ci_validation_errors|a:2:{s:5:"email";s:51:"The email field must contain a valid email address.";s:8:"password";s:59:"The password field must be at least 8 characters in length.";}error|s:206:"	<div class="errors" role="alert">
+		<ul>
+					<li>The email field must contain a valid email address.</li>
+					<li>The password field must be at least 8 characters in length.</li>
+				</ul>
+	</div>
+";success|s:33:"Usuario registrado correctamente.";

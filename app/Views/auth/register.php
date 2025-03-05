@@ -47,6 +47,13 @@ License: For each use you must have a valid license purchased only from above li
 					</a>
 					<!--end::Logo-->
 					<!--begin::Wrapper-->
+					<?php if (session()->getFlashdata('errors')): ?>
+						<div class="alert alert-danger">
+							<?php foreach (session()->getFlashdata('errors') as $error): ?>
+								<p><?= esc($error) ?></p>
+							<?php endforeach; ?>
+						</div>
+					<?php endif; ?>
 					<div class="w-lg-600px bg-body rounded shadow-sm p-10 p-lg-15 mx-auto">
 						<!--begin::Form-->
 						<form class="form w-100" novalidate="novalidate" id="kt_sign_up_form" action="<?= base_url('auth/register/process') ?>" method="post">

@@ -110,23 +110,25 @@ License: For each use you must have a valid license purchased only from above li
 												<span class="menu-item">Brands</span>
 											</a>
 										</div>
-										<div class="menu-item">
-											<a class="menu-link" href="<?= base_url('usuarios') ?>">
+										<?php if (session()->get('rol_id') == 1): ?>
+											<div class="menu-item">
+												<a class="menu-link" href="<?= base_url('usuarios') ?>">
 
-												<span class="menu-bullet">
-													<span class="bullet bullet-dot"></span>
-												</span>
-												<span class="menu-item">Users</span>
-											</a>
-										</div>
-										<div class="menu-item">
-											<a class="menu-link" href="<?= base_url('ventas') ?>">
-												<span class="menu-bullet">
-													<span class="bullet bullet-dot"></span>
-												</span>
-												<span class="menu-item">Sales</span>
-											</a>
-										</div>
+													<span class="menu-bullet">
+														<span class="bullet bullet-dot"></span>
+													</span>
+													<span class="menu-item">Users</span>
+												</a>
+											</div>
+											<div class="menu-item">
+												<a class="menu-link" href="<?= base_url('ventas') ?>">
+													<span class="menu-bullet">
+														<span class="bullet bullet-dot"></span>
+													</span>
+													<span class="menu-item">Sales</span>
+												</a>
+											</div>
+										<?php endif?>
 									</div>
 								</div>
 								<div class="menu-item">
@@ -160,289 +162,291 @@ License: For each use you must have a valid license purchased only from above li
 				</div>
 				<!--end::Aside-->
 				<!--begin::Wrapper-->
-				<div class="wrapper d-flex flex-column flex-row-fluid" id="kt_wrapper">
-					<!--begin::Content-->
-					<div class="content d-flex flex-column flex-column-fluid" id="kt_content">
-						<!--begin::Toolbar-->
-						<div class="toolbar top-0" id="kt_toolbar">
-							<!--begin::Container-->
-							<div id="kt_toolbar_container" class="container-fluid d-flex flex-stack">
-								<!--begin::Page title-->
-								<div data-kt-swapper="true" data-kt-swapper-mode="prepend" data-kt-swapper-parent="{default: '#kt_content_container', 'lg': '#kt_toolbar_container'}" class="page-title d-flex align-items-center flex-wrap me-3 mb-5 mb-lg-0">
-									<!--begin::Title-->
-									<h1 class="d-flex align-items-center text-dark fw-bolder fs-3 my-1">Sale List</h1>
-									<!--end::Title-->
-									<!--begin::Separator-->
-									<span class="h-20px border-gray-200 border-start mx-4"></span>
-									<!--end::Separator-->
-									<!--begin::Breadcrumb-->
-									<ul class="breadcrumb breadcrumb-separatorless fw-bold fs-7 my-1">
-										<!--begin::Item-->
-										<li class="breadcrumb-item text-muted">
-											<a href="../../demo1/dist/index.html" class="text-muted text-hover-primary">Home</a>
-										</li>
-										<!--end::Item-->
-										<!--begin::Item-->
-										<li class="breadcrumb-item">
-											<span class="bullet bg-gray-200 w-5px h-2px"></span>
-										</li>
-										<!--end::Item-->
-										<!--begin::Item-->
-										<li class="breadcrumb-item text-muted">Sales</li>
-										<!--end::Item-->
-										<!--begin::Item-->
-										<li class="breadcrumb-item">
-											<span class="bullet bg-gray-200 w-5px h-2px"></span>
-										</li>
-										<!--end::Item-->
-										<!--begin::Item-->
-										<li class="breadcrumb-item text-dark">Sale Listing</li>
-										<!--end::Item-->
-									</ul>
-									<!--end::Breadcrumb-->
+				<?php if (session()->get('rol_id') == 1): ?>
+					<div class="wrapper d-flex flex-column flex-row-fluid" id="kt_wrapper">
+						<!--begin::Content-->
+						<div class="content d-flex flex-column flex-column-fluid" id="kt_content">
+							<!--begin::Toolbar-->
+							<div class="toolbar top-0" id="kt_toolbar">
+								<!--begin::Container-->
+								<div id="kt_toolbar_container" class="container-fluid d-flex flex-stack">
+									<!--begin::Page title-->
+									<div data-kt-swapper="true" data-kt-swapper-mode="prepend" data-kt-swapper-parent="{default: '#kt_content_container', 'lg': '#kt_toolbar_container'}" class="page-title d-flex align-items-center flex-wrap me-3 mb-5 mb-lg-0">
+										<!--begin::Title-->
+										<h1 class="d-flex align-items-center text-dark fw-bolder fs-3 my-1">Sale List</h1>
+										<!--end::Title-->
+										<!--begin::Separator-->
+										<span class="h-20px border-gray-200 border-start mx-4"></span>
+										<!--end::Separator-->
+										<!--begin::Breadcrumb-->
+										<ul class="breadcrumb breadcrumb-separatorless fw-bold fs-7 my-1">
+											<!--begin::Item-->
+											<li class="breadcrumb-item text-muted">
+												<a href="../../demo1/dist/index.html" class="text-muted text-hover-primary">Home</a>
+											</li>
+											<!--end::Item-->
+											<!--begin::Item-->
+											<li class="breadcrumb-item">
+												<span class="bullet bg-gray-200 w-5px h-2px"></span>
+											</li>
+											<!--end::Item-->
+											<!--begin::Item-->
+											<li class="breadcrumb-item text-muted">Sales</li>
+											<!--end::Item-->
+											<!--begin::Item-->
+											<li class="breadcrumb-item">
+												<span class="bullet bg-gray-200 w-5px h-2px"></span>
+											</li>
+											<!--end::Item-->
+											<!--begin::Item-->
+											<li class="breadcrumb-item text-dark">Sale Listing</li>
+											<!--end::Item-->
+										</ul>
+										<!--end::Breadcrumb-->
+									</div>
 								</div>
+								<!--end::Container-->
 							</div>
-							<!--end::Container-->
-						</div>
-						<!--end::Toolbar-->
-						<!--begin::Post-->
-						<div class="post d-flex flex-column-fluid" id="kt_post">
-							<!--begin::Container-->
-							<div id="kt_content_container" class="container-xxl">
-								<!--begin::Card-->
-								<div class="card">
-									<!--begin::Card header-->
-									<div class="card-header border-0 pt-6">
-										<!--begin::Card title-->
-										<div class="card-title">
-											<!--begin::Search-->
-											<div class="d-flex align-items-center position-relative my-1">
-												<!--begin::Svg Icon | path: icons/duotune/general/gen021.svg-->
-												<span class="svg-icon svg-icon-1 position-absolute ms-6">
-													<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-														<rect opacity="0.5" x="17.0365" y="15.1223" width="8.15546" height="2" rx="1" transform="rotate(45 17.0365 15.1223)" fill="black" />
-														<path d="M11 19C6.55556 19 3 15.4444 3 11C3 6.55556 6.55556 3 11 3C15.4444 3 19 6.55556 19 11C19 15.4444 15.4444 19 11 19ZM11 5C7.53333 5 5 7.53333 5 11C5 14.4667 7.53333 17 11 17C14.4667 17 17 14.4667 17 11C17 7.53333 14.4667 5 11 5Z" fill="black" />
-													</svg>
-												</span>
-												<!--end::Svg Icon-->
-												<form method="GET" action="<?=base_url('ventas')?>">
-													<input type="text" name="coche_id" data-kt-customer-table-filter="search" class="form-control form-control-solid w-250px ps-15" placeholder="Search Car" value="<?= isset($coche_id) ? $coche_id : '' ?>" />
-												</form>
-												
-											</div>
-											<!--end::Search-->
-										</div>
-										<!--begin::Card title-->
-										<!--begin::Card toolbar-->
-										<div class="card-toolbar">
-											<!--begin::Toolbar-->
-											<div class="d-flex justify-content-end" data-kt-customer-table-toolbar="base">
-												<!--begin::Filter-->
-												<button type="button" class="btn btn-light-primary me-3" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
-												<!--begin::Svg Icon | path: icons/duotune/general/gen031.svg-->
-												<span class="svg-icon svg-icon-2">
-													<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-														<path d="M19.0759 3H4.72777C3.95892 3 3.47768 3.83148 3.86067 4.49814L8.56967 12.6949C9.17923 13.7559 9.5 14.9582 9.5 16.1819V19.5072C9.5 20.2189 10.2223 20.7028 10.8805 20.432L13.8805 19.1977C14.2553 19.0435 14.5 18.6783 14.5 18.273V13.8372C14.5 12.8089 14.8171 11.8056 15.408 10.964L19.8943 4.57465C20.3596 3.912 19.8856 3 19.0759 3Z" fill="black" />
-													</svg>
-												</span>
-												<!--end::Svg Icon-->Filter</button>
-												<!--begin::Menu 1-->
-												<div class="menu menu-sub menu-sub-dropdown w-300px w-md-325px" data-kt-menu="true" id="kt-toolbar-filter">
-													<!--begin::Header-->
-													<div class="px-7 py-5">
-														<div class="fs-4 text-dark fw-bolder">Filter Options</div>
-													</div>
-													<!--end::Header-->
-													<!--begin::Separator-->
-													<div class="separator border-gray-200"></div>
-													<!--end::Separator-->
-													<!--begin::Content-->
-													<form  method="GET" action="<?=base_url('ventas')?>">
-														<div class="px-7 py-5">
-															<!--begin::Input group-->
-								
-															<!--begin::Input group-->
-															<div class="mb-10">
-																<!--begin::Label-->
-																<label class="form-label fs-5 fw-bold mb-1">Status</label>
-																<!--end::Label-->
-																<!--begin::Options-->
-																<select name="status" class="form-select form-select-solid fw-bolder" data-placeholder="Select option" data-allow-clear="true" data-kt-customer-table-filter="status" data-dropdown-parent="#kt-toolbar-filter">
-																	<option value="">All</option>
-																	<option value="alta" <?= isset($status) && $status == 'alta' ? 'selected' : '' ?>>Admitted</option>
-																	<option value="baja" <?= isset($status) && $status == 'baja' ? 'selected' : '' ?>>Discharged</option>
-																</select>
-														
-																<!--end::Options-->
-															</div>
-															<!--end::Input group-->
-															<!--begin::Actions-->
-															<div class="d-flex justify-content-end">
-																<button type="reset" class="btn btn-light btn-active-light-primary me-2" data-kt-menu-dismiss="true" data-kt-customer-table-filter="reset">Reset</button>
-																<button type="submit" class="btn btn-primary" data-kt-menu-dismiss="true" data-kt-customer-table-filter="filter">Apply</button>
-															</div>
-															<!--end::Actions-->
-														</div>
+							<!--end::Toolbar-->
+							<!--begin::Post-->
+							<div class="post d-flex flex-column-fluid" id="kt_post">
+								<!--begin::Container-->
+								<div id="kt_content_container" class="container-xxl">
+									<!--begin::Card-->
+									<div class="card">
+										<!--begin::Card header-->
+										<div class="card-header border-0 pt-6">
+											<!--begin::Card title-->
+											<div class="card-title">
+												<!--begin::Search-->
+												<div class="d-flex align-items-center position-relative my-1">
+													<!--begin::Svg Icon | path: icons/duotune/general/gen021.svg-->
+													<span class="svg-icon svg-icon-1 position-absolute ms-6">
+														<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+															<rect opacity="0.5" x="17.0365" y="15.1223" width="8.15546" height="2" rx="1" transform="rotate(45 17.0365 15.1223)" fill="black" />
+															<path d="M11 19C6.55556 19 3 15.4444 3 11C3 6.55556 6.55556 3 11 3C15.4444 3 19 6.55556 19 11C19 15.4444 15.4444 19 11 19ZM11 5C7.53333 5 5 7.53333 5 11C5 14.4667 7.53333 17 11 17C14.4667 17 17 14.4667 17 11C17 7.53333 14.4667 5 11 5Z" fill="black" />
+														</svg>
+													</span>
+													<!--end::Svg Icon-->
+													<form method="GET" action="<?=base_url('ventas')?>">
+														<input type="text" name="coche_id" data-kt-customer-table-filter="search" class="form-control form-control-solid w-250px ps-15" placeholder="Search Car" value="<?= isset($coche_id) ? $coche_id : '' ?>" />
 													</form>
-													<!--end::Content-->
+													
 												</div>
-												<!--end::Menu 1-->
-												<!--end::Filter-->
-												<!--begin::Export-->
-												<a href="<?=base_url('ventas/export')?>">
-												<button type="button" class="btn btn-light-primary me-3" data-bs-toggle="modal" data-bs-target="#kt_customers_export_modal">
-												<!--begin::Svg Icon | path: icons/duotune/arrows/arr078.svg-->
-												<span class="svg-icon svg-icon-2">
-													<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-														<rect opacity="0.3" x="12.75" y="4.25" width="12" height="2" rx="1" transform="rotate(90 12.75 4.25)" fill="black" />
-														<path d="M12.0573 6.11875L13.5203 7.87435C13.9121 8.34457 14.6232 8.37683 15.056 7.94401C15.4457 7.5543 15.4641 6.92836 15.0979 6.51643L12.4974 3.59084C12.0996 3.14332 11.4004 3.14332 11.0026 3.59084L8.40206 6.51643C8.0359 6.92836 8.0543 7.5543 8.44401 7.94401C8.87683 8.37683 9.58785 8.34458 9.9797 7.87435L11.4427 6.11875C11.6026 5.92684 11.8974 5.92684 12.0573 6.11875Z" fill="black" />
-														<path d="M18.75 8.25H17.75C17.1977 8.25 16.75 8.69772 16.75 9.25C16.75 9.80228 17.1977 10.25 17.75 10.25C18.3023 10.25 18.75 10.6977 18.75 11.25V18.25C18.75 18.8023 18.3023 19.25 17.75 19.25H5.75C5.19772 19.25 4.75 18.8023 4.75 18.25V11.25C4.75 10.6977 5.19771 10.25 5.75 10.25C6.30229 10.25 6.75 9.80228 6.75 9.25C6.75 8.69772 6.30229 8.25 5.75 8.25H4.75C3.64543 8.25 2.75 9.14543 2.75 10.25V19.25C2.75 20.3546 3.64543 21.25 4.75 21.25H18.75C19.8546 21.25 20.75 20.3546 20.75 19.25V10.25C20.75 9.14543 19.8546 8.25 18.75 8.25Z" fill="#C4C4C4" />
-													</svg>
-												</span>
-												</span>
-												<!--end::Svg Icon-->Export</button>
-												</a>
-												
-												<!--end::Export-->
-												<!--begin::Add customer-->
-												<?php if (session()->get('rol_id') == 1): ?>
-													<button type="button" class="btn btn-primary"><a class="menu-link text-white" href="<?= base_url('ventas/save')?>">Add Sale</a></button>
-												<?php endif?>
-												<!--end::Add customer-->
+												<!--end::Search-->
 											</div>
-										</div>
-										<!--end::Card toolbar-->
-									</div>
-									<!--end::Card header-->
-									<!--begin::Card body-->
-									<div class="card-body pt-0">
-										<!--begin::Table-->
-										<?php if (!empty($ventas) && is_array($ventas)): ?>
-										<table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_customers_table">
-											<!--begin::Table head-->
-											<thead>
-												<!--begin::Table row-->
-												<tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
-													<th class="min-w-125px"><a href="<?=base_url('ventas?sort=coche_modelo&order=' . ($sort == 'coche_modelo' && $order == 'asc' ? 'desc' : 'asc'))?>">Sale</a><</th>
-													<th class="min-w-125px"><a href="<?=base_url('ventas?sort=usuario_nombre&order=' . ($sort == 'modelo' && $order == 'asc' ? 'desc' : 'asc'))?>">Users</a></th>
-													<th class="min-w-125px"><a href="<?=base_url('ventas?sort=fecha&order=' . ($sort == 'año' && $order == 'asc' ? 'desc' : 'asc'))?>">Date</a></th>
-													<th class="min-w-125px"><a href="<?=base_url('ventas?sort=precio_venta&order=' . ($sort == 'precio' && $order == 'asc' ? 'desc' : 'asc'))?>">Price</a></th>
-													<?php if (session()->get('rol_id') == 1): ?>
-														<th class="text-end min-w-70px">Actions</th>
-													<?php endif?>
-												</tr>
-												<!--end::Table row-->
-											</thead>
-											<!--end::Table head-->
-											<!--begin::Table body-->
-											<tbody class="fw-bold text-gray-600">
-											<?php foreach ($ventas as $venta): ?>
-												<tr>
-													<!--begin::Name=-->
-													<td style="<?= is_null($venta['fecha_baja']) ? '' : 'color: red;' ?>"><?= esc($venta['coche_modelo']) ?></td>
-													<!--end::Name=-->
-													<!--begin::Email=-->
-													<td style="<?= is_null($venta['fecha_baja']) ? '' : 'color: red;' ?>"><?= esc($venta['usuario_nombre']) ?></td>
-													<!--end::Email=-->
-													<!--begin::Company=-->
-													<td style="<?= is_null($venta['fecha_baja']) ? '' : 'color: red;' ?>"><?= esc($venta['fecha']) ?></td>
-													<!--end::Company=-->
-													<!--begin::Payment method=-->
-													<td style="<?= is_null($venta['fecha_baja']) ? '' : 'color: red;' ?>"><?= esc($venta['precio_venta']) ?></td>
-													<!--end::Payment method=-->
-													<!--begin::Action=-->
-													<?php if (session()->get('rol_id') == 1): ?>
-														<td class="text-end">
-														<a href="#" class="btn btn-sm btn-light btn-active-light-primary" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">Actions
-														<!--begin::Svg Icon | path: icons/duotune/arrows/arr072.svg-->
-														<span class="svg-icon svg-icon-5 m-0">
-															<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-																<path d="M11.4343 12.7344L7.25 8.55005C6.83579 8.13583 6.16421 8.13584 5.75 8.55005C5.33579 8.96426 5.33579 9.63583 5.75 10.05L11.2929 15.5929C11.6834 15.9835 12.3166 15.9835 12.7071 15.5929L18.25 10.05C18.6642 9.63584 18.6642 8.96426 18.25 8.55005C17.8358 8.13584 17.1642 8.13584 16.75 8.55005L12.5657 12.7344C12.2533 13.0468 11.7467 13.0468 11.4343 12.7344Z" fill="black" />
-															</svg>
-														</span>
-														<!--end::Svg Icon--></a>
-														<!--begin::Menu-->
-														<div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-bold fs-7 w-125px py-4" data-kt-menu="true">
-															<!--begin::Menu item-->
-															<div class="menu-item px-3">
-																<a href="<?= base_url('ventas/save/' . $venta['id']) ?>" class="menu-link px-3">Edit</a>
-															</div>
-															<!--end::Menu item-->
-															<!--begin::Menu item-->
-															<div class="menu-item px-3">
-																<a href="#" class="menu-link px-3" data-kt-customer-table-filter="delete_row">
-																	<?php if (is_null($venta['fecha_baja'])): ?>
-                                										<a class="menu-link text-success px-3" href="<?= base_url('ventas/archive/' . $venta['id']) ?>">Archive</a>
-                            										<?php else: ?>
-                                										<a class="menu-link text-danger px-3" href="<?= base_url('ventas/unarchive/' . $venta['id']) ?>">Unarchive</a>
-                            										<?php endif; ?>
-																</a>
-															</div>
-															<!--end::Menu item-->
+											<!--begin::Card title-->
+											<!--begin::Card toolbar-->
+											<div class="card-toolbar">
+												<!--begin::Toolbar-->
+												<div class="d-flex justify-content-end" data-kt-customer-table-toolbar="base">
+													<!--begin::Filter-->
+													<button type="button" class="btn btn-light-primary me-3" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
+													<!--begin::Svg Icon | path: icons/duotune/general/gen031.svg-->
+													<span class="svg-icon svg-icon-2">
+														<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+															<path d="M19.0759 3H4.72777C3.95892 3 3.47768 3.83148 3.86067 4.49814L8.56967 12.6949C9.17923 13.7559 9.5 14.9582 9.5 16.1819V19.5072C9.5 20.2189 10.2223 20.7028 10.8805 20.432L13.8805 19.1977C14.2553 19.0435 14.5 18.6783 14.5 18.273V13.8372C14.5 12.8089 14.8171 11.8056 15.408 10.964L19.8943 4.57465C20.3596 3.912 19.8856 3 19.0759 3Z" fill="black" />
+														</svg>
+													</span>
+													<!--end::Svg Icon-->Filter</button>
+													<!--begin::Menu 1-->
+													<div class="menu menu-sub menu-sub-dropdown w-300px w-md-325px" data-kt-menu="true" id="kt-toolbar-filter">
+														<!--begin::Header-->
+														<div class="px-7 py-5">
+															<div class="fs-4 text-dark fw-bolder">Filter Options</div>
 														</div>
+														<!--end::Header-->
+														<!--begin::Separator-->
+														<div class="separator border-gray-200"></div>
+														<!--end::Separator-->
+														<!--begin::Content-->
+														<form  method="GET" action="<?=base_url('ventas')?>">
+															<div class="px-7 py-5">
+																<!--begin::Input group-->
+									
+																<!--begin::Input group-->
+																<div class="mb-10">
+																	<!--begin::Label-->
+																	<label class="form-label fs-5 fw-bold mb-1">Status</label>
+																	<!--end::Label-->
+																	<!--begin::Options-->
+																	<select name="status" class="form-select form-select-solid fw-bolder" data-placeholder="Select option" data-allow-clear="true" data-kt-customer-table-filter="status" data-dropdown-parent="#kt-toolbar-filter">
+																		<option value="">All</option>
+																		<option value="alta" <?= isset($status) && $status == 'alta' ? 'selected' : '' ?>>Admitted</option>
+																		<option value="baja" <?= isset($status) && $status == 'baja' ? 'selected' : '' ?>>Discharged</option>
+																	</select>
+															
+																	<!--end::Options-->
+																</div>
+																<!--end::Input group-->
+																<!--begin::Actions-->
+																<div class="d-flex justify-content-end">
+																	<button type="reset" class="btn btn-light btn-active-light-primary me-2" data-kt-menu-dismiss="true" data-kt-customer-table-filter="reset">Reset</button>
+																	<button type="submit" class="btn btn-primary" data-kt-menu-dismiss="true" data-kt-customer-table-filter="filter">Apply</button>
+																</div>
+																<!--end::Actions-->
+															</div>
+														</form>
+														<!--end::Content-->
+													</div>
+													<!--end::Menu 1-->
+													<!--end::Filter-->
+													<!--begin::Export-->
+													<a href="<?=base_url('ventas/export')?>">
+													<button type="button" class="btn btn-light-primary me-3" data-bs-toggle="modal" data-bs-target="#kt_customers_export_modal">
+													<!--begin::Svg Icon | path: icons/duotune/arrows/arr078.svg-->
+													<span class="svg-icon svg-icon-2">
+														<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+															<rect opacity="0.3" x="12.75" y="4.25" width="12" height="2" rx="1" transform="rotate(90 12.75 4.25)" fill="black" />
+															<path d="M12.0573 6.11875L13.5203 7.87435C13.9121 8.34457 14.6232 8.37683 15.056 7.94401C15.4457 7.5543 15.4641 6.92836 15.0979 6.51643L12.4974 3.59084C12.0996 3.14332 11.4004 3.14332 11.0026 3.59084L8.40206 6.51643C8.0359 6.92836 8.0543 7.5543 8.44401 7.94401C8.87683 8.37683 9.58785 8.34458 9.9797 7.87435L11.4427 6.11875C11.6026 5.92684 11.8974 5.92684 12.0573 6.11875Z" fill="black" />
+															<path d="M18.75 8.25H17.75C17.1977 8.25 16.75 8.69772 16.75 9.25C16.75 9.80228 17.1977 10.25 17.75 10.25C18.3023 10.25 18.75 10.6977 18.75 11.25V18.25C18.75 18.8023 18.3023 19.25 17.75 19.25H5.75C5.19772 19.25 4.75 18.8023 4.75 18.25V11.25C4.75 10.6977 5.19771 10.25 5.75 10.25C6.30229 10.25 6.75 9.80228 6.75 9.25C6.75 8.69772 6.30229 8.25 5.75 8.25H4.75C3.64543 8.25 2.75 9.14543 2.75 10.25V19.25C2.75 20.3546 3.64543 21.25 4.75 21.25H18.75C19.8546 21.25 20.75 20.3546 20.75 19.25V10.25C20.75 9.14543 19.8546 8.25 18.75 8.25Z" fill="#C4C4C4" />
+														</svg>
+													</span>
+													</span>
+													<!--end::Svg Icon-->Export</button>
+													</a>
+													
+													<!--end::Export-->
+													<!--begin::Add customer-->
+													<?php if (session()->get('rol_id') == 1): ?>
+														<button type="button" class="btn btn-primary"><a class="menu-link text-white" href="<?= base_url('ventas/save')?>">Add Sale</a></button>
 													<?php endif?>
-														<!--end::Menu-->
-													</td>
-													</td>
-													<!--end::Action=-->
-												</tr>
-												<?php endforeach; ?>
-												
-													<!--begin::Checkbox-->
-											</tbody>
-											<!--end::Table body-->
-										</table>
-									<?php endif?>
-									<div class="mt-4">
-										<?= $pager->only(['name'])->links('default','custom_pagination') ?>
+													<!--end::Add customer-->
+												</div>
+											</div>
+											<!--end::Card toolbar-->
+										</div>
+										<!--end::Card header-->
+										<!--begin::Card body-->
+										<div class="card-body pt-0">
+											<!--begin::Table-->
+											<?php if (!empty($ventas) && is_array($ventas)): ?>
+											<table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_customers_table">
+												<!--begin::Table head-->
+												<thead>
+													<!--begin::Table row-->
+													<tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
+														<th class="min-w-125px"><a href="<?=base_url('ventas?sort=coche_modelo&order=' . ($sort == 'coche_modelo' && $order == 'asc' ? 'desc' : 'asc'))?>">Sale</a><</th>
+														<th class="min-w-125px"><a href="<?=base_url('ventas?sort=usuario_nombre&order=' . ($sort == 'modelo' && $order == 'asc' ? 'desc' : 'asc'))?>">Users</a></th>
+														<th class="min-w-125px"><a href="<?=base_url('ventas?sort=fecha&order=' . ($sort == 'año' && $order == 'asc' ? 'desc' : 'asc'))?>">Date</a></th>
+														<th class="min-w-125px"><a href="<?=base_url('ventas?sort=precio_venta&order=' . ($sort == 'precio' && $order == 'asc' ? 'desc' : 'asc'))?>">Price</a></th>
+														<?php if (session()->get('rol_id') == 1): ?>
+															<th class="text-end min-w-70px">Actions</th>
+														<?php endif?>
+													</tr>
+													<!--end::Table row-->
+												</thead>
+												<!--end::Table head-->
+												<!--begin::Table body-->
+												<tbody class="fw-bold text-gray-600">
+												<?php foreach ($ventas as $venta): ?>
+													<tr>
+														<!--begin::Name=-->
+														<td style="<?= is_null($venta['fecha_baja']) ? '' : 'color: red;' ?>"><?= esc($venta['coche_modelo']) ?></td>
+														<!--end::Name=-->
+														<!--begin::Email=-->
+														<td style="<?= is_null($venta['fecha_baja']) ? '' : 'color: red;' ?>"><?= esc($venta['usuario_nombre']) ?></td>
+														<!--end::Email=-->
+														<!--begin::Company=-->
+														<td style="<?= is_null($venta['fecha_baja']) ? '' : 'color: red;' ?>"><?= esc($venta['fecha']) ?></td>
+														<!--end::Company=-->
+														<!--begin::Payment method=-->
+														<td style="<?= is_null($venta['fecha_baja']) ? '' : 'color: red;' ?>"><?= esc($venta['precio_venta']) ?></td>
+														<!--end::Payment method=-->
+														<!--begin::Action=-->
+														<?php if (session()->get('rol_id') == 1): ?>
+															<td class="text-end">
+															<a href="#" class="btn btn-sm btn-light btn-active-light-primary" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">Actions
+															<!--begin::Svg Icon | path: icons/duotune/arrows/arr072.svg-->
+															<span class="svg-icon svg-icon-5 m-0">
+																<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+																	<path d="M11.4343 12.7344L7.25 8.55005C6.83579 8.13583 6.16421 8.13584 5.75 8.55005C5.33579 8.96426 5.33579 9.63583 5.75 10.05L11.2929 15.5929C11.6834 15.9835 12.3166 15.9835 12.7071 15.5929L18.25 10.05C18.6642 9.63584 18.6642 8.96426 18.25 8.55005C17.8358 8.13584 17.1642 8.13584 16.75 8.55005L12.5657 12.7344C12.2533 13.0468 11.7467 13.0468 11.4343 12.7344Z" fill="black" />
+																</svg>
+															</span>
+															<!--end::Svg Icon--></a>
+															<!--begin::Menu-->
+															<div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-bold fs-7 w-125px py-4" data-kt-menu="true">
+																<!--begin::Menu item-->
+																<div class="menu-item px-3">
+																	<a href="<?= base_url('ventas/save/' . $venta['id']) ?>" class="menu-link px-3">Edit</a>
+																</div>
+																<!--end::Menu item-->
+																<!--begin::Menu item-->
+																<div class="menu-item px-3">
+																	<a href="#" class="menu-link px-3" data-kt-customer-table-filter="delete_row">
+																		<?php if (is_null($venta['fecha_baja'])): ?>
+																			<a class="menu-link text-success px-3" href="<?= base_url('ventas/archive/' . $venta['id']) ?>">Archive</a>
+																		<?php else: ?>
+																			<a class="menu-link text-danger px-3" href="<?= base_url('ventas/unarchive/' . $venta['id']) ?>">Unarchive</a>
+																		<?php endif; ?>
+																	</a>
+																</div>
+																<!--end::Menu item-->
+															</div>
+														<?php endif?>
+															<!--end::Menu-->
+														</td>
+														</td>
+														<!--end::Action=-->
+													</tr>
+													<?php endforeach; ?>
+													
+														<!--begin::Checkbox-->
+												</tbody>
+												<!--end::Table body-->
+											</table>
+										<?php endif?>
+										<div class="mt-4">
+											<?= $pager->only(['name'])->links('default','custom_pagination') ?>
+										</div>
+							
+											<!--end::Table-->
+										</div>
+										<!--end::Card body-->
 									</div>
-						
-										<!--end::Table-->
-									</div>
-									<!--end::Card body-->
+									<!--end::Card-->
+									<!--begin::Modals-->
+									<!--begin::Modal - Customers - Add-->
+									
+									
+									
+									<!--end::Modal - New Card-->
+									<!--end::Modals-->
 								</div>
-								<!--end::Card-->
-								<!--begin::Modals-->
-								<!--begin::Modal - Customers - Add-->
-								
-								
-								
-								<!--end::Modal - New Card-->
-								<!--end::Modals-->
+								<!--end::Container-->
+							</div>
+							<!--end::Post-->
+						</div>
+						<!--end::Content-->
+						<!--begin::Footer-->
+						<div class="footer py-4 d-flex flex-lg-column" id="kt_footer">
+							<!--begin::Container-->
+							<div class="container-fluid d-flex flex-column flex-md-row align-items-center justify-content-between">
+								<!--begin::Copyright-->
+								<div class="text-dark order-2 order-md-1">
+									<span class="text-muted fw-bold me-1">2021©</span>
+									<a href="https://keenthemes.com" target="_blank" class="text-gray-800 text-hover-primary">Keenthemes</a>
+								</div>
+								<!--end::Copyright-->
+								<!--begin::Menu-->
+								<ul class="menu menu-gray-600 menu-hover-primary fw-bold order-1">
+									<li class="menu-item">
+										<a href="https://keenthemes.com" target="_blank" class="menu-link px-2">About</a>
+									</li>
+									<li class="menu-item">
+										<a href="https://keenthemes.com/support" target="_blank" class="menu-link px-2">Support</a>
+									</li>
+									<li class="menu-item">
+										<a href="https://1.envato.market/EA4JP" target="_blank" class="menu-link px-2">Purchase</a>
+									</li>
+								</ul>
+								<!--end::Menu-->
 							</div>
 							<!--end::Container-->
 						</div>
-						<!--end::Post-->
+						<!--end::Footer-->
 					</div>
-					<!--end::Content-->
-					<!--begin::Footer-->
-					<div class="footer py-4 d-flex flex-lg-column" id="kt_footer">
-						<!--begin::Container-->
-						<div class="container-fluid d-flex flex-column flex-md-row align-items-center justify-content-between">
-							<!--begin::Copyright-->
-							<div class="text-dark order-2 order-md-1">
-								<span class="text-muted fw-bold me-1">2021©</span>
-								<a href="https://keenthemes.com" target="_blank" class="text-gray-800 text-hover-primary">Keenthemes</a>
-							</div>
-							<!--end::Copyright-->
-							<!--begin::Menu-->
-							<ul class="menu menu-gray-600 menu-hover-primary fw-bold order-1">
-								<li class="menu-item">
-									<a href="https://keenthemes.com" target="_blank" class="menu-link px-2">About</a>
-								</li>
-								<li class="menu-item">
-									<a href="https://keenthemes.com/support" target="_blank" class="menu-link px-2">Support</a>
-								</li>
-								<li class="menu-item">
-									<a href="https://1.envato.market/EA4JP" target="_blank" class="menu-link px-2">Purchase</a>
-								</li>
-							</ul>
-							<!--end::Menu-->
-						</div>
-						<!--end::Container-->
-					</div>
-					<!--end::Footer-->
-				</div>
+				<?php endif?>
 				<!--end::Wrapper-->
 			</div>
 			<!--end::Page-->

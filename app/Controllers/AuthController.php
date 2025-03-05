@@ -19,31 +19,31 @@ class AuthController extends BaseController
      */
     public function processRegister()
     {
-        helper(['form', 'url']); // Carga los helpers necesarios para trabajar con formularios y URLs.
-
-        // Configuración de las reglas de validación del formulario.
+        helper(['form', 'url']);
+    
         $rules = [
-            'nombre' => 'required|min_length[3]|max_length[50]', // El nombre es obligatorio y debe tener entre 3 y 50 caracteres.
-            'email' => 'required|valid_email|is_unique[usuarios.email]', // El correo debe ser válido y único en la tabla `usuarios`.
-            'password' => 'required|min_length[8]', // La contraseña debe ser obligatoria y tener al menos 8 caracteres.
-            'confpassword' => 'required|matches[password]', // La confirmación de la contraseña debe coincidir con la contraseña.
-            'rol_id' => 'required', // El rol del usuario es obligatorio.
-            'telefono' => 'required|min_length[10]|max_length[15]', // El teléfono es obligatorio y debe tener entre 10 y 15 caracteres.
-            'direccion' => 'required|min_length[5]|max_length[255]', // La dirección es obligatoria y debe tener entre 5 y 255 caracteres.
+            'nombre' => 'required|min_length[3]|max_length[50]',
+            'email' => 'required|valid_email|is_unique[usuarios.email]',
+            'password' => 'required|min_length[8]',
+            'confirm-password' => 'required|matches[password]',
+            'telefono' => 'required|min_length[10]|max_length[15]',
+            'direccion' => 'required|min_length[5]|max_length[255]',
         ];
-
-        // Si la validación pasa, procedemos a guardar el usuario en la base de datos.
+    
+        if (!$this->validate($rules)) {
+            return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
+        }
+    
         $userModel = new UserModel();
         $userModel->save([
-            'nombre' => $this->request->getPost('nombre'), // Obtenemos el nombre del formulario.
-            'email' => $this->request->getPost('email'), // Obtenemos el correo del formulario.
-            'password' => password_hash($this->request->getPost('password'), PASSWORD_DEFAULT), // Encriptamos la contraseña antes de guardarla.
-            'rol_id' => 3,
-            'telefono' => $this->request->getPost('telefono'), // Obtenemos el teléfono del formulario.
-            'direccion' => $this->request->getPost('direccion'), // Obtenemos la dirección del formulario.
+            'nombre' => $this->request->getPost('nombre'),
+            'email' => $this->request->getPost('email'),
+            'password' => password_hash($this->request->getPost('password'), PASSWORD_DEFAULT),
+            'rol_id' => 3, // Asegúrate de obtener el rol del formulario.
+            'telefono' => $this->request->getPost('telefono'),
+            'direccion' => $this->request->getPost('direccion'),
         ]);
-
-        // Redirigimos al formulario de inicio de sesión con un mensaje de éxito.
+    
         return redirect()->to('/auth/login')->with('success', 'Usuario registrado correctamente.');
     }
 
