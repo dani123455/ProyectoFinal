@@ -8,6 +8,7 @@ use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 class CarController extends BaseController
 {
+
     public function index()
     {
         $brandModel = new BrandModel();
@@ -76,7 +77,41 @@ class CarController extends BaseController
 
         return view('car/car_list', $data);
     }
-
+public function imagen($id)
+    {
+        $db = \Config\Database::connect();
+        $builder = $db->table('coches');
+        $builder->select('imagen');
+        $builder->where('id', $id);
+        $query = $builder->get();
+        $result = $query->getRowArray();
+        
+        if (!$result || empty($result['imagen'])) {
+            $response = $this->response;
+            $response->setHeader('Content-Type', 'image/jpeg');
+            return $response->setBody(file_get_contents(FCPATH . 'assets/media/cars/default-car.jpg'));
+        }
+        
+        // Set the appropriate content type
+        $response = $this->response;
+        $response->setHeader('Content-Type', 'image/jpeg');
+        
+        // Return the image data
+        return $response->setBody($result['imagen']);
+    }
+    
+    public function catalog()
+    {
+        $db = \Config\Database::connect();
+        $builder = $db->table('coches');
+        $builder->select('coches.*, marcas.nombre as marca_nombre');
+        $builder->join('marcas', 'marcas.id = coches.marca_id', 'left');
+        $builder->where('coches.disponible', 1);
+        $query = $builder->get();
+        $data['coches'] = $query->getResultArray();
+        
+        return view('catalog', $data);
+    }
     public function saveCar($id = null)
     {
         $carModel = new CarModel();

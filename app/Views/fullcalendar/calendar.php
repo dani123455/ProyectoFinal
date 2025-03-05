@@ -12,13 +12,14 @@
     <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css" rel="stylesheet">
     <link href="../assets/plugins/custom/fullcalendar/fullcalendar.bundle.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
 </head>
 <body id="kt_body" class="header-fixed header-tablet-and-mobile-fixed toolbar-enabled toolbar-fixed aside-enabled aside-fixed" style="--kt-toolbar-height:55px;--kt-toolbar-height-tablet-and-mobile:55px">
     <div id="kt_aside" class="aside aside-dark aside-hoverable" data-kt-drawer="true" data-kt-drawer-name="aside" data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true" data-kt-drawer-width="{default:'200px', '300px': '250px'}" data-kt-drawer-direction="start" data-kt-drawer-toggle="#kt_aside_mobile_toggle">
 		<!--begin::Brand-->
 		<div class="aside-logo flex-column-auto p-2" style="background-color:#21273a;" id="kt_aside_logo">
             <!--begin::Logo-->
-			<a href="<?= base_url('admin/dashboard') ?>">
+			<a href="<?= base_url('/') ?>">
 				<img alt="Logo" src="<?= base_url('assets/media/logos/LogoTiendaCoche.png')?>" class="logo" style="width: 200px;" />
 			</a>
 			<!--end::Logo-->
@@ -79,23 +80,25 @@
 									<span class="menu-item">Brands</span>
 								</a>
 							</div>
-							<div class="menu-item">
-								<a class="menu-link" href="<?= base_url('usuarios') ?>">
+                            <?php if (session()->get('rol_id') == 1): ?>
+                                <div class="menu-item">
+                                    <a class="menu-link" href="<?= base_url('usuarios') ?>">
 
-									<span class="menu-bullet">
-										<span class="bullet bullet-dot"></span>
-									</span>
-									<span class="menu-item">Users</span>
-								</a>
-							</div>
-							<div class="menu-item">
-								<a class="menu-link" href="<?= base_url('ventas') ?>">
-									<span class="menu-bullet">
-                                    <span class="bullet bullet-dot"></span>
-									</span>
-									<span class="menu-item">Sales</span>
-								</a>
-							</div>
+                                        <span class="menu-bullet">
+                                            <span class="bullet bullet-dot"></span>
+                                        </span>
+                                        <span class="menu-item">Users</span>
+                                    </a>
+                                </div>
+                                <div class="menu-item">
+                                    <a class="menu-link" href="<?= base_url('ventas') ?>">
+                                        <span class="menu-bullet">
+                                        <span class="bullet bullet-dot"></span>
+                                        </span>
+                                        <span class="menu-item">Sales</span>
+                                    </a>
+                                </div>
+                            <?php endif?>
 						</div>
 					</div>
 					<div class="menu-item">

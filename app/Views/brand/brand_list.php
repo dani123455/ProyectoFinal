@@ -110,23 +110,25 @@ License: For each use you must have a valid license purchased only from above li
 												<span class="menu-item">Brands</span>
 											</a>
 										</div>
-										<div class="menu-item">
-											<a class="menu-link" href="<?= base_url('usuarios') ?>">
+										<?php if (session()->get('rol_id') == 1): ?>
+											<div class="menu-item">
+												<a class="menu-link" href="<?= base_url('usuarios') ?>">
 
-												<span class="menu-bullet">
-													<span class="bullet bullet-dot"></span>
-												</span>
-												<span class="menu-item">Users</span>
-											</a>
-										</div>
-										<div class="menu-item">
-											<a class="menu-link" href="<?= base_url('ventas') ?>">
-												<span class="menu-bullet">
-													<span class="bullet bullet-dot"></span>
-												</span>
-												<span class="menu-item">Sales</span>
-											</a>
-										</div>
+													<span class="menu-bullet">
+														<span class="bullet bullet-dot"></span>
+													</span>
+													<span class="menu-item">Users</span>
+												</a>
+											</div>
+											<div class="menu-item">
+												<a class="menu-link" href="<?= base_url('ventas') ?>">
+													<span class="menu-bullet">
+														<span class="bullet bullet-dot"></span>
+													</span>
+													<span class="menu-item">Sales</span>
+												</a>
+											</div>
+										<?php endif?>
 									</div>
 								</div>
 								<div class="menu-item">

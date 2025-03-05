@@ -131,18 +131,34 @@ License: For each use you must have a valid license purchased only from above li
 									</div>
 								</div>
 								<div class="menu-item">
-											<a class="menu-link" href="<?= base_url('fullcalendar')?>">
-												<span class="menu-icon">
-													<span class="svg-icon svg-icon-2">
-														<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-															<path opacity="0.3" d="M3 4C3 3.4 3.4 3 4 3H20C20.6 3 21 3.4 21 4V5H3V4Z" fill="black"/>
-															<path d="M21 8V19C21 20.1 20.1 21 19 21H5C3.9 21 3 20.1 3 19V8H21ZM9 11H7V13H9V11ZM13 11H11V13H13V11ZM17 11H15V13H17V11ZM9 15H7V17H9V15ZM13 15H11V17H13V15ZM17 15H15V17H17V15Z" fill="black"/>
-														</svg>
-													</span>
-												</span>
-												<span class="menu-title">Calendar</span>
-											</a>
-										</div>
+									<div class="menu-content pt-8 pb-2">
+										<span class="menu-section text-muted text-uppercase fs-8 ls-1">Functionalities</span>
+									</div>
+								</div>
+								<div class="menu-item">
+									<a class="menu-link" href="<?= base_url('fullcalendar')?>">
+										<span class="menu-icon">
+											<span class="svg-icon svg-icon-2">
+												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+													<path opacity="0.3" d="M3 4C3 3.4 3.4 3 4 3H20C20.6 3 21 3.4 21 4V5H3V4Z" fill="black"/>
+													<path d="M21 8V19C21 20.1 20.1 21 19 21H5C3.9 21 3 20.1 3 19V8H21ZM9 11H7V13H9V11ZM13 11H11V13H13V11ZM17 11H15V13H17V11ZM9 15H7V17H9V15ZM13 15H11V17H13V15ZM17 15H15V17H17V15Z" fill="black"/>
+												</svg>
+											</span>
+										</span>
+										<span class="menu-title">Calendar</span>
+									</a>
+								</div>
+								<div class="menu-item">
+									<a class="menu-link" href="<?= base_url('fullcalendar')?>">
+										<span class="menu-icon">
+										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="black">
+    <path opacity="0.3" d="M3 11H21V13H3V11Z" fill="black"/>
+    <path d="M5 16C4.45 16 4 16.45 4 17C4 17.55 4.45 18 5 18C5.55 18 6 17.55 6 17C6 16.45 5.55 16 5 16ZM19 16C18.45 16 18 16.45 18 17C18 17.55 18.45 18 19 18C19.55 18 20 17.55 20 17C20 16.45 19.55 16 19 16ZM5 14H19C20.1 14 21 14.9 21 16V17C21 18.1 20.1 19 19 19H5C3.9 19 3 18.1 3 17V16C3 14.9 3.9 14 5 14ZM5 10H19C20.1 10 21 10.9 21 12V14H3V12C3 10.9 3.9 10 5 10ZM5 6H19C20.1 6 21 6.9 21 8V10H3V8C3 6.9 3.9 6 5 6Z" fill="black"/>
+</svg>
+										</span>
+										<span class="menu-title">Catalog</span>
+									</a>
+								</div>
 							</div>
 							<!--end::Menu-->
 						</div>

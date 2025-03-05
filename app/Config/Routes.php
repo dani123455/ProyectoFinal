@@ -49,6 +49,8 @@ $routes->get('/', 'Home::index');
 
     $routes->get('marcas', 'BrandController::index'); // Listar marcas
     $routes->get('coches', 'CarController::index'); // Listar coches
+    $routes->get('catalogo', 'CatalogController::view');
+    $routes->get('imagen', 'CatalogController::imagen');
 
 
 // Inicio de sesion y registro

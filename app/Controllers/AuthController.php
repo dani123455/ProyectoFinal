@@ -122,6 +122,8 @@ class AuthController extends BaseController
         return redirect()->to('/')->with('success', 'Has cerrado sesión correctamente.');
     }
 
+
+
     /**
      * Establece los datos de la sesión del usuario.
      */

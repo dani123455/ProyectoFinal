@@ -24,3 +24,6 @@ aRREGLA FORM DEL CAR (EL AÑO)
 al regiustrarse conm un correo que exista que mande iun mensaje no que salga el whooooooops
 
 ajustar dsahboard para los roles
+
+
+LISTAS QUE FILTREN BIEN Y AL ORDENAR NO SE ROMPA Y CON EL EXCEL QUE SOLO SALGA LO Q FILTRES Y LAS FELCHITAS DE ORDENACION

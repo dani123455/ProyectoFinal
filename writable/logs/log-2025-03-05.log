@@ -1,0 +1,70 @@
+CRITICAL - 2025-03-05 07:42:39 --> ErrorException: Undefined variable $rol
+[Method: GET, Route: fullcalendar]
+in APPPATH\Views\fullcalendar\calendar.php on line 23.
+ 1 APPPATH\Views\fullcalendar\calendar.php(23): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $rol', 'C:\\wamp64\\www\\ProyectoFinal\\app\\Views\\fullcalendar\\calendar.php', 23)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\wamp64\\www\\ProyectoFinal\\app\\Views\\fullcalendar\\calendar.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('fullcalendar/calendar.php', [], true)
+ 5 APPPATH\Controllers\EventController.php(11): view('fullcalendar/calendar.php')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\EventController->Calendar()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EventController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-05 08:29:16 --> ErrorException: Undefined variable $coche
+[Method: GET, Route: catalogo]
+in APPPATH\Views\car\catalog.php on line 209.
+ 1 APPPATH\Views\car\catalog.php(209): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $coche', 'C:\\wamp64\\www\\ProyectoFinal\\app\\Views\\car\\catalog.php', 209)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\wamp64\\www\\ProyectoFinal\\app\\Views\\car\\catalog.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('car/catalog', [], true)
+ 5 APPPATH\Controllers\CatalogController.php(10): view('car/catalog')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CatalogController->view()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CatalogController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-05 08:38:52 --> ErrorException: Undefined variable $pager
+[Method: GET, Route: catalogo]
+in APPPATH\Views\car\catalog.php on line 264.
+ 1 APPPATH\Views\car\catalog.php(264): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $pager', 'C:\\wamp64\\www\\ProyectoFinal\\app\\Views\\car\\catalog.php', 264)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\wamp64\\www\\ProyectoFinal\\app\\Views\\car\\catalog.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('car/catalog', [], true)
+ 5 APPPATH\Controllers\CatalogController.php(10): view('car/catalog')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CatalogController->view()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CatalogController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-05 08:41:49 --> ErrorException: Undefined variable $pager
+[Method: GET, Route: catalogo]
+in APPPATH\Views\car\catalog.php on line 264.
+ 1 APPPATH\Views\car\catalog.php(264): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $pager', 'C:\\wamp64\\www\\ProyectoFinal\\app\\Views\\car\\catalog.php', 264)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\wamp64\\www\\ProyectoFinal\\app\\Views\\car\\catalog.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('car/catalog', [], true)
+ 5 APPPATH\Controllers\CatalogController.php(10): view('car/catalog')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CatalogController->view()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CatalogController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-05 09:15:06 --> ErrorException: Undefined variable $db
+[Method: GET, Route: catalogo]
+in APPPATH\Views\car\catalog.php on line 202.
+ 1 APPPATH\Views\car\catalog.php(202): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $db', 'C:\\wamp64\\www\\ProyectoFinal\\app\\Views\\car\\catalog.php', 202)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\wamp64\\www\\ProyectoFinal\\app\\Views\\car\\catalog.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('car/catalog', [], true)
+ 5 APPPATH\Controllers\CatalogController.php(10): view('car/catalog')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CatalogController->view()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CatalogController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
