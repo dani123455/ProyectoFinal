@@ -79,25 +79,25 @@ License: For each use you must have a valid license purchased only from above li
 							<div class="row fv-row mb-7">
 								<!--begin::Col-->
 								<div class="col-xl-6">
-									<label class="form-label fw-bolder fs-6" style="color: #21273a;">First Name</label>
-									<input class="form-control form-control-lg form-control-solid" style="border:1px solid" type="text" placeholder="" name="nombre" autocomplete="off" />
+									<label class="form-label fw-bolder fs-6" style="color: #21273a;">First Name <span style="color: red;"> *</span></label>
+									<input class="form-control form-control-lg form-control-solid" style="border:1px solid" type="text" placeholder="" name="nombre" autocomplete="off" required />
 								</div>
 								<div class="col-xl-6">
-									<label class="form-label fw-bolder fs-6" style="color: #21273a;">Phone</label>
-									<input class="form-control form-control-lg form-control-solid" style="border:1px solid" type="tel" name="telefono" autocomplete="off" />
+									<label class="form-label fw-bolder fs-6" style="color: #21273a;">Phone <span style="color: red;"> *</span></label>
+									<input class="form-control form-control-lg form-control-solid" style="border:1px solid" type="tel" name="telefono" autocomplete="off" required />
 								</div>
 								<!--end::Col-->
 							</div>
 							<!--end::Input group-->
 							<!--begin::Input group-->
 							<div class="fv-row mb-7">
-								<label class="form-label fw-bolder fs-6" style="color: #21273a;">Email</label>
-								<input class="form-control form-control-lg form-control-solid" style="border:1px solid" type="email" placeholder="" name="email" autocomplete="off" />
+								<label class="form-label fw-bolder fs-6" style="color: #21273a;">Email <span style="color: red;">*</span></label>
+								<input class="form-control form-control-lg form-control-solid" style="border:1px solid" type="email" placeholder="" name="email" autocomplete="off" required />
 							</div>
 
 							<div class="fv-row mb-7">
-									<label class="form-label fw-bolder fs-6" style="color: #21273a;">Address</label>
-									<input class="form-control form-control-lg form-control-solid" style="border:1px solid" type="text" name="direccion" autocomplete="off" />
+								<label class="form-label fw-bolder fs-6" style="color: #21273a;">Address <span style="color: red;">*</span></label>
+								<input class="form-control form-control-lg form-control-solid" style="border:1px solid" type="text" name="direccion" autocomplete="off" required />
 							</div>
 							<!--end::Input group-->
 							<!--begin::Input group-->
@@ -105,11 +105,11 @@ License: For each use you must have a valid license purchased only from above li
 								<!--begin::Wrapper-->
 								<div class="mb-1">
 									<!--begin::Label-->
-									<label class="form-label fw-bolder fs-6" style="color: #21273a;">Password</label>
+									<label class="form-label fw-bolder fs-6" style="color: #21273a;">Password <span style="color: red;">*</span></label>
 									<!--end::Label-->
 									<!--begin::Input wrapper-->
 									<div class="position-relative mb-3">
-										<input class="form-control form-control-lg form-control-solid" style="border:1px solid" type="password" placeholder="" name="password" autocomplete="off" />
+										<input class="form-control form-control-lg form-control-solid" style="border:1px solid" type="password" placeholder="" name="password" autocomplete="off" required />
 										<span class="btn btn-sm btn-icon position-absolute translate-middle top-50 end-0 me-n2" data-kt-password-meter-control="visibility">
 											<i class="bi bi-eye-slash fs-2"></i>
 											<i class="bi bi-eye fs-2 d-none"></i>
@@ -130,12 +130,13 @@ License: For each use you must have a valid license purchased only from above li
 								<div class="text-muted">Use 8 or more characters with a mix of letters, numbers &amp; symbols.</div>
 								<!--end::Hint-->
 							</div>
-							<!--end::Input group=-->
+							<!--end::Input group-->
 							<!--begin::Input group-->
 							<div class="fv-row mb-5">
-								<label class="form-label fw-bolder fs-6" style="color: #21273a;">Confirm Password</label>
-								<input class="form-control form-control-lg form-control-solid" style="border:1px solid" type="password" placeholder="" name="confirm-password" autocomplete="off" />
+								<label class="form-label fw-bolder fs-6" style="color: #21273a;">Confirm Password <span style="color: red;">*</span></label>
+								<input class="form-control form-control-lg form-control-solid" style="border:1px solid" type="password" placeholder="" name="confirm-password" autocomplete="off" required />
 							</div>
+
 							<!--end::Input group-->
 							<!--begin::Input group-->
 							<div class="fv-row mb-10">

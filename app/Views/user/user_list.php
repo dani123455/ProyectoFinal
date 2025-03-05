@@ -338,49 +338,51 @@ License: For each use you must have a valid license purchased only from above li
 														<thead>
 															<!--begin::Table row-->
 															<tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
-															<th class="min-w-125px">
-															
-																	User
-																	<?php if ($sort == 'nombre'): ?>
-																		<span class="icon"><?php echo $order == 'asc' ? '<i class="bi bi-arrow-up fs-3"></i>' : '<i class="bi bi-arrow-down fs-3"></i>'; ?></span>
-																	<?php endif; ?>
-																</a>
-															</th>
 																<th class="min-w-125px">
-																<a href="<?= base_url('usuarios') ?>?nombre=<?= urlencode($name) ?>&email=<?= urlencode($email) ?>&rol=<?= urlencode($rol) ?>&telefono=<?= urlencode($telefono) ?>&direccion=<?= urlencode($direccion) ?>&status=<?= urlencode($status) ?>&sort=email&order=<?= ($order == 'asc') ? 'desc' : 'asc' ?>">
+																	<a href="<?= base_url('usuarios') ?>?<?= http_build_query(array_merge($_GET, ['sort' => 'nombre', 'order' => ($sort == 'nombre' && $order == 'asc') ? 'desc' : 'asc'])) ?>">
+																		User
+																		<span class="icon">
+																			<?= $sort == 'nombre' ? ($order == 'asc' ? '<i class="bi bi-arrow-up fs-3"></i>' : '<i class="bi bi-arrow-down fs-3"></i>') : '<i class="bi bi-arrow-up-down fs-3"></i>' ?>
+																		</span>
+																	</a>
+																</th>
+																<th class="min-w-125px">
+																	<a href="<?= base_url('usuarios') ?>?<?= http_build_query(array_merge($_GET, ['sort' => 'email', 'order' => ($sort == 'email' && $order == 'asc') ? 'desc' : 'asc'])) ?>">
 																		Email
-																	<?php if ($sort == 'email'): ?>
-																		<span class="icon"><?php echo $order == 'asc' ? '<i class="bi bi-arrow-up fs-3"></i>' : '<i class="bi bi-arrow-down fs-3"></i>'; ?></span>
-																	<?php endif; ?></a>
+																		<span class="icon">
+																			<?= $sort == 'email' ? ($order == 'asc' ? '<i class="bi bi-arrow-up fs-3"></i>' : '<i class="bi bi-arrow-down fs-3"></i>') : '<i class="bi bi-arrow-up-down fs-3"></i>' ?>
+																		</span>
+																	</a>
 																</th>
 																<th class="min-w-125px">
-																<a href="<?= base_url('usuarios') ?>?page=<?= $pager->getCurrentPage() ?>&nombre=<?= urlencode($name) ?>&email=<?= urlencode($email) ?>&rol=<?= urlencode($rol) ?>&telefono=<?= urlencode($telefono) ?>&direccion=<?= urlencode($direccion) ?>&status=<?= urlencode($status) ?>&sort=nombre&order=<?= ($order == 'asc') ? 'desc' : 'asc' ?>">
+																	<a href="<?= base_url('usuarios') ?>?<?= http_build_query(array_merge($_GET, ['sort' => 'rol', 'order' => ($sort == 'rol' && $order == 'asc') ? 'desc' : 'asc'])) ?>">
 																		Rol
-																	<?php if ($sort == 'rol_nombre'): ?>
-																		<span class="icon"><?php echo $order == 'asc' ? '<i class="bi bi-arrow-up fs-3"></i>' : '<i class="bi bi-arrow-down fs-3"></i>'; ?></span>
-																	<?php endif; ?>
+																		<span class="icon">
+																			<?= $sort == 'rol' ? ($order == 'asc' ? '<i class="bi bi-arrow-up fs-3"></i>' : '<i class="bi bi-arrow-down fs-3"></i>') : '<i class="bi bi-arrow-up-down fs-3"></i>' ?>
+																		</span>
 																	</a>
 																</th>
 																<th class="min-w-125px">
-																<a href="<?= base_url('usuarios') ?>?page=<?= $pager->getCurrentPage() ?>&nombre=<?= urlencode($name) ?>&email=<?= urlencode($email) ?>&rol=<?= urlencode($rol) ?>&telefono=<?= urlencode($telefono) ?>&direccion=<?= urlencode($direccion) ?>&status=<?= urlencode($status) ?>&sort=nombre&order=<?= ($order == 'asc') ? 'desc' : 'asc' ?>">
+																	<a href="<?= base_url('usuarios') ?>?<?= http_build_query(array_merge($_GET, ['sort' => 'telefono', 'order' => ($sort == 'telefono' && $order == 'asc') ? 'desc' : 'asc'])) ?>">
 																		Phone
-																	<?php if ($sort == 'telefono'): ?>
-																		<span class="icon"><?php echo $order == 'asc' ? '<i class="bi bi-arrow-up fs-3"></i>' : '<i class="bi bi-arrow-down fs-3"></i>'; ?></span>
-																	<?php endif; ?>
+																		<span class="icon">
+																			<?= $sort == 'telefono' ? ($order == 'asc' ? '<i class="bi bi-arrow-up fs-3"></i>' : '<i class="bi bi-arrow-down fs-3"></i>') : '<i class="bi bi-arrow-up-down fs-3"></i>' ?>
+																		</span>
 																	</a>
 																</th>
 																<th class="min-w-125px">
-																<a href="<?= base_url('usuarios') ?>?page=<?= $pager->getCurrentPage() ?>&nombre=<?= urlencode($name) ?>&email=<?= urlencode($email) ?>&rol=<?= urlencode($rol) ?>&telefono=<?= urlencode($telefono) ?>&direccion=<?= urlencode($direccion) ?>&status=<?= urlencode($status) ?>&sort=nombre&order=<?= ($order == 'asc') ? 'desc' : 'asc' ?>">
+																	<a href="<?= base_url('usuarios') ?>?<?= http_build_query(array_merge($_GET, ['sort' => 'direccion', 'order' => ($sort == 'direccion' && $order == 'asc') ? 'desc' : 'asc'])) ?>">
 																		Address
-																	<?php if ($sort == 'direccion'): ?>
-																		<span class="icon"><?php echo $order == 'asc' ? '<i class="bi bi-arrow-up fs-3"></i>' : '<i class="bi bi-arrow-down fs-3"></i>'; ?></span>
-																	<?php endif; ?>
+																		<span class="icon">
+																			<?= $sort == 'direccion' ? ($order == 'asc' ? '<i class="bi bi-arrow-up fs-3"></i>' : '<i class="bi bi-arrow-down fs-3"></i>') : '<i class="bi bi-arrow-up-down fs-3"></i>' ?>
+																		</span>
 																	</a>
 																</th>
 																<?php if (session()->get('rol_id') == 1): ?>
 																	<th class="text-end min-w-70px">Actions</th>
-																<?php endif?>
+																<?php endif ?>
 															</tr>
+
 															<!--end::Table row-->
 														</thead>
 														<!--end::Table head-->

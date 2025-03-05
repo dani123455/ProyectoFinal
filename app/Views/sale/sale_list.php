@@ -217,24 +217,7 @@ License: For each use you must have a valid license purchased only from above li
 										<!--begin::Card header-->
 										<div class="card-header border-0 pt-6">
 											<!--begin::Card title-->
-											<div class="card-title">
-												<!--begin::Search-->
-												<div class="d-flex align-items-center position-relative my-1">
-													<!--begin::Svg Icon | path: icons/duotune/general/gen021.svg-->
-													<span class="svg-icon svg-icon-1 position-absolute ms-6">
-														<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-															<rect opacity="0.5" x="17.0365" y="15.1223" width="8.15546" height="2" rx="1" transform="rotate(45 17.0365 15.1223)" fill="black" />
-															<path d="M11 19C6.55556 19 3 15.4444 3 11C3 6.55556 6.55556 3 11 3C15.4444 3 19 6.55556 19 11C19 15.4444 15.4444 19 11 19ZM11 5C7.53333 5 5 7.53333 5 11C5 14.4667 7.53333 17 11 17C14.4667 17 17 14.4667 17 11C17 7.53333 14.4667 5 11 5Z" fill="black" />
-														</svg>
-													</span>
-													<!--end::Svg Icon-->
-													<form method="GET" action="<?=base_url('ventas')?>">
-														<input type="text" name="coche_id" data-kt-customer-table-filter="search" class="form-control form-control-solid w-250px ps-15" placeholder="Search Car" value="<?= isset($coche_id) ? $coche_id : '' ?>" />
-													</form>
-													
-												</div>
-												<!--end::Search-->
-											</div>
+											
 											<!--begin::Card title-->
 											<!--begin::Card toolbar-->
 											<div class="card-toolbar">
@@ -263,7 +246,22 @@ License: For each use you must have a valid license purchased only from above li
 														<form  method="GET" action="<?=base_url('ventas')?>">
 															<div class="px-7 py-5">
 																<!--begin::Input group-->
-									
+																<div class="mb-10">
+																	<label class="form-label fs-5 fw-bold mb-1">Sale:</label>
+																	<input type="text" name="coche_id" data-kt-customer-table-filter="search" class="form-control form-control-solid w-250px ps-15" placeholder="Search Car" value="<?= isset($coche_id) ? $coche_id : '' ?>" />
+																</div>
+																<div class="mb-10">
+																	<label class="form-label fs-5 fw-bold mb-1">User:</label>
+																	<input type="text" name="usuarios_id" data-kt-customer-table-filter="search" class="form-control form-control-solid w-250px ps-15" placeholder="Search User" value="<?= isset($usuarios_id) ? $usuarios_id : '' ?>" />
+																</div>
+																<div class="mb-10">
+																	<label class="form-label fs-5 fw-bold mb-1">Date:</label>
+																	<input type="date" name="fecha" data-kt-customer-table-filter="search" class="form-control form-control-solid w-250px ps-15" placeholder="Search Date" value="<?= isset($fecha) ? $fecha : '' ?>" />
+																</div>
+																<div class="mb-10">
+																	<label class="form-label fs-5 fw-bold mb-1">Price:</label>
+																	<input type="number" name="precio_venta" data-kt-customer-table-filter="search" class="form-control form-control-solid w-250px ps-15" placeholder="Search Price" value="<?= isset($precio_venta) ? $precio_venta : '' ?>" />
+																</div>
 																<!--begin::Input group-->
 																<div class="mb-10">
 																	<!--begin::Label-->
@@ -326,14 +324,43 @@ License: For each use you must have a valid license purchased only from above li
 												<thead>
 													<!--begin::Table row-->
 													<tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
-														<th class="min-w-125px"><a href="<?=base_url('ventas?sort=coche_modelo&order=' . ($sort == 'coche_modelo' && $order == 'asc' ? 'desc' : 'asc'))?>">Sale</a><</th>
-														<th class="min-w-125px"><a href="<?=base_url('ventas?sort=usuario_nombre&order=' . ($sort == 'modelo' && $order == 'asc' ? 'desc' : 'asc'))?>">Users</a></th>
-														<th class="min-w-125px"><a href="<?=base_url('ventas?sort=fecha&order=' . ($sort == 'año' && $order == 'asc' ? 'desc' : 'asc'))?>">Date</a></th>
-														<th class="min-w-125px"><a href="<?=base_url('ventas?sort=precio_venta&order=' . ($sort == 'precio' && $order == 'asc' ? 'desc' : 'asc'))?>">Price</a></th>
+														<th class="min-w-125px">
+															<a href="<?= base_url('ventas') ?>?<?= http_build_query(array_merge($_GET, ['sort' => 'coche_modelo', 'order' => ($sort == 'coche_modelo' && $order == 'asc') ? 'desc' : 'asc'])) ?>">
+																Sale
+																<span class="icon">
+																	<?= $sort == 'coche_modelo' ? ($order == 'asc' ? '<i class="bi bi-arrow-up fs-3"></i>' : '<i class="bi bi-arrow-down fs-3"></i>') : '<i class="bi bi-arrow-up-down fs-3"></i>' ?>
+																</span>
+															</a>
+														</th>
+														<th class="min-w-125px">
+															<a href="<?= base_url('ventas') ?>?<?= http_build_query(array_merge($_GET, ['sort' => 'usuario_nombre', 'order' => ($sort == 'usuario_nombre' && $order == 'asc') ? 'desc' : 'asc'])) ?>">
+																Users
+																<span class="icon">
+																	<?= $sort == 'usuario_nombre' ? ($order == 'asc' ? '<i class="bi bi-arrow-up fs-3"></i>' : '<i class="bi bi-arrow-down fs-3"></i>') : '<i class="bi bi-arrow-up-down fs-3"></i>' ?>
+																</span>
+															</a>
+														</th>
+														<th class="min-w-125px">
+															<a href="<?= base_url('ventas') ?>?<?= http_build_query(array_merge($_GET, ['sort' => 'fecha', 'order' => ($sort == 'fecha' && $order == 'asc') ? 'desc' : 'asc'])) ?>">
+																Date
+																<span class="icon">
+																	<?= $sort == 'fecha' ? ($order == 'asc' ? '<i class="bi bi-arrow-up fs-3"></i>' : '<i class="bi bi-arrow-down fs-3"></i>') : '<i class="bi bi-arrow-up-down fs-3"></i>' ?>
+																</span>
+															</a>
+														</th>
+														<th class="min-w-125px">
+															<a href="<?= base_url('ventas') ?>?<?= http_build_query(array_merge($_GET, ['sort' => 'precio_venta', 'order' => ($sort == 'precio_venta' && $order == 'asc') ? 'desc' : 'asc'])) ?>">
+																Price
+																<span class="icon">
+																	<?= $sort == 'precio_venta' ? ($order == 'asc' ? '<i class="bi bi-arrow-up fs-3"></i>' : '<i class="bi bi-arrow-down fs-3"></i>') : '<i class="bi bi-arrow-up-down fs-3"></i>' ?>
+																</span>
+															</a>
+														</th>
 														<?php if (session()->get('rol_id') == 1): ?>
 															<th class="text-end min-w-70px">Actions</th>
-														<?php endif?>
+														<?php endif ?>
 													</tr>
+
 													<!--end::Table row-->
 												</thead>
 												<!--end::Table head-->
