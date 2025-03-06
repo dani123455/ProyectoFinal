@@ -164,7 +164,7 @@
                 <form action="<?= isset($coche) ? base_url('coches/save/' . $coche['id']) : base_url('coches/save') ?>" method="post">
                     <?= csrf_field(); ?>
                     <div class="mb-3">
-                        <label for="marca_id" class="form-label fw-bold">Brand</label>
+                        <label for="marca_id" class="form-label fw-bold">Brand <span style="color: red;">*</span></label>
                         <select name="marca_id" id="marca_id" class="form-control">
                             <?php foreach($marcas as $marca): ?>
                                 <option value="<?= $marca['id'] ?>" <?= isset($coche['marca_id']) && $coche['marca_id'] == $marca['id'] ? 'selected' : '' ?>><?= $marca['nombre'] ?></option>
@@ -172,22 +172,22 @@
                         </select>
                     </div>
                     <div class="mb-3">
-                        <label for="modelo" class="form-label fw-bold">Model</label>
+                        <label for="modelo" class="form-label fw-bold">Model <span style="color: red;">*</span></label>
                         <input type="text" name="modelo" id="modelo" class="form-control" 
                             value="<?= isset($coche) ? esc($coche['modelo']) : '' ?>" required>
                     </div>
                     <div class="mb-3">
-                        <label for="año" class="form-label fw-bold">Year</label>
+                        <label for="año" class="form-label fw-bold">Year <span style="color: red;">*</span></label>
                         <input type="number" name="año" id="año" class="form-control" 
                         value="<?= isset($coche) ? esc($coche['año']) : '' ?>" required>
                     </div>
                     <div class="mb-3">
-                        <label for="precio" class="form-label fw-bold">Price</label>
+                        <label for="precio" class="form-label fw-bold">Price <span style="color: red;">*</span></label>
                         <input type="number" name="precio" id="precio" class="form-control" 
                             value="<?= isset($coche) ? esc($coche['precio']) : '' ?>" required>
                     </div>
                     <div class="mb-3">
-                        <label for="disponible" class="form-label fw-bold">Available</label>
+                        <label for="disponible" class="form-label fw-bold">Available <span style="color: red;">*</span></label>
                         <input type="number" name="disponible" id="disponible" class="form-control" 
                             value="<?= isset($coche) ? esc($coche['disponible']) : '' ?>" required>
                     </div>

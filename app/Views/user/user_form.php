@@ -163,17 +163,17 @@
                 <form action="<?= isset($usuario) ? base_url('usuarios/save/' . $usuario['id']) : base_url('usuarios/save') ?>" method="post">
                     <?= csrf_field(); ?>
                     <div class="mb-3">
-                        <label for="nombre" class="form-label fw-bold">Nombre</label>
+                        <label for="nombre" class="form-label fw-bold">Nombre <span style="color: red;">*</span></label>
                         <input type="text" name="nombre" id="nombre" class="form-control" 
                             value="<?= isset($usuario) ? esc($usuario['nombre']) : '' ?>" required>
                     </div>
                     <div class="mb-3">
-                        <label for="email" class="form-label fw-bold">Email</label>
+                        <label for="email" class="form-label fw-bold">Email <span style="color: red;">*</span></label>
                         <input type="email" name="email" id="email" class="form-control" 
                             value="<?= isset($usuario) ? esc($usuario['email']) : '' ?>" required>
                     </div>
                     <div class="mb-3">
-                        <label for="rol_id" class="form-label fw-bold">Rol</label>
+                        <label for="rol_id" class="form-label fw-bold">Rol <span style="color: red;">*</span></label>
                         <select name="rol_id" id="rol_id" class="form-control" required>
                             <?php foreach ($roles as $rol): ?>
                                 <option value="<?= $rol['id'] ?>" <?= isset($usuario['rol_id']) && $usuario['rol_id'] == $rol['id'] ? 'selected' : '' ?>><?= $rol['nombre'] ?></option>
@@ -181,12 +181,12 @@
                         </select>
                     </div>
                     <div class="mb-3">
-                        <label for="telefono" class="form-label fw-bold">Teléfono</label>
+                        <label for="telefono" class="form-label fw-bold">Teléfono <span style="color: red;">*</span></label>
                         <input type="text" name="telefono" id="telefono" class="form-control" 
                             value="<?= isset($usuario) ? esc($usuario['telefono']) : '' ?>" required>
                     </div>
                     <div class="mb-3">
-                        <label for="direccion" class="form-label fw-bold">Dirección</label>
+                        <label for="direccion" class="form-label fw-bold">Dirección <span style="color: red;">*</span></label>
                         <input type="text" name="direccion" id="direccion" class="form-control" 
                             value="<?= isset($usuario) ? esc($usuario['direccion']) : '' ?>" required>
                     </div>

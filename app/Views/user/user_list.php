@@ -215,7 +215,7 @@ License: For each use you must have a valid license purchased only from above li
 											<!--begin::Card-->
 											<div class="card">
 												<!--begin::Card header-->
-												<div class="card-header border-0 pt-6">
+												<div class="card-header border-0 pt-6 justify-content-end">
 													<!--begin::Card title-->
 													<!--begin::Card title-->
 													<!--begin::Card toolbar-->
@@ -287,7 +287,10 @@ License: For each use you must have a valid license purchased only from above li
 																				<option value="alta" <?= isset($status) && $status == 'alta' ? 'selected' : '' ?>>Admitted</option>
 																				<option value="baja" <?= isset($status) && $status == 'baja' ? 'selected' : '' ?>>Discharged</option>
 																			</select>
-																	
+
+																			<input type="hidden" name="sort" value="<?= esc($sort) ?>">
+																			<input type="hidden" name="order" value="<?= esc($order) ?>">
+
 																			<!--end::Options-->
 																		</div>
 																		<!--end::Input group-->

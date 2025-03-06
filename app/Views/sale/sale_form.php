@@ -164,7 +164,7 @@
                 <form action="<?= isset($venta) ? base_url('ventas/save/' . $venta['id']) : base_url('ventas/save') ?>" method="post">
                     <?= csrf_field(); ?>
                     <div class="mb-3">
-                        <label for="coche_id" class="form-label fw-bold">Cars</label>
+                        <label for="coche_id" class="form-label fw-bold">Cars <span style="color: red;">*</span></label>
                         <select name="coche_id" id="coche_id" class="form-control">
                             <?php foreach($coches as $coche): ?>
                                 <option value="<?= $coche['id'] ?>" <?= isset($venta['coche_id']) && $venta['coche_id'] == $coche['id'] ? 'selected' : '' ?>><?= $coche['modelo'] ?></option>
@@ -172,7 +172,7 @@
                         </select>
                     </div>
                     <div class="mb-3">
-                        <label for="usuarios_id" class="form-label fw-bold">User</label>
+                        <label for="usuarios_id" class="form-label fw-bold">User <span style="color: red;">*</span></label>
                         <select name="usuarios_id" id="usuarios_id" class="form-control">
                             <?php foreach($usuarios as $usuario): ?>
                                 <option value="<?= $usuario['id'] ?>" <?= isset($venta['usuarios_id']) && $venta['usuarios_id'] == $usuario['id'] ? 'selected' : '' ?>><?= $usuario['nombre'] ?></option>
@@ -180,12 +180,12 @@
                         </select>
                     </div>
                     <div class="mb-3">
-                        <label for="fecha" class="form-label fw-bold">Date</label>
+                        <label for="fecha" class="form-label fw-bold">Date <span style="color: red;">*</span></label>
                         <input type="date" name="fecha" id="fecha" class="form-control" 
                         value="<?= isset($venta) ? esc($venta['fecha']) : '' ?>" required>
                     </div>
                     <div class="mb-3">
-                        <label for="precio_venta" class="form-label fw-bold">Price</label>
+                        <label for="precio_venta" class="form-label fw-bold">Price <span style="color: red;">*</span></label>
                         <input type="number" name="precio_venta" id="precio_venta" class="form-control" 
                             value="<?= isset($venta) ? esc($venta['precio_venta']) : '' ?>" required>
                     </div>

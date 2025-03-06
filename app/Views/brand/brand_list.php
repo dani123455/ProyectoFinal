@@ -125,7 +125,7 @@ License: For each use you must have a valid license purchased only from above li
 													<span class="menu-bullet">
 														<span class="bullet bullet-dot"></span>
 													</span>
-													<span class="menu-item">Sales</span>
+													<span class="menu-item">Brand</span>
 												</a>
 											</div>
 										<?php endif?>
@@ -174,7 +174,7 @@ License: For each use you must have a valid license purchased only from above li
 								<!--begin::Page title-->
 								<div data-kt-swapper="true" data-kt-swapper-mode="prepend" data-kt-swapper-parent="{default: '#kt_content_container', 'lg': '#kt_toolbar_container'}" class="page-title d-flex align-items-center flex-wrap me-3 mb-5 mb-lg-0">
 									<!--begin::Title-->
-									<h1 class="d-flex align-items-center text-dark fw-bolder fs-3 my-1">Sale List</h1>
+									<h1 class="d-flex align-items-center text-dark fw-bolder fs-3 my-1">Brand List</h1>
 									<!--end::Title-->
 									<!--begin::Separator-->
 									<span class="h-20px border-gray-200 border-start mx-4"></span>
@@ -216,7 +216,7 @@ License: For each use you must have a valid license purchased only from above li
 								<!--begin::Card-->
 								<div class="card">
 									<!--begin::Card header-->
-									<div class="card-header border-0 pt-6">
+									<div class="card-header border-0 pt-6 justify-content-end">
 										<!--begin::Card title-->
 									
 										<!--begin::Card title-->
@@ -262,6 +262,8 @@ License: For each use you must have a valid license purchased only from above li
 																	<option value="baja" <?= isset($status) && $status == 'baja' ? 'selected' : '' ?>>Discharged</option>
 																</select>
 														
+																<input type="hidden" name="sort" value="<?= esc($sort) ?>">
+																<input type="hidden" name="order" value="<?= esc($order) ?>">
 																<!--end::Options-->
 															</div>
 															<!--end::Input group-->

@@ -27,8 +27,8 @@
 		<link href="<?=base_url('assets/plugins/global/plugins.bundle.css')?>" rel="stylesheet" type="text/css" />
 		<link href="<?=base_url('assets/css/style.bundle.css')?>" rel="stylesheet" type="text/css" />
 </head>
-<body class="bg-secondary">
-<div class="d-flex flex-column flex-root">
+<body id="kt_body" class="header-fixed header-tablet-and-mobile-fixed toolbar-enabled toolbar-fixed aside-enabled aside-fixed bg-secondary" style="--kt-toolbar-height:55px;--kt-toolbar-height-tablet-and-mobile:55px">
+	<div class="d-flex flex-column flex-root">
 			<!--begin::Page-->
 			<div class="page d-flex flex-row flex-column-fluid">
 				<!--begin::Aside-->
@@ -146,36 +146,110 @@
 					</div>
 					<!--end::Footer-->
 				</div>
+				<div class="wrapper d-flex flex-column flex-row-fluid" id="kt_wrapper">
+					<!--begin::Content-->
+					<div class="content d-flex flex-column flex-column-fluid" id="kt_content">
+						<div class=" toolbar top-0" id="kt_toolbar">
+							<!--begin::Container-->
+							<div id="kt_toolbar_container" class="container-fluid d-flex flex-stack">
+								<!--begin::Page title-->
+								<div data-kt-swapper="true" data-kt-swapper-mode="prepend" data-kt-swapper-parent="{default: '#kt_content_container', 'lg': '#kt_toolbar_container'}" class="page-title d-flex align-items-center flex-wrap me-3 mb-5 mb-lg-0">
+									<!--begin::Title-->
+									<h1 class="d-flex align-items-center text-dark fw-bolder fs-3 my-1">Brand List</h1>
+									<!--end::Title-->
+									<!--begin::Separator-->
+									<span class="h-20px border-gray-200 border-start mx-4"></span>
+									<!--end::Separator-->
+									<!--begin::Breadcrumb-->
+									<ul class="breadcrumb breadcrumb-separatorless fw-bold fs-7 my-1">
+										<!--begin::Item-->
+										<li class="breadcrumb-item text-muted">
+											<a href="../../demo1/dist/index.html" class="text-muted text-hover-primary">Home</a>
+										</li>
+										<!--end::Item-->
+										<!--begin::Item-->
+										<li class="breadcrumb-item">
+											<span class="bullet bg-gray-200 w-5px h-2px"></span>
+										</li>
+										<!--end::Item-->
+										<!--begin::Item-->
+										<li class="breadcrumb-item text-muted">Brands</li>
+										<!--end::Item-->
+										<!--begin::Item-->
+										<li class="breadcrumb-item">
+											<span class="bullet bg-gray-200 w-5px h-2px"></span>
+										</li>
+										<!--end::Item-->
+										<!--begin::Item-->
+										<li class="breadcrumb-item text-muted">Brand Listing</li>
+										<!--end::Item-->
+										<li class="breadcrumb-item">
+											<span class="bullet bg-gray-200 w-5px h-2px"></span>
+										</li>
 
-<div class="container mt-5">
-    <div class="card shadow-none rounded-0 mt-5">
-        <div class="card-header text-center" id="kt_activities_header">
-            <h1 class="p-5"><?= $isEdit ? 'Edit Brand' : 'Add Brand' ?></h1>
-        </div>
-        <div class="card-body position-relative" id="kt_activities_body" style="max-height: 500px;">
-            <div id="kt_activities_scroll" class="position-relative scroll-y me-n5 pe-5" data-kt-scroll="true" data-kt-scroll-height="auto" data-kt-scroll-wrappers="#kt_activities_body" data-kt-scroll-dependencies="#kt_activities_header, #kt_activities_footer" data-kt-scroll-offset="5px">
-            <!-- Mostrar errores de validación -->
-                <?php if (isset($validation)): ?>
-                    <div class="alert alert-danger">
-                        <?= $validation->listErrors() ?>
-                    </div>
-                <?php endif; ?>
+										<li class="breadcrumb-item text-dark">Brand Form</li>
+									</ul>
+									<!--end::Breadcrumb-->
+								</div>
+							</div>
+							<!--end::Container-->
+						</div>
+						<div class="container mt-5">
+							<div class="card shadow-none rounded-0 mt-5">
+								<div class="card-header text-center" id="kt_activities_header">
+									<h1 class="p-5"><?= $isEdit ? 'Edit Brand' : 'Add Brand' ?></h1>
+								</div>
+								<div class="card-body position-relative" id="kt_activities_body" style="max-height: 500px;">
+									<div>
+									<!-- Mostrar errores de validación -->
+										<?php if (isset($validation)): ?>
+											<div class="alert alert-danger">
+												<?= $validation->listErrors() ?>
+											</div>
+										<?php endif; ?>
 
-                <!-- Formulario -->
-                <form action="<?= isset($marca) ? base_url('marcas/save/' . $marca['id']) : base_url('marcas/save') ?>" method="post">
-                    <?= csrf_field(); ?>
-                    <div class="mb-3">
-                        <label for="name" class="form-label fw-bold">Brand</label>
-                        <input type="text" name="nombre" id="name" class="form-control" 
-                        value="<?= isset($marca) ? esc($marca['nombre']) : '' ?>" required>
-                    </div>
-                    <button type="submit" class="btn btn-success"><?= isset($venta) ? 'Update' : 'Add' ?></button>
-                    <a href="<?= base_url('ventas') ?>" class="btn btn-secondary">Cancel</a>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
+										<!-- Formulario -->
+										<form action="<?= isset($marca) ? base_url('marcas/save/' . $marca['id']) : base_url('marcas/save') ?>" method="post">
+											<?= csrf_field(); ?>
+											<div class="mb-3">
+												<label for="name" class="form-label fw-bold">Brand</label>
+												<input type="text" name="nombre" id="name" class="form-control" 
+												value="<?= isset($marca) ? esc($marca['nombre']) : '' ?>" required>
+											</div>
+											<button type="submit" class="btn btn-success"><?= isset($venta) ? 'Update' : 'Add' ?></button>
+											<a href="<?= base_url('marcas') ?>" class="btn btn-secondary">Cancel</a>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="footer py-4 d-flex flex-lg-column mt-auto" id="kt_footer">
+							<!--begin::Container-->
+							<div class="container-fluid d-flex flex-column flex-md-row align-items-center justify-content-between">
+								<!--begin::Copyright-->
+								<div class="text-dark order-2 order-md-1">
+									<span class="text-muted fw-bold me-1">2021©</span>
+									<a href="https://keenthemes.com" target="_blank" class="text-gray-800 text-hover-primary">Keenthemes</a>
+								</div>
+								<!--end::Copyright-->
+								<!--begin::Menu-->
+								<ul class="menu menu-gray-600 menu-hover-primary fw-bold order-1">
+									<li class="menu-item">
+										<a href="https://keenthemes.com" target="_blank" class="menu-link px-2">About</a>
+									</li>
+									<li class="menu-item">
+										<a href="https://keenthemes.com/support" target="_blank" class="menu-link px-2">Support</a>
+									</li>
+									<li class="menu-item">
+										<a href="https://1.envato.market/EA4JP" target="_blank" class="menu-link px-2">Purchase</a>
+									</li>
+								</ul>
+								<!--end::Menu-->
+							</div>
+							<!--end::Container-->
+						</div>
+
 <script>var hostUrl = "<?=base_url('assets/')?>";</script>
 		<!--begin::Javascript-->
 		<!--begin::Global Javascript Bundle(used by all pages)-->
