@@ -34,6 +34,8 @@ License: For each use you must have a valid license purchased only from above li
 		<!--begin::Global Stylesheets Bundle(used by all pages)-->
 		<link href="../assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
 		<link href="../assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
+		<link href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
+		<link href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css" rel="stylesheet" type="text/css" />
 		<!--end::Global Stylesheets Bundle-->
 	</head>
 	<!--end::Head-->
@@ -309,80 +311,66 @@ License: For each use you must have a valid license purchased only from above li
 									<div class="card-body pt-0">
 										<!--begin::Table-->
 										<?php if (!empty($marcas) && is_array($marcas)): ?>
-										<table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_customers_table">
-											<!--begin::Table head-->
-											<thead>
-												<!--begin::Table row-->
-												<tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
-													<th class="min-w-125px">
-														<a href="<?= base_url('marcas') ?>?<?= http_build_query(array_merge($_GET, ['sort' => 'nombre', 'order' => ($sort == 'nombre' && $order == 'asc') ? 'desc' : 'asc'])) ?>">
-															Brand
-															<span class="icon">
-																<?= $sort == 'nombre' ? ($order == 'asc' ? '<i class="bi bi-arrow-up fs-3"></i>' : '<i class="bi bi-arrow-down fs-3"></i>') : '<i class="bi bi-arrow-up-down fs-3"></i>' ?>
-															</span>
-														</a>
-													</th>
-													<?php if (session()->get('rol_id') == 1): ?>
-														<th class="text-end min-w-70px">Actions</th>
-													<?php endif ?>
-												</tr>
-
-												<!--end::Table row-->
-											</thead>
-											<!--end::Table head-->
-											<!--begin::Table body-->
-											<tbody class="fw-bold text-gray-600">
-											<?php foreach ($marcas as $marca): ?>
-												<tr>
-													<!--begin::Name=-->
-													<td style="<?= is_null($marca['fecha_baja']) ? '' : 'color: red;' ?>"><?= esc($marca['nombre']) ?></td>
-													<!--begin::Action=-->
-													<?php if (session()->get('rol_id') == 1): ?>
-														<td class="text-end">
-														<a href="#" class="btn btn-sm btn-light btn-active-light-primary" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">Actions
-														<!--begin::Svg Icon | path: icons/duotune/arrows/arr072.svg-->
-														<span class="svg-icon svg-icon-5 m-0">
-															<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-																<path d="M11.4343 12.7344L7.25 8.55005C6.83579 8.13583 6.16421 8.13584 5.75 8.55005C5.33579 8.96426 5.33579 9.63583 5.75 10.05L11.2929 15.5929C11.6834 15.9835 12.3166 15.9835 12.7071 15.5929L18.25 10.05C18.6642 9.63584 18.6642 8.96426 18.25 8.55005C17.8358 8.13584 17.1642 8.13584 16.75 8.55005L12.5657 12.7344C12.2533 13.0468 11.7467 13.0468 11.4343 12.7344Z" fill="black" />
-															</svg>
-														</span>
-														<!--end::Svg Icon--></a>
-														<!--begin::Menu-->
-														<div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-bold fs-7 w-125px py-4" data-kt-menu="true">
-															<!--begin::Menu item-->
-															<div class="menu-item px-3">
-																<a href="<?= base_url('marcas/save/' . $marca['id']) ?>" class="menu-link px-3">Edit</a>
-															</div>
-															<!--end::Menu item-->
-															<!--begin::Menu item-->
-															<div class="menu-item px-3">
-																<a href="#" class="menu-link px-3" data-kt-customer-table-filter="delete_row">
-																	<?php if (is_null($marca['fecha_baja'])): ?>
-                                										<a class="menu-link text-success px-3" href="<?= base_url('marcas/archive/' . $marca['id']) ?>">Archive</a>
-                            										<?php else: ?>
-                                										<a class="menu-link text-danger px-3" href="<?= base_url('marcas/unarchive/' . $marca['id']) ?>">Unarchive</a>
-                            										<?php endif; ?>
+											<div class="container">
+												<h2>Brand List</h2>
+												<table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_customers_table">
+													<!--begin::Table head-->
+													<thead>
+														<!--begin::Table row-->
+														<tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
+															<th class="min-w-125px">
+																<a href="<?= base_url('marcas') ?>?<?= http_build_query(array_merge($_GET, ['sort' => 'nombre', 'order' => ($sort == 'nombre' && $order == 'asc') ? 'desc' : 'asc'])) ?>">
+																	Brand
+																	<span class="icon">
+																		<?= $sort == 'nombre' ? ($order == 'asc' ? '<i class="bi bi-arrow-up fs-3"></i>' : '<i class="bi bi-arrow-down fs-3"></i>') : '<i class="bi bi-arrow-up-down fs-3"></i>' ?>
+																	</span>
 																</a>
-															</div>
-															<!--end::Menu item-->
-														</div>
-													<?php endif?>
-														<!--end::Menu-->
-													</td>
-													</td>
-													<!--end::Action=-->
-												</tr>
-												<?php endforeach; ?>
-												
-													<!--begin::Checkbox-->
-											</tbody>
-											<!--end::Table body-->
-										</table>
+															</th>
+															<?php if (session()->get('rol_id') == 1): ?>
+																<th class="text-end min-w-70px">Actions</th>
+															<?php endif ?>
+														</tr>
+													</thead>
+													<!--end::Table head-->
+													<!--begin::Table body-->
+													<tbody class="fw-bold text-gray-600">
+													<?php foreach ($marcas as $marca): ?>
+														<tr>
+															<td style="<?= is_null($marca['fecha_baja']) ? '' : 'color: red;' ?>"><?= esc($marca['nombre']) ?></td>
+															<?php if (session()->get('rol_id') == 1): ?>
+																<td class="text-end">
+																	<a href="#" class="btn btn-sm btn-light btn-active-light-primary" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">Actions
+																		<span class="svg-icon svg-icon-5 m-0">
+																			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+																				<path d="M11.4343 12.7344L7.25 8.55005C6.83579 8.13583 6.16421 8.13584 5.75 8.55005C5.33579 8.96426 5.33579 9.63583 5.75 10.05L11.2929 15.5929C11.6834 15.9835 12.3166 15.9835 12.7071 15.5929L18.25 10.05C18.6642 9.63584 18.6642 8.96426 18.25 8.55005C17.8358 8.13584 17.1642 8.13584 16.75 8.55005L12.5657 12.7344C12.2533 13.0468 11.7467 13.0468 11.4343 12.7344Z" fill="black" />
+																			</svg>
+																		</span>
+																	</a>
+																	<div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-bold fs-7 w-125px py-4" data-kt-menu="true">
+																		<div class="menu-item px-3">
+																			<a href="<?= base_url('marcas/save/' . $marca['id']) ?>" class="menu-link px-3">Edit</a>
+																		</div>
+																		<div class="menu-item px-3">
+																			<a href="#" class="menu-link px-3" data-kt-customer-table-filter="delete_row">
+																				<?php if (is_null($marca['fecha_baja'])): ?>
+																					<a class="menu-link text-success px-3" href="<?= base_url('marcas/archive/' . $marca['id']) ?>">Archive</a>
+																				<?php else: ?>
+																					<a class="menu-link text-danger px-3" href="<?= base_url('marcas/unarchive/' . $marca['id']) ?>">Unarchive</a>
+																				<?php endif; ?>
+																			</a>
+																		</div>
+																	</div>
+																</td>
+															<?php endif ?>
+														</tr>
+													<?php endforeach; ?>
+													</tbody>
+													<!--end::Table body-->
+												</table>
+											</div>
+
 									<?php endif?>
-									<div class="mt-4">
-										<?= $pager->only(['name'])->links('default','custom_pagination') ?>
-									</div>
-						
+									
 										<!--end::Table-->
 									</div>
 									<!--end::Card body-->
@@ -548,6 +536,11 @@ License: For each use you must have a valid license purchased only from above li
 		</div>
 		<!--end::Scrolltop-->
 		<!--end::Main-->
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+		<script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+		<script src="../assets/plugins/global/plugins.bundle.js"></script>
+		<script src="../assets/js/scripts.bundle.js"></script>
 		<script>var hostUrl = "../assets/";</script>
 		<!--begin::Javascript-->
 		<!--begin::Global Javascript Bundle(used by all pages)-->
@@ -565,6 +558,43 @@ License: For each use you must have a valid license purchased only from above li
 		<script src="../assets/js/custom/apps/chat/chat.js"></script>
 		<script src="../assets/js/custom/modals/create-app.js"></script>
 		<script src="../assets/js/custom/modals/upgrade-plan.js"></script>
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+<script>
+        $(document).ready(function() {
+            $('#kt_customers_table').DataTable({
+                // Configuración básica
+                pageLength: 5,
+                lengthMenu: [5, 10, 25, 50],
+                
+                // Traducción al español
+                language: {
+                    processing: "Procesando...",
+                    search: "Search:",
+                    lengthMenu: "Show _MENU_ records",
+                    info: "Showing records of _START_ al _END_ of a total of _TOTAL_ records",
+                    infoEmpty: "Showing records 0 to 0 of a total of 0 records",
+                    infoFiltered: "(filtered from a total of _MAX_ record)",
+                    loadingRecords: "Cargando...",
+                    zeroRecords: "No se encontraron resultados",
+                    emptyTable: "Ningún dato disponible en esta tabla",
+                    paginate: {
+                        first: "First",
+                        previous: "Former",
+                        next: "Next",
+                        last: "Last"
+                    }
+                },
+                
+                // Desactivar el ordenamiento en la columna de acciones
+                columnDefs: [
+                    { orderable: false, targets: -1 }
+                ]
+            });
+        });
+    </script>
+
+
 		<!--end::Page Custom Javascript-->
 		<!--end::Javascript-->
 	</body>

@@ -24,13 +24,13 @@
         
             var options2 = {
                 series: [{
-                    name: 'Low-end',
+                    name: 'Low-class',
                     data: [44, 55, 41, 67, 22, 43, 21, 49]
                 }, {
-                    name: 'Mid-range',
+                    name: 'Mid-class',
                     data: [13, 23, 20, 8, 13, 27, 33, 12]
                 }, {
-                    name: 'High-end',
+                    name: 'High-class',
                     data: [11, 17, 15, 15, 21, 14, 15, 13]
                 }],
                 chart: {
@@ -50,7 +50,7 @@
                     }
                 }],
                 xaxis: {
-                    categories: ['2011 Q1', '2011 Q2', '2011 Q3', '2011 Q4', '2012 Q1', '2012 Q2', '2012 Q3', '2012 Q4']
+                    categories: ['2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024']
                 },
                 fill: {
                     opacity: 1
